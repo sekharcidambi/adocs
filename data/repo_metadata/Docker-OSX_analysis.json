@@ -1,0 +1,44 @@
+{
+  "github_repo": "https://github.com/sickcodes/Docker-OSX",
+  "business_domain": "Developer Tools",
+  "overview": "Docker-OSX is an open-source project that enables running macOS in a Docker container. It provides a comprehensive solution for setting up and launching a macOS virtual machine (VM) within a Docker environment. The primary purpose of this project is to facilitate security research, app development, and other use cases that require a macOS environment, particularly in scenarios where running macOS on bare-metal hardware is not feasible or practical. The project includes features such as automatic generation of unique serial numbers and firmware to make the VM appear like genuine Mac hardware, as well as the ability to connect USB devices like iPhones to the VM. Docker-OSX aims to provide a repeatable, ephemeral, and flexible macOS environment that can be easily deployed and tested across different platforms and environments.",
+  "tech_stack": {
+    "languages": [
+      "Markdown",
+      "Python",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [
+      "Express",
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Containerized",
+    "description": "The architecture of Docker-OSX follows a containerized approach, where the entire macOS virtual machine is packaged and deployed as a Docker container. This architectural pattern was chosen to leverage the benefits of containerization, such as portability, reproducibility, and isolation. The Docker container encapsulates all the necessary components to run the macOS VM, including the QEMU hypervisor, the macOS installer, and the necessary configuration files. By using Docker, the project can provide a consistent and predictable environment for running macOS, making it easier to set up, distribute, and maintain the solution across different platforms and infrastructure. The containerized approach also allows for easy scaling, deployment, and integration with existing Docker-based workflows and toolchains. Additionally, the use of Docker enables the project to take advantage of features like resource management, networking, and security features provided by the Docker platform, further enhancing the overall robustness and flexibility of the solution."
+  },
+  "setup": {
+    "install": "docker pull sickcodes/docker-osx:latest",
+    "run": "docker run -it --device /dev/kvm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -v $PWD/disk.img:/image sickcodes/docker-osx:latest ./Launch.sh",
+    "test": "docker run -it --device /dev/kvm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -v $PWD/disk.img:/image sickcodes/docker-osx:latest ./Launch.sh -t"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

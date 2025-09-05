@@ -1,0 +1,51 @@
+{
+  "github_repo": "https://github.com/AppFlowy-IO/AppFlowy",
+  "business_domain": "SaaS",
+  "overview": "AppFlowy is an open-source alternative to Notion, a popular project and knowledge management tool. It aims to provide users with Notion's functionality, data security, and cross-platform native experience, while addressing its limitations. AppFlowy is designed to empower individuals and enterprises to create custom applications that suit their specific needs. The project is driven by three core values: data privacy, reliable native experience, and community-driven extensibility. Unlike Notion, which may struggle to scale horizontally and prioritize a subset of customers, AppFlowy aims to democratize the knowledge and tools required to build complex workplace management applications. Users can design and modify AppFlowy to their liking, with a single codebase written in Flutter and Rust supporting multiple platforms and ensuring long-term maintainability.",
+  "tech_stack": {
+    "languages": [
+      "C++",
+      "HTML",
+      "JSON",
+      "Java",
+      "JavaScript",
+      "Kotlin",
+      "MATLAB",
+      "Markdown",
+      "Rust",
+      "SQL",
+      "Shell",
+      "Swift",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "description": "AppFlowy's architecture follows a microservices pattern, where the application is composed of multiple independent services that communicate with each other through well-defined interfaces. This approach allows for better scalability, flexibility, and modularity compared to a monolithic architecture. The frontend, built using Flutter, interacts with the backend services written in Rust. This separation of concerns between the client and server components enables the application to be deployed and scaled independently, improving overall system resilience and performance. The microservices architecture also facilitates the integration of new features and functionalities, as well as the replacement or modification of individual components without affecting the entire system. This design decision aligns with AppFlowy's goal of enabling users to customize and extend the application to suit their specific needs, fostering a community-driven approach to development and innovation."
+  },
+  "setup": {
+    "install": "To install AppFlowy, users can download the desktop application for macOS, Windows, or Linux from the GitHub releases page. Alternatively, AppFlowy is available on various distribution channels, such as Flathub, Snapcraft, and Sourceforge. For mobile devices, the app is available on the App Store (iOS) and Play Store (Android).",
+    "run": "The desktop application can be launched directly after installation. For self-hosting, users can follow the instructions provided in the AppFlowy documentation.",
+    "test": "The documentation includes instructions for running tests, which can be executed using the provided commands."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

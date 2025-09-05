@@ -1,0 +1,67 @@
+{
+  "github_repo": "https://github.com/torvalds/linux",
+  "business_domain": "Other",
+  "overview": "Project description not available",
+  "tech_stack": {
+    "languages": [
+      "C",
+      "C++",
+      "CSS",
+      "HTML",
+      "JSON",
+      "MATLAB",
+      "Markdown",
+      "Python",
+      "Ruby",
+      "Rust",
+      "Shell",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "Angular",
+      "React"
+    ],
+    "backend": [
+      "Node.js",
+      "Express",
+      "Ruby on Rails",
+      "Spring"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "Redis",
+      "PostgreSQL",
+      "SQLite"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Mvc",
+    "detected_patterns": [
+      "Mvc",
+      "Microservices",
+      "Feature_Based"
+    ],
+    "description": "The project uses a Mvc architectural pattern."
+  },
+  "setup": {
+    "install": "See README for installation instructions",
+    "run": "See README for running instructions",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

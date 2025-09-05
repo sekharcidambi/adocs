@@ -1,0 +1,47 @@
+{
+  "github_repo": "https://github.com/anthropics/anthropic-sdk-python",
+  "business_domain": "Other",
+  "overview": "<!-- prettier-ignore -->",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "Markdown",
+      "Python",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "DynamoDB"
+    ],
+    "devops": [
+      "Docker",
+      "GitHub Actions",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "# install from PyPI\npip install anthropic",
+    "run": "# install from PyPI\npip install anthropic[aiohttp]",
+    "test": "python\nclient.with_options(http_client=DefaultHttpxClient(...))"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

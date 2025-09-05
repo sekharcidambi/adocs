@@ -1,0 +1,55 @@
+{
+  "github_repo": "https://github.com/zed-industries/zed",
+  "business_domain": "Other",
+  "overview": "Welcome to Zed, a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+  "tech_stack": {
+    "languages": [
+      "C++",
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "Rust",
+      "SQL",
+      "Shell",
+      "TypeScript",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Next.js"
+    ],
+    "backend": [
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "GitHub Actions",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "See README for installation instructions",
+    "run": "See README for running instructions",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

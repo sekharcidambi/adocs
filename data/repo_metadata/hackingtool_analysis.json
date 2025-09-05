@@ -1,0 +1,45 @@
+{
+  "github_repo": "https://github.com/Z4nzu/hackingtool",
+  "business_domain": "Cybersecurity, Penetration Testing, Ethical Hacking",
+  "overview": "Hackingtool is an all-in-one hacking tool for hackers and security researchers. It provides a comprehensive collection of over 100 hacking tools across various categories, including information gathering, wireless attacks, SQL injection, phishing, web attacks, post-exploitation, forensics, payload creation, exploit frameworks, reverse engineering, DDoS attacks, remote administration tools (RATs), XSS attacks, steganography, and more. The project aims to be a one-stop-shop for a wide range of hacking and security testing capabilities, catering to the needs of both novice and experienced security professionals. Hackingtool simplifies the process of installing and managing these tools, making it easier for users to leverage a diverse set of security testing utilities from a single platform.",
+  "tech_stack": {
+    "languages": [
+      "Markdown",
+      "Python",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [],
+    "databases": [
+      "Elasticsearch",
+      "MongoDB",
+      "PostgreSQL"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Modular",
+    "description": "Hackingtool follows a modular architecture, where each hacking tool is encapsulated as a separate module or component. This design allows for easy addition, removal, and management of individual tools without affecting the overall functionality of the system. The modular approach provides flexibility, scalability, and maintainability, as new tools can be seamlessly integrated, and existing ones can be updated or replaced as needed. The architecture also includes a central menu system that serves as the entry point for users to access and execute the various hacking tools. This menu-driven interface simplifies the user experience and enables easy navigation through the extensive tool collection. The modular design of Hackingtool aligns well with the diverse and evolving nature of the cybersecurity landscape, allowing the project to adapt and expand its capabilities as new tools and techniques emerge."
+  },
+  "setup": {
+    "install": "git clone https://github.com/Z4nzu/hackingtool.git\ncd hackingtool\nchmod -R 755 hackingtool\nsudo bash install.sh",
+    "run": "sudo hackingtool",
+    "test": "No specific test command provided in the documentation"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

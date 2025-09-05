@@ -1,0 +1,55 @@
+{
+  "github_repo": "https://github.com/nektos/act",
+  "business_domain": "Other",
+  "overview": "> \"Think globally, act locally\"",
+  "tech_stack": {
+    "languages": [
+      "Go",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Next.js",
+      "Bootstrap"
+    ],
+    "backend": [
+      "Express",
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "detected_patterns": [
+      "Microservices"
+    ],
+    "description": "The project is built using a Microservices architecture with separate services."
+  },
+  "setup": {
+    "install": "See README for installation instructions",
+    "run": "See README for running instructions",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

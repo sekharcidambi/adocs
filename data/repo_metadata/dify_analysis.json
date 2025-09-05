@@ -1,0 +1,76 @@
+{
+  "github_repo": "https://github.com/langgenius/dify",
+  "business_domain": "AI/ML",
+  "overview": "Dify is an open-source platform for developing large language model (LLM) applications. It provides an intuitive interface that combines agentic AI workflows, Retrieval Augmented Generation (RAG) pipelines, agent capabilities, model management, and observability features. This allows users to quickly move from prototype to production when building LLM-powered applications. Dify supports seamless integration with hundreds of proprietary and open-source LLMs from dozens of inference providers and self-hosted solutions, covering models like GPT, Mistral, Llama3, and any OpenAI API-compatible models. It offers a comprehensive set of features, including a visual workflow builder, prompt IDE, RAG pipeline, agent capabilities with pre-built and custom tools, and LLMOps for monitoring and analyzing application performance. Dify also provides corresponding APIs, enabling easy integration into users' own business logic. The platform is designed to empower developers, businesses, and organizations to leverage the power of LLMs in their applications and workflows.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "Dockerfile",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "MDX",
+      "Makefile",
+      "Mako",
+      "Markdown",
+      "PHP",
+      "Python",
+      "SCSS",
+      "SQL",
+      "Shell",
+      "TypeScript",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "Tailwind CSS",
+      "Next.js",
+      "React",
+      "Angular",
+      "Vue",
+      "Ant Design",
+      "Bootstrap"
+    ],
+    "backend": [
+      "Node.js",
+      "Express",
+      "Hapi",
+      "Django",
+      "Spring",
+      "Ruby on Rails",
+      "Flask"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis",
+      "MySQL",
+      "MongoDB",
+      "DynamoDB",
+      "SQLite"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "description": "Dify's architecture follows a microservices pattern, with each major component (e.g., workflow, model management, RAG pipeline, agent capabilities, LLMOps) implemented as a separate service. This allows for better scalability, flexibility, and maintainability of the overall system. The services communicate with each other using a message queue and RESTful APIs, enabling loose coupling and independent deployment. The use of microservices also facilitates the integration of various LLM providers and third-party tools, as each service can be easily extended or replaced without affecting the entire system. Additionally, the microservices architecture enables Dify to be deployed in a highly available and fault-tolerant manner, with each service scaling independently based on demand. This design decision was made to accommodate the growing complexity of LLM-powered applications and the need for modular, scalable, and extensible platforms in the rapidly evolving AI landscape."
+  },
+  "setup": {
+    "install": "cd dify\ncd docker\ncp .env.example .env\ndocker compose up -d",
+    "run": "docker compose up -d",
+    "test": "No specific test command provided in the documentation"
+  },
+  "metadata": {
+    "stars": 113008,
+    "forks": 17288,
+    "open_issues": 716,
+    "created_at": "2023-04-12T07:40:24Z",
+    "updated_at": "2025-09-04T04:54:21Z",
+    "license": "Other",
+    "homepage": "https://dify.ai",
+    "status": "Active"
+  }
+}

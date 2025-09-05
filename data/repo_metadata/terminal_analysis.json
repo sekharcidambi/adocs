@@ -1,0 +1,52 @@
+{
+  "github_repo": "https://github.com/microsoft/terminal",
+  "business_domain": "Developer Tools",
+  "overview": "Windows Terminal is a new, modern, feature-rich, and productive terminal application for command-line users on Windows. It was created by the Microsoft team to address the limitations of the legacy Windows Console host (conhost.exe), which has been the primary command-line interface on Windows for decades. Windows Terminal includes many of the features most frequently requested by the Windows command-line community, such as support for tabs, rich text, globalization, configurability, theming and styling, and more. The project also includes the source code for the Windows Console host itself, as well as shared components that can be reused in any terminal implementation on Windows. The goal is to provide a fast, efficient, and customizable terminal experience that meets the evolving needs of developers, IT professionals, and power users on the Windows platform.",
+  "tech_stack": {
+    "languages": [
+      "C#",
+      "C++",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "XML"
+    ],
+    "frontend": [
+      "Next.js",
+      "React"
+    ],
+    "backend": [
+      "Node.js",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Component-based",
+    "description": "The Windows Terminal application follows a component-based architecture, where the core functionality is encapsulated in reusable modules and UI controls. This approach allows for better separation of concerns, improved testability, and the ability to incorporate the Terminal's core components into other applications. The Terminal's architecture includes several key components: the Windows Console host (conhost.exe), which provides the underlying command-line infrastructure and APIs; shared components, such as the DirectWrite-based text layout and rendering engine, a text buffer capable of storing UTF-16 and UTF-8 text, and a VT parser/emitter; and the Terminal application itself, which acts as a host for these shared components and provides the user interface and feature set. The component-based design allows the Terminal to reuse and build upon the modernized codebase of the Windows Console, while also introducing new capabilities and a more flexible, extensible architecture. This architectural pattern was chosen to maximize code reuse, enable future extensibility, and provide a solid foundation for the Terminal's evolution as a premier command-line experience on Windows."
+  },
+  "setup": {
+    "install": "Add-AppxPackage Microsoft.WindowsTerminal_<versionNumber>.msixbundle",
+    "run": "Start-Process wt.exe",
+    "test": "Invoke-Pester -Path ./tests"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

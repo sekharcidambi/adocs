@@ -1,0 +1,35 @@
+{
+  "github_repo": "https://github.com/github/gitignore",
+  "business_domain": "Other",
+  "overview": "This is GitHub’s collection of [.gitignore][man] file templates.",
+  "tech_stack": {
+    "languages": [
+      "Markdown"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "gitignore\n# gitignore template for InforCRM (formerly SalesLogix)\n# website: https://www.infor.com/product-summary/cx/infor-crm/\n#\n# Recommended: VisualStudio.gitignore\n\n# Ignore model files that are auto-generated\nModelIndex.xml\nExportedFiles.xml\n\n# Ignore deployment files\n[Mm]odel/[Dd]eployment\n\n# Force include portal SupportFiles\n!Model/Portal/*/SupportFiles/[Bb]in/\n!Model/Portal/PortalTemplates/*/SupportFiles/[Bb]in",
+    "run": "gitignore\n# gitignore template for InforCRM (formerly SalesLogix)\n# website: https://www.infor.com/product-summary/cx/infor-crm/\n#\n# Recommended: VisualStudio.gitignore\n\n# Ignore model files that are auto-generated\nModelIndex.xml\nExportedFiles.xml\n\n# Ignore deployment files\n[Mm]odel/[Dd]eployment\n\n# Force include portal SupportFiles\n!Model/Portal/*/SupportFiles/[Bb]in/\n!Model/Portal/PortalTemplates/*/SupportFiles/[Bb]in",
+    "test": "gitignore\n# gitignore template for InforCRM (formerly SalesLogix)\n# website: https://www.infor.com/product-summary/cx/infor-crm/\n#\n# Recommended: VisualStudio.gitignore\n\n# Ignore model files that are auto-generated\nModelIndex.xml\nExportedFiles.xml\n\n# Ignore deployment files\n[Mm]odel/[Dd]eployment\n\n# Force include portal SupportFiles\n!Model/Portal/*/SupportFiles/[Bb]in/\n!Model/Portal/PortalTemplates/*/SupportFiles/[Bb]in"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

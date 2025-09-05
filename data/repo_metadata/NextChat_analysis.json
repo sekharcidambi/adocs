@@ -1,0 +1,56 @@
+{
+  "github_repo": "https://github.com/ChatGPTNextWeb/NextChat",
+  "business_domain": "Developer Tools",
+  "overview": "NextChat is a lightweight and fast AI assistant that supports multiple AI models, including Claude, DeepSeek, GPT-4, and Gemini Pro. It is designed to provide a seamless and efficient conversational experience for developers and users. The project aims to offer a privacy-first approach, with all data stored locally in the user's browser. NextChat supports a wide range of features, including Markdown formatting, dark mode, and progressive web app (PWA) capabilities. It is highly customizable, allowing users to deploy it for free on platforms like Vercel, and is also compatible with self-hosted large language models (LLMs) such as RWKV-Runner and LocalAI. The project's roadmap includes the addition of features like prompt templates, plugins, and local knowledge base integration, making it a powerful and versatile tool for developers and AI enthusiasts.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "Dockerfile",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Rust",
+      "SCSS",
+      "Shell",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Next.js",
+      "Vue"
+    ],
+    "backend": [
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "TypeScript",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Monolith",
+    "description": "The NextChat project follows a monolithic architecture, where the entire application is bundled as a single, self-contained unit. This architectural pattern was chosen to provide a simple and straightforward deployment experience, especially for users who may not have extensive experience with more complex distributed systems. The monolithic design allows for easier development, testing, and maintenance, as all the components of the application are tightly integrated and can be easily managed as a single codebase. The application is built using Next.js, a popular React framework that provides server-side rendering (SSR) and static site generation (SSG) capabilities, which contribute to the project's fast first-screen loading speed and responsive design. The monolithic approach also simplifies the deployment process, allowing users to easily host the application on platforms like Vercel with a single-click deployment. While a monolithic architecture may have scalability limitations compared to more distributed patterns, the project's focus on providing a lightweight and efficient AI assistant experience makes the monolithic design a suitable choice, especially for the project's target audience of developers and AI enthusiasts."
+  },
+  "setup": {
+    "install": "To install NextChat, you can use the one-click deployment options provided on the project's README, such as the Vercel deployment button. Alternatively, you can clone the repository and follow the development setup instructions.",
+    "run": "To run the NextChat application, you can use the `npm run dev` command after installing the necessary dependencies.",
+    "test": "The project includes tests that can be run using the `npm test` command."
+  },
+  "metadata": {
+    "stars": 85733,
+    "forks": 61052,
+    "open_issues": 764,
+    "created_at": "2023-03-10T18:27:54Z",
+    "updated_at": "2025-09-04T04:23:14Z",
+    "license": "MIT License",
+    "homepage": "https://nextchat.club/download",
+    "status": "Active"
+  }
+}

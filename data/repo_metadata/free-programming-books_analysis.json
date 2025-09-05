@@ -1,0 +1,42 @@
+{
+  "github_repo": "https://github.com/EbookFoundation/free-programming-books",
+  "business_domain": "Other",
+  "overview": "<div align=\"center\" markdown=\"1\">",
+  "tech_stack": {
+    "languages": [
+      "HTML",
+      "Markdown",
+      "Python",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "See README for installation instructions",
+    "run": "See README for running instructions",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

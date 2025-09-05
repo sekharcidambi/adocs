@@ -1,0 +1,48 @@
+{
+  "github_repo": "https://github.com/3b1b/manim",
+  "business_domain": "Developer Tools",
+  "overview": "Manim is an open-source Python library designed for creating high-quality, programmatic animations, primarily focused on explaining mathematical concepts. It was originally developed by Grant Sanderson, the creator of the popular YouTube channel 3Blue1Brown, as a tool for animating his educational videos. Manim allows users to create precise, customizable animations by writing code that defines the visual elements, their movements, and the timing of the animations. The library provides a wide range of features, including the ability to create 2D and 3D shapes, text, graphs, and other visual elements, as well as the ability to control the camera, lighting, and other aspects of the animation. Manim is particularly well-suited for creating explanatory videos on mathematical topics, but it can also be used for a variety of other animation-related projects, such as data visualizations, simulations, and educational content in other fields.",
+  "tech_stack": {
+    "languages": [
+      "GLSL",
+      "Markdown",
+      "Python",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "Angular"
+    ],
+    "backend": [
+      "Express",
+      "Node.js"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Component-based",
+    "description": "Manim follows a component-based architecture, where the core functionality is divided into modular components that can be easily extended or replaced. The main components include the Scene class, which manages the overall animation, the Mobject class, which represents the various visual elements in the animation, and the Camera class, which controls the camera and rendering. These components interact with each other through well-defined interfaces, allowing for a high degree of flexibility and extensibility. The architecture also includes support for various rendering backends, such as OpenGL and Cairo, which can be selected based on the specific requirements of the project. This modular design allows developers to customize and extend Manim to suit their specific needs, whether that's adding new animation types, integrating with external libraries, or optimizing performance for complex scenes. The component-based approach also facilitates testing and maintainability, as individual components can be tested and updated independently. Overall, the architecture of Manim is designed to provide a powerful and flexible platform for creating high-quality, programmatic animations."
+  },
+  "setup": {
+    "install": "pip install manimgl",
+    "run": "manimgl example_scenes.py OpeningManimExample",
+    "test": "No specific test command provided in documentation"
+  },
+  "metadata": {
+    "stars": 80356,
+    "forks": 6862,
+    "open_issues": 465,
+    "created_at": "2015-03-22T18:50:58Z",
+    "updated_at": "2025-09-04T04:36:25Z",
+    "license": "MIT License",
+    "homepage": null,
+    "status": "Active"
+  }
+}

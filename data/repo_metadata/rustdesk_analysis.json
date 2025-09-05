@@ -1,0 +1,66 @@
+{
+  "github_repo": "https://github.com/rustdesk/rustdesk",
+  "business_domain": "Other",
+  "overview": "<p align=\"center\">",
+  "tech_stack": {
+    "languages": [
+      "AppleScript",
+      "C",
+      "C++",
+      "CMake",
+      "CSS",
+      "Dart",
+      "Dockerfile",
+      "HTML",
+      "JSON",
+      "Kotlin",
+      "Markdown",
+      "Objective-C",
+      "Objective-C++",
+      "Python",
+      "Ruby",
+      "Rust",
+      "Shell",
+      "Swift",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "Bootstrap"
+    ],
+    "backend": [
+      "Flask"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL"
+    ],
+    "devops": [
+      "Docker",
+      "GitHub Actions",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Component_Based",
+    "detected_patterns": [
+      "Component_Based"
+    ],
+    "description": "The project uses a Component_Based architectural pattern."
+  },
+  "setup": {
+    "install": "sudo apt install -y zip g++ gcc git curl wget nasm yasm libgtk-3-dev clang libxcb-randr0-dev libxdo-dev \\\n        libxfixes-dev libxcb-shape0-dev libxcb-xfixes0-dev libasound2-dev libpulse-dev cmake make \\\n        libclang-dev ninja-build libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libpam0g-dev",
+    "run": "sudo apt install -y zip g++ gcc git curl wget nasm yasm libgtk-3-dev clang libxcb-randr0-dev libxdo-dev \\\n        libxfixes-dev libxcb-shape0-dev libxcb-xfixes0-dev libasound2-dev libpulse-dev cmake make \\\n        libclang-dev ninja-build libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libpam0g-dev",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 97388,
+    "forks": 14286,
+    "open_issues": 74,
+    "created_at": "2020-09-28T15:36:08Z",
+    "updated_at": "2025-09-04T04:54:52Z",
+    "license": "GNU Affero General Public License v3.0",
+    "homepage": "https://rustdesk.com",
+    "status": "Active"
+  }
+}

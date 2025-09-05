@@ -1,0 +1,65 @@
+{
+  "github_repo": "https://github.com/NationalSecurityAgency/ghidra",
+  "business_domain": "Cybersecurity",
+  "overview": "Ghidra is a software reverse engineering (SRE) framework created and maintained by the National Security Agency (NSA) Research Directorate. It includes a suite of full-featured, high-end software analysis tools that enable users to analyze compiled code on a variety of platforms including Windows, macOS, and Linux. Key capabilities include disassembly, assembly, decompilation, graphing, and scripting, along with hundreds of other features. Ghidra supports a wide variety of processor instruction sets and executable formats and can be run in both user-interactive and automated modes. Users may also develop their own Ghidra extension components and/or scripts using Java or Python. Ghidra was built to solve scaling and teaming problems on complex SRE efforts, and to provide a customizable and extensible SRE research platform. NSA has applied Ghidra SRE capabilities to a variety of problems that involve analyzing malicious code and generating deep insights for SRE analysts who seek a better understanding of potential vulnerabilities in networks and systems.",
+  "tech_stack": {
+    "languages": [
+      "C",
+      "C++",
+      "CSS",
+      "HTML",
+      "JSON",
+      "Java",
+      "Markdown",
+      "Python",
+      "SQL",
+      "Shell",
+      "XML"
+    ],
+    "frontend": [
+      "Next.js",
+      "React",
+      "Nuxt.js",
+      "Angular",
+      "Ant Design",
+      "Bootstrap"
+    ],
+    "backend": [
+      "Express",
+      "Node.js",
+      "Hapi",
+      "Spring",
+      "Ruby on Rails",
+      "Koa"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis",
+      "SQLite"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Modular",
+    "description": "Ghidra's architecture follows a modular design pattern, with the core framework providing a set of extensible services and APIs that enable the development of custom plugins and analysis tools. The main components include the CodeBrowser, which provides the interactive user interface for reverse engineering, the Processor Module API for supporting different CPU architectures, the Program Database for storing and managing analysis data, the scripting engine for automating tasks, and various analysis tools and utilities. This modular approach allows Ghidra to be customized and extended to meet the specific needs of reverse engineering projects, while also promoting reusability and maintainability of the codebase. The architecture is designed to be scalable, with support for distributed analysis and collaboration features. Additionally, the use of Java and a plugin-based system enables cross-platform compatibility and easy integration with other tools and workflows."
+  },
+  "setup": {
+    "install": "1. Install JDK 21 64-bit\n2. Download a Ghidra release file\n3. Extract the Ghidra release file\n4. Launch Ghidra: `./ghidraRun` (`ghidraRun.bat` for Windows)",
+    "run": "./ghidraRun (`ghidraRun.bat` for Windows)",
+    "test": "No specific test command provided in documentation"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

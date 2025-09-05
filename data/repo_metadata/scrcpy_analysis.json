@@ -1,0 +1,48 @@
+{
+  "github_repo": "https://github.com/Genymobile/scrcpy",
+  "business_domain": "Other",
+  "overview": "**This GitHub repo (<https://github.com/Genymobile/scrcpy>) is the only official",
+  "tech_stack": {
+    "languages": [
+      "C",
+      "C++",
+      "Java",
+      "Markdown",
+      "Shell",
+      "XML"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "Injecting input events requires the caller (or the source of the instrumentation, if any) to have the INJECT_EVENTS permission.",
+    "run": "Injecting input events requires the caller (or the source of the instrumentation, if any) to have the INJECT_EVENTS permission.",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

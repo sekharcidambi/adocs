@@ -1,0 +1,64 @@
+{
+  "github_repo": "https://github.com/microsoft/TypeScript",
+  "business_domain": "Developer Tools",
+  "overview": "TypeScript is a superset of JavaScript that adds optional static typing to the language. It is designed for building large-scale, application-level JavaScript projects. TypeScript provides tooling and features that enable better code organization, tooling support, and tooling for large JavaScript codebases. It compiles to readable, standards-based JavaScript that runs on any browser, any host, and any operating system. TypeScript aims to improve the developer experience by providing a more robust type system, better tooling, and enhanced code readability and maintainability for JavaScript projects of all sizes. It is widely used in the industry for building web applications, mobile apps, server-side applications, and more, especially for projects that require scalability and maintainability.",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "Angular",
+      "React",
+      "Next.js",
+      "Vue",
+      "Bootstrap",
+      "Ant Design",
+      "Material-UI"
+    ],
+    "backend": [
+      "Node.js",
+      "Express",
+      "Spring",
+      "ASP.NET",
+      "Ruby on Rails",
+      "Hapi",
+      "Koa"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "SQLite"
+    ],
+    "devops": [
+      "Docker",
+      "GitHub Actions",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Compiler",
+    "description": "The TypeScript compiler is a key component of the project. It is responsible for transforming TypeScript source code into JavaScript. The compiler follows a traditional compiler architecture, with phases such as lexing, parsing, type checking, and code generation. The compiler is designed to be modular and extensible, allowing for custom transformations and optimizations. The architecture also includes a language service, which provides features like code completion, refactoring, and semantic diagnostics to IDEs and other tools. The language service interacts with the compiler to provide these features. The overall architecture is focused on providing a robust, scalable, and extensible system for compiling and working with TypeScript code, enabling the language to be used effectively in large-scale JavaScript projects across a variety of platforms and environments."
+  },
+  "setup": {
+    "install": "npm install -D typescript",
+    "run": "node ./built/local/tsc.js",
+    "test": "hereby runtests-parallel"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

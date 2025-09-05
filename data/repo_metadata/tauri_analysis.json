@@ -1,0 +1,56 @@
+{
+  "github_repo": "https://github.com/tauri-apps/tauri",
+  "business_domain": "Developer Tools",
+  "overview": "Tauri is a framework for building tiny, blazingly fast binaries for all major desktop platforms. Developers can integrate any front-end framework that compiles to HTML, JS and CSS for building their user interface. The backend of the application is a Rust-sourced binary with an API that the front-end can interact with. Tauri provides a unified interface to the system webview, leveraging WKWebView on macOS & iOS, WebView2 on Windows, WebKitGTK on Linux and Android System WebView on Android. It includes features like a built-in app bundler, self-updater, system tray icons, native notifications, and a GitHub action for streamlined CI. Tauri aims to be a sustainable collective based on principles that guide sustainable free and open software communities.",
+  "tech_stack": {
+    "languages": [
+      "C++",
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Kotlin",
+      "Markdown",
+      "Rust",
+      "Shell",
+      "Swift",
+      "TypeScript",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "Svelte"
+    ],
+    "backend": [
+      "Node.js",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "description": "Tauri follows a microservices architecture, with several independent Rust crates that work together to provide the overall functionality. The core Tauri crate brings everything together, reading the configuration file and managing the application. It interacts with lower-level crates like tauri-runtime, tauri-runtime-wry, and tauri-utils to handle system-level interactions and webview rendering. The tauri-codegen and tauri-macros crates are used at build-time to generate code and apply necessary macros. Tauri also maintains the upstream TAO and WRY crates, which are responsible for cross-platform window management and webview rendering, respectively. This modular, composable architecture allows Tauri to be highly flexible and extensible, with developers able to integrate custom functionality through plugins. The microservices approach also enables better scalability, maintainability, and separation of concerns compared to a monolithic design."
+  },
+  "setup": {
+    "install": "npm create tauri-app@latest",
+    "run": "pnpm tauri dev",
+    "test": "pnpm tauri info"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

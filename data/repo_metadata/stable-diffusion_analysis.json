@@ -1,0 +1,47 @@
+{
+  "github_repo": "https://github.com/CompVis/stable-diffusion",
+  "business_domain": "SaaS",
+  "overview": "*Stable Diffusion was made possible thanks to a collaboration with Stability AI and Runway and builds upon our previous work:*",
+  "tech_stack": {
+    "languages": [
+      "Jupyter Notebook",
+      "Markdown",
+      "Python",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [
+      "Express",
+      "Hapi"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "mkdir -p models/ldm/stable-diffusion-v1/\nln -s <path/to/model.ckpt> models/ldm/stable-diffusion-v1/model.ckpt",
+    "run": "conda env create -f environment.yaml\nconda activate ldm",
+    "test": "mkdir -p models/ldm/stable-diffusion-v1/\nln -s <path/to/model.ckpt> models/ldm/stable-diffusion-v1/model.ckpt"
+  },
+  "metadata": {
+    "stars": 71405,
+    "forks": 10502,
+    "open_issues": 607,
+    "created_at": "2022-08-10T14:36:44Z",
+    "updated_at": "2025-09-03T16:11:25Z",
+    "license": "Other",
+    "homepage": "https://ommer-lab.com/research/latent-diffusion-models/",
+    "status": "Active"
+  }
+}

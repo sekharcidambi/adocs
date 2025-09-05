@@ -1,0 +1,36 @@
+{
+  "github_repo": "https://github.com/kelseyhightower/nocode",
+  "business_domain": "Developer Tools",
+  "overview": "The 'No Code' project is a humorous and ironic take on the concept of software development. It promotes the idea that the best way to write secure and reliable applications is to write no code at all. The project's main purpose is to showcase the absurdity of the 'no-code' movement and the misconception that software can be built without any actual coding. It provides a satirical example of an 'application' that does nothing but demonstrates how to not write any code and deploy it nowhere. The project's unique value proposition is its ability to highlight the importance of software engineering and the fundamental role that code plays in building functional and reliable systems, even in an era where 'no-code' solutions are becoming increasingly popular.",
+  "tech_stack": {
+    "languages": [
+      "Markdown"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Monolith",
+    "description": "The 'No Code' project follows a monolithic architectural pattern, as it is a single, self-contained application that does not rely on any external components or services. The project's architecture is designed to be as simple and straightforward as possible, with no complex interactions or data flows. The entire application is encapsulated within a single codebase, which consists of a README file that provides instructions on how to 'build' and 'deploy' the application. This architectural decision aligns with the project's overall theme of not writing any code, as a monolithic structure requires the least amount of development effort and complexity. The simplicity of the monolithic pattern also makes it suitable for the project's purpose of satirizing the 'no-code' movement, as it demonstrates how an application can be 'built' and 'deployed' without any actual code being written."
+  },
+  "setup": {
+    "install": "There are no installation instructions, as the project does not require any installation.",
+    "run": "There are no commands to run the application, as the project does not have any executable code.",
+    "test": "There are no tests to run, as the project does not have any testable functionality."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "github_repo": "https://github.com/netdata/netdata",
+  "business_domain": "Developer Tools",
+  "overview": "Netdata is an open-source, real-time infrastructure monitoring platform. It provides comprehensive monitoring and troubleshooting capabilities for systems, applications, and cloud environments. Netdata's core purpose is to deliver instant insights into every aspect of infrastructure performance, enabling users to detect, diagnose, and resolve issues quickly. The project was started in 2013 by Costa Tsaousis, the CTO of a cloud-based company, who was frustrated by the lack of high-resolution, scalable, and cost-effective monitoring solutions available at the time. Netdata was built from the ground up to address these shortcomings, with a focus on efficiency, ease of use, and actionable intelligence.Netdata's key advantages include real-time per-second data collection, zero-configuration auto-discovery, machine learning-powered anomaly detection, and secure distributed architecture. It supports monitoring of a wide range of systems, applications, and cloud services, providing comprehensive visibility into infrastructure performance. Netdata also offers centralized monitoring and collaboration features through its Netdata Cloud platform, enabling teams to manage and troubleshoot their entire infrastructure from a single pane of glass.The project has a large and active community, with over 1 million servers monitored and millions of sessions served. Netdata is widely adopted across various industries, including technology, finance, healthcare, and e-commerce, due to its ability to transform infrastructure monitoring and observability.",
+  "tech_stack": {
+    "languages": [
+      "C",
+      "C++",
+      "CSS",
+      "Go",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "Rust",
+      "Shell",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [
+      "Node.js",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "MongoDB",
+      "MySQL"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Distributed, Edge-based",
+    "description": "Netdata follows a distributed, edge-based architectural pattern. The core of the system is the Netdata Agent, which runs on each monitored node (server, container, or cloud instance) and is responsible for data collection, processing, storage, and alerting. The Agents automatically discover and monitor various system and application metrics, without the need for complex configuration.To enable centralized monitoring and collaboration, Netdata supports a hierarchical, parent-child architecture. Netdata Parents can be deployed to aggregate and store data from multiple child Agents, providing a unified view of the infrastructure. Parents can also be clustered for high availability and scalability, with child Agents automatically connecting to the most appropriate Parent based on availability and load.The distributed, edge-based design of Netdata offers several advantages. By processing data locally on each node, Netdata minimizes the need for centralized data collection and storage, reducing the overall infrastructure and operational costs. The edge-based approach also ensures that monitoring data remains secure and private, as it never leaves the customer's premises unless explicitly configured to do so.Netdata's architecture also enables efficient resource utilization and scalability. The Agents are designed to have a minimal impact on the systems they monitor, with low CPU and memory usage. This allows Netdata to be deployed even on resource-constrained environments, such as IoT devices or edge computing nodes. The parent-child hierarchy and clustering capabilities further enhance Netdata's scalability, allowing it to seamlessly handle infrastructure growth and support large-scale deployments.Overall, Netdata's distributed, edge-based architecture provides a highly scalable, secure, and efficient monitoring solution that can adapt to the needs of diverse infrastructure environments, from small-scale deployments to large-scale, multi-cloud setups."
+  },
+  "setup": {
+    "install": "curl -Ss https://my-netdata.io/kickstart.sh | bash",
+    "run": "sudo netdata",
+    "test": "sudo netdata-claim.sh"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

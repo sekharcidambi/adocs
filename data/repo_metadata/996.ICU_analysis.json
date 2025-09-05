@@ -1,0 +1,41 @@
+{
+  "github_repo": "https://github.com/996icu/996.ICU",
+  "business_domain": "Developer Tools",
+  "overview": "The 996.ICU project is an initiative started by IT practitioners to address the growing issue of the '996' work schedule (9 a.m. to 9 p.m., 6 days a week) that has become prevalent in the Chinese tech industry. The project aims to raise awareness about the negative impact of this work culture on employees' health and well-being, and to advocate for better labor rights and work-life balance. The project provides a platform for developers and workers to share their experiences, document evidence, and take collective action against companies that enforce the '996' schedule. The ultimate goal is to create an open-source software license that promotes workers' rights and prevents companies from exploiting their employees. The project has gained significant attention and support from the global tech community, and has sparked a broader discussion about the need for more humane and sustainable work practices in the industry.",
+  "tech_stack": {
+    "languages": [
+      "Go",
+      "Markdown",
+      "Python",
+      "Rust"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Open-Source Community Project",
+    "description": "The 996.ICU project is an open-source, community-driven initiative that does not have a formal technical architecture. Instead, it relies on the collective efforts of contributors from around the world to maintain and expand the project. The project's main components include a GitHub repository, a website, and various community-driven initiatives such as blacklists, whitelists, petitions, and awareness campaigns. The project's architecture is decentralized and flexible, allowing for rapid response to emerging issues and the incorporation of new ideas and proposals from the community. The project's success is largely dependent on the engagement and participation of its contributors, who share a common goal of promoting better labor rights and work-life balance in the tech industry."
+  },
+  "setup": {
+    "install": "There are no specific installation instructions, as the 996.ICU project is primarily a community-driven initiative without a centralized software application.",
+    "run": "There are no specific instructions to 'run' the 996.ICU project, as it is not a software application. The project is maintained and expanded through the contributions of its community members.",
+    "test": "There are no formal testing procedures for the 996.ICU project, as it is not a software application. The project's success is measured by the level of engagement and impact it has on the tech industry and labor rights discussions."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

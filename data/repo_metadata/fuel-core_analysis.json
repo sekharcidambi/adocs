@@ -1,0 +1,40 @@
+{
+  "github_repo": "https://github.com/FuelLabs/fuel-core",
+  "business_domain": "Other",
+  "overview": "Fuel client implementation.",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "Markdown",
+      "Rust",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "GitHub Actions",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "#### Debian",
+    "run": "brew update\nbrew install cmake",
+    "test": "brew update\nbrew install cmake"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

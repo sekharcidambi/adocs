@@ -1,0 +1,67 @@
+{
+  "github_repo": "https://github.com/lobehub/lobe-chat",
+  "business_domain": "Gaming",
+  "overview": "<div align=\"center\"><a name=\"readme-top\"></a>",
+  "tech_stack": {
+    "languages": [
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "SQL",
+      "Shell",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "React",
+      "Ant Design",
+      "Bootstrap",
+      "Vue",
+      "Svelte",
+      "Tailwind CSS",
+      "Angular"
+    ],
+    "backend": [
+      "Node.js",
+      "Koa",
+      "Express",
+      "Hapi",
+      "Flask"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "SQLite"
+    ],
+    "devops": [
+      "Docker",
+      "TypeScript",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "detected_patterns": [
+      "Microservices",
+      "Feature_Based"
+    ],
+    "description": "The project is built using a Microservices architecture with separate services."
+  },
+  "setup": {
+    "install": "fish\n$ mkdir lobe-chat-db && cd lobe-chat-db",
+    "run": "fish\n$ mkdir lobe-chat-db && cd lobe-chat-db",
+    "test": "fish\n$ mkdir lobe-chat-db && cd lobe-chat-db"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

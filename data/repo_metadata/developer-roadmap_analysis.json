@@ -1,0 +1,63 @@
+{
+  "github_repo": "https://github.com/kamranahmedse/developer-roadmap",
+  "business_domain": "Education",
+  "overview": "The developer-roadmap project is a community-driven initiative that provides interactive roadmaps, articles, and resources for developers. The primary purpose of this project is to help developers navigate the complex landscape of technologies, frameworks, and best practices in the software development industry. The roadmaps cover a wide range of domains, including frontend, backend, DevOps, data science, cloud computing, and more. The project aims to distill the essential knowledge and skills required for each domain, making it easier for developers to plan their learning and career paths. The roadmaps are designed to be interactive, allowing users to click on individual nodes to learn more about the topics. The project also includes best practices and questions to help developers assess and improve their knowledge. Overall, the developer-roadmap project is a valuable resource for developers at all levels, from beginners to experienced professionals, who are looking to enhance their skills and stay up-to-date with the latest industry trends and technologies.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Shell",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Vue",
+      "Angular"
+    ],
+    "backend": [
+      "Node.js",
+      "Ruby on Rails",
+      "Koa",
+      "Spring",
+      "ASP.NET",
+      "Flask",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "SQLite"
+    ],
+    "devops": [
+      "Docker",
+      "TypeScript",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Component-based",
+    "description": "The developer-roadmap project follows a component-based architecture, which allows for modular and scalable development. The project is built using a combination of HTML, CSS, and JavaScript, with the roadmaps and content being stored in separate data files. This architecture enables easy maintenance and updates, as changes to individual components or data files can be made without affecting the overall structure of the application. The project also utilizes a static site generator, which generates the final HTML pages from the component-based structure, ensuring fast load times and efficient delivery of the content. The component-based approach also allows for easy integration of new roadmaps or features, as new components can be added without disrupting the existing functionality. This architectural pattern was chosen to support the project's goal of providing a scalable and maintainable platform for delivering educational content to developers."
+  },
+  "setup": {
+    "install": "git clone git@github.com:kamranahmedse/developer-roadmap.git --depth 1",
+    "run": "pnpm dev",
+    "test": "No specific test command provided in the documentation"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

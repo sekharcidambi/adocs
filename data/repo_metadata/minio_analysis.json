@@ -1,0 +1,49 @@
+{
+  "github_repo": "https://github.com/minio/minio",
+  "business_domain": "Developer Tools",
+  "overview": "MinIO is a high-performance, S3-compatible object storage solution released under the GNU AGPL v3.0 license. Designed for speed and scalability, it powers AI/ML, analytics, and data-intensive workloads with industry-leading performance. MinIO provides seamless integration with existing S3 tools and is optimized for large-scale data pipelines. It offers high performance that makes it ideal for demanding storage workloads. MinIO can be deployed on bare metal hardware, containers, or Kubernetes, and supports features like versioning, object locking, and bucket replication. It provides a comprehensive set of APIs and SDKs for developers to build applications on top of the object storage. MinIO also supports multi-cluster, multi-site federation and data tiering between hot and warm storage tiers using its Information Lifecycle Management (ILM) capabilities.",
+  "tech_stack": {
+    "languages": [
+      "Go",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [
+      "Express",
+      "Flask",
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "DynamoDB"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "description": "MinIO follows a microservices architecture, with each component (server, client, gateway, etc.) deployed as a separate service. The core MinIO server is responsible for handling object storage operations like PUT, GET, DELETE, etc. It uses an erasure coding-based distributed storage backend to provide high availability and durability. The MinIO server exposes a S3-compatible API, allowing seamless integration with existing S3 tools and applications. The MinIO Console provides a web-based user interface for managing the object storage, while the MinIO Client (mc) offers a command-line interface. This modular, microservices-based architecture allows MinIO to be highly scalable, flexible, and easy to deploy and manage, especially in cloud-native environments like Kubernetes. The choice of a microservices pattern enables independent scaling and upgrades of individual components, improved fault tolerance, and better resource utilization compared to a monolithic design. This architecture also facilitates the addition of new features and capabilities to the system without disrupting the existing functionality."
+  },
+  "setup": {
+    "install": "podman run -p 9000:9000 -p 9001:9001 quay.io/minio/minio server /data --console-address \":9001\"",
+    "run": "minio server /data",
+    "test": "mc mb myminio/testbucket && mc put myminio/testbucket README.md && mc get myminio/testbucket README.md"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

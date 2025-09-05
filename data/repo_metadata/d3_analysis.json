@@ -1,0 +1,48 @@
+{
+  "github_repo": "https://github.com/d3/d3",
+  "business_domain": "Other",
+  "overview": "<a href=\"https://d3js.org\"><img src=\"./docs/public/logo.svg\" width=\"256\" height=\"256\"></a>",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Shell",
+      "TypeScript"
+    ],
+    "frontend": [
+      "Vue",
+      "Next.js"
+    ],
+    "backend": [
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Rollup",
+      "GitHub Actions",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "See README for installation instructions",
+    "run": "See README for running instructions",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

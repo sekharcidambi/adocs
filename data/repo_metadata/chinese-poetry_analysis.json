@@ -1,0 +1,44 @@
+{
+  "github_repo": "https://github.com/chinese-poetry/chinese-poetry",
+  "business_domain": "Developer Tools",
+  "overview": "This project is a comprehensive database of classical Chinese poetry, containing over 55,000 Tang Dynasty poems, 260,000 Song Dynasty poems, 21,000 Song Dynasty ci (lyrics), and other classical literary collections. The database includes works from nearly 14,000 ancient poets from the Tang and Song dynasties, as well as 1,500 ci poets from the Song era. The primary goal of this project is to leverage technology to generate formatted (JSON) data, making it easier and faster for developers to build poetry-related applications. The project was created because classical Chinese poetry is a treasure trove for the Chinese nation and the world, but many people do not have access to these large literary collections. By providing the data in an electronic, easily distributable format, this open-source database aims to facilitate the preservation and sharing of this cultural heritage.",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [
+      "Elasticsearch",
+      "SQLite"
+    ],
+    "devops": [
+      "Travis CI",
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Data Repository",
+    "description": "The chinese-poetry project is structured as a data repository, with the primary focus on collecting, organizing, and distributing classical Chinese poetry data in a standardized JSON format. The architecture follows a simple, decentralized design, where the data is stored in various directories and files within the repository, organized by literary genre and time period. This approach allows for easy maintenance, updates, and contributions from the community, as new data can be added or existing data can be corrected through pull requests. The repository also includes supporting files, such as license information and documentation, to provide context and guidance for users. The data-centric architecture was chosen to maximize the accessibility and usability of the poetry content, making it readily available for developers to integrate into their own applications and projects."
+  },
+  "setup": {
+    "install": "No installation required, the data is available in the repository for direct use.",
+    "run": "No running required, the data is available in the repository for direct use.",
+    "test": "No tests provided, as this is a data repository."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

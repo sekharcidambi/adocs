@@ -1,0 +1,303 @@
+[
+  {
+    "title": "Overview",
+    "children": [
+      {
+        "title": "What is Supabase",
+        "children": []
+      },
+      {
+        "title": "Platform Architecture",
+        "children": [
+          {
+            "title": "Core Services Overview",
+            "children": []
+          },
+          {
+            "title": "Postgres Database Layer",
+            "children": []
+          },
+          {
+            "title": "API Gateway and Authentication",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Repository Structure",
+        "children": [
+          {
+            "title": "Monorepo Organization",
+            "children": []
+          },
+          {
+            "title": "Core Applications",
+            "children": []
+          },
+          {
+            "title": "Shared Libraries and Packages",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Technology Stack",
+        "children": [
+          {
+            "title": "Frontend Technologies",
+            "children": []
+          },
+          {
+            "title": "Backend Services",
+            "children": []
+          },
+          {
+            "title": "Database and Storage",
+            "children": []
+          },
+          {
+            "title": "Infrastructure and DevOps",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Core Components",
+    "children": [
+      {
+        "title": "Studio Dashboard",
+        "children": [
+          {
+            "title": "Dashboard Architecture",
+            "children": []
+          },
+          {
+            "title": "User Interface Components",
+            "children": []
+          },
+          {
+            "title": "Database Management Features",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "API Services",
+        "children": [
+          {
+            "title": "REST API Gateway",
+            "children": []
+          },
+          {
+            "title": "GraphQL Interface",
+            "children": []
+          },
+          {
+            "title": "Real-time Subscriptions",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Authentication System",
+        "children": [
+          {
+            "title": "Auth Service Architecture",
+            "children": []
+          },
+          {
+            "title": "Provider Integrations",
+            "children": []
+          },
+          {
+            "title": "Security and Authorization",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Storage and File Management",
+        "children": [
+          {
+            "title": "Storage Service",
+            "children": []
+          },
+          {
+            "title": "File Upload and Processing",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Development Platform",
+    "children": [
+      {
+        "title": "Client Libraries and SDKs",
+        "children": [
+          {
+            "title": "JavaScript/TypeScript SDK",
+            "children": []
+          },
+          {
+            "title": "Mobile SDKs",
+            "children": []
+          },
+          {
+            "title": "Server-side Libraries",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "CLI Tools",
+        "children": [
+          {
+            "title": "Supabase CLI",
+            "children": []
+          },
+          {
+            "title": "Migration Tools",
+            "children": []
+          },
+          {
+            "title": "Local Development",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Extensions and Plugins",
+        "children": [
+          {
+            "title": "Postgres Extensions",
+            "children": []
+          },
+          {
+            "title": "Custom Functions",
+            "children": []
+          },
+          {
+            "title": "Third-party Integrations",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Deployment and Infrastructure",
+    "children": [
+      {
+        "title": "Cloud Platform",
+        "children": [
+          {
+            "title": "Multi-tenant Architecture",
+            "children": []
+          },
+          {
+            "title": "Scaling and Performance",
+            "children": []
+          },
+          {
+            "title": "Regional Deployment",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Self-hosting",
+        "children": [
+          {
+            "title": "Docker Deployment",
+            "children": []
+          },
+          {
+            "title": "Kubernetes Configuration",
+            "children": []
+          },
+          {
+            "title": "Environment Setup",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Monitoring and Observability",
+        "children": [
+          {
+            "title": "Logging and Metrics",
+            "children": []
+          },
+          {
+            "title": "Health Checks",
+            "children": []
+          },
+          {
+            "title": "Performance Monitoring",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Development Workflow",
+    "children": [
+      {
+        "title": "Build System",
+        "children": [
+          {
+            "title": "Build Configuration",
+            "children": []
+          },
+          {
+            "title": "Package Management",
+            "children": []
+          },
+          {
+            "title": "Development Scripts",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Testing Strategy",
+        "children": [
+          {
+            "title": "Unit Testing",
+            "children": []
+          },
+          {
+            "title": "Integration Testing",
+            "children": []
+          },
+          {
+            "title": "End-to-End Testing",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Release Management",
+        "children": [
+          {
+            "title": "Version Control Strategy",
+            "children": []
+          },
+          {
+            "title": "CI/CD Pipeline",
+            "children": []
+          },
+          {
+            "title": "Release Process",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

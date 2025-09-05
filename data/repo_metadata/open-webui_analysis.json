@@ -1,0 +1,65 @@
+{
+  "github_repo": "https://github.com/open-webui/open-webui",
+  "business_domain": "Developer Tools",
+  "overview": "Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform designed to operate entirely offline. It supports various LLM runners like Ollama and OpenAI-compatible APIs, with a built-in inference engine for RAG, making it a powerful AI deployment solution. The platform provides effortless setup using Docker or Kubernetes, seamless Ollama/OpenAI API integration, granular permissions and user groups, SCIM 2.0 support, responsive design, and a progressive web app for mobile. Open WebUI offers comprehensive Markdown and LaTeX support, hands-free voice/video call capabilities, a model builder, native Python function calling tools, and local RAG integration with web search and browsing capabilities. The project also includes image generation integration, support for conversations with multiple models, role-based access control, and multilingual support. Open WebUI is committed to continuous updates and improvements, with a focus on security and user experience.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "Shell",
+      "TypeScript",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "Svelte",
+      "Tailwind CSS",
+      "Next.js",
+      "React",
+      "Bootstrap",
+      "Vue"
+    ],
+    "backend": [
+      "Node.js",
+      "FastAPI",
+      "Express",
+      "Hapi"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "Redis",
+      "PostgreSQL",
+      "SQLite",
+      "DynamoDB",
+      "MySQL"
+    ],
+    "devops": [
+      "Docker",
+      "TypeScript",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "description": "The Open WebUI architecture follows a microservices pattern, where the system is composed of multiple independent services that communicate with each other through well-defined APIs. This approach allows for scalability, flexibility, and easier maintenance of the application. The core components of the architecture include the frontend web application, the backend API server, and the Ollama LLM runner. The frontend is a responsive web application built using modern web technologies, which communicates with the backend API server to handle user interactions, manage user sessions, and integrate with the Ollama LLM. The backend API server acts as a reverse proxy, handling requests from the frontend and forwarding them to the Ollama LLM, which is responsible for the actual language model inference. This microservices architecture enables the system to be easily scaled, upgraded, and maintained independently, while also providing a secure and reliable way to interact with the Ollama LLM. The use of a reverse proxy in the backend also helps to address CORS issues and enhance the overall security of the system."
+  },
+  "setup": {
+    "install": "pip install open-webui",
+    "run": "open-webui serve",
+    "test": "No specific test command provided in documentation"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "github_repo": "https://github.com/neovim/neovim",
+  "business_domain": "Other",
+  "overview": "<h1 align=\"center\">",
+  "tech_stack": {
+    "languages": [
+      "Batchfile",
+      "BitBake",
+      "C",
+      "C++",
+      "CMake",
+      "HTML",
+      "JSON",
+      "KRL",
+      "Lua",
+      "MATLAB",
+      "Makefile",
+      "Markdown",
+      "Python",
+      "Roff",
+      "Ruby",
+      "Scheme",
+      "Shell",
+      "Tcl",
+      "Thrift",
+      "Tree-sitter Query",
+      "Vim Script",
+      "XML",
+      "YAML",
+      "Zig"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "See README for installation instructions",
+    "run": "See README for running instructions",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 92489,
+    "forks": 6297,
+    "open_issues": 1994,
+    "created_at": "2014-01-31T13:39:22Z",
+    "updated_at": "2025-09-04T04:30:33Z",
+    "license": "Other",
+    "homepage": "https://neovim.io",
+    "status": "Active"
+  }
+}

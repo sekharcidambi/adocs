@@ -1,0 +1,30 @@
+{
+  "github_repo": "https://github.com/example/sample-project",
+  "overview": "A modern web application built with React and Node.js for managing user tasks and projects. Features real-time collaboration, file sharing, and advanced analytics dashboard.",
+  "business_domain": "Productivity Software",
+  "architecture": {
+    "description": "Microservices architecture with React frontend, Node.js backend, PostgreSQL database, and Redis for caching. Deployed on AWS with Docker containers.",
+    "components": ["Frontend", "Backend API", "Database", "Cache Layer", "File Storage"]
+  },
+  "tech_stack": [
+    "React",
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Redis",
+    "Docker",
+    "AWS",
+    "TypeScript",
+    "Jest",
+    "Webpack"
+  ],
+  "features": [
+    "User authentication",
+    "Task management",
+    "Real-time collaboration",
+    "File sharing",
+    "Analytics dashboard",
+    "Mobile responsive design"
+  ],
+  "target_audience": "Small to medium businesses and teams looking for project management solutions"
+}

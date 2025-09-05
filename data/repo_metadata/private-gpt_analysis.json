@@ -1,0 +1,48 @@
+{
+  "github_repo": "https://github.com/zylon-ai/private-gpt",
+  "business_domain": "Developer Tools",
+  "overview": "PrivateGPT is a production-ready AI project that allows users to ask questions about their documents using the power of Large Language Models (LLMs), even in scenarios without an Internet connection. It is 100% private, ensuring that no data leaves the execution environment at any point. The project provides an API that offers all the primitives required to build private, context-aware AI applications. It follows and extends the OpenAI API standard and supports both normal and streaming responses. The API is divided into a high-level API that abstracts the complexity of a Retrieval Augmented Generation (RAG) pipeline implementation, and a low-level API that allows advanced users to implement their own complex pipelines. In addition, a Gradio UI client is provided to test the API, along with a set of useful tools such as a bulk model download script, an ingestion script, and a documents folder watch feature.",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "Markdown",
+      "Python",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [
+      "FastAPI",
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "DynamoDB"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "description": "Conceptually, PrivateGPT is an API that wraps a RAG pipeline and exposes its primitives. The API is built using FastAPI and follows the OpenAI API scheme, while the RAG pipeline is based on LlamaIndex. The design of PrivateGPT allows for easy extension and adaptation of both the API and the RAG implementation. Key architectural decisions include the use of Dependency Injection to decouple the different components and layers, the utilization of LlamaIndex abstractions (such as LLM, BaseEmbedding, and VectorStore) to make it easy to change the actual implementations of those abstractions, and a focus on simplicity by adding as few layers and new abstractions as possible. The main building blocks are the API definitions in the `private_gpt:server:<api>` packages, which contain the FastAPI layer and the service implementation, and the components in `private_gpt:components:<component>`, which provide the actual implementations for the base abstractions used in the Services."
+  },
+  "setup": {
+    "install": "pip install private-gpt",
+    "run": "private-gpt server start",
+    "test": "make test"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

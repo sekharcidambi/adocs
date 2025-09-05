@@ -1,0 +1,61 @@
+{
+  "github_repo": "https://github.com/prettier/prettier",
+  "business_domain": "Developer Tools",
+  "overview": "Prettier is an opinionated code formatter that enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary. It supports a wide range of programming languages including JavaScript, TypeScript, Flow, JSX, JSON, CSS, SCSS, Less, HTML, Vue, Angular, GraphQL, Markdown, and YAML. Prettier can be run in your editor on-save, in a pre-commit hook, or in CI environments to ensure your codebase has a consistent style without developers having to post nit-picky comments on code reviews. It is designed to improve code collaboration and readability by automatically formatting code according to a set of opinionated rules, eliminating the need for manual formatting and avoiding style debates.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Shell",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Vue",
+      "Next.js",
+      "Angular",
+      "Bootstrap",
+      "Tailwind CSS"
+    ],
+    "backend": [
+      "Node.js",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis",
+      "MongoDB"
+    ],
+    "devops": [
+      "Jest",
+      "TypeScript",
+      "ESLint",
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Monolith",
+    "description": "Prettier follows a monolithic architecture, where the core functionality is implemented in a single, self-contained application. The main components include the parser, printer, and options handling. The parser is responsible for converting the input code into an abstract syntax tree (AST), the printer then takes the AST and generates the formatted output, and the options handling manages the configuration settings. This monolithic approach allows for a tightly integrated and efficient implementation, where the different components can work together seamlessly to provide the desired code formatting functionality. The monolithic architecture was chosen as it simplifies the overall system design, reduces complexity, and enables better performance compared to a more distributed, microservices-based approach. This architectural pattern is well-suited for Prettier's primary use case of providing a standalone, opinionated code formatting tool that can be easily integrated into various development workflows and toolchains."
+  },
+  "setup": {
+    "install": "npm install --save-dev --save-exact prettier",
+    "run": "npx prettier . --write",
+    "test": "npx prettier . --check"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

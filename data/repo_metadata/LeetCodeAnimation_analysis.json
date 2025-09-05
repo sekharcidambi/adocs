@@ -1,0 +1,43 @@
+{
+  "github_repo": "https://github.com/MisterBooo/LeetCodeAnimation",
+  "business_domain": "Developer Tools",
+  "overview": "LeetCodeAnimation is a comprehensive project that aims to provide animated visualizations and explanations for all the problems on the popular coding interview platform, LeetCode. The primary goal of this project is to help developers, especially those new to algorithms and data structures, better understand and master the concepts behind these problems through engaging, easy-to-follow animations. The project covers a wide range of algorithmic topics, from classic sorting algorithms to advanced data structures and problem-solving techniques. By breaking down complex problems into step-by-step animations, the project makes the learning process more accessible and enjoyable for users. This not only benefits those preparing for coding interviews, but also serves as a valuable resource for anyone interested in improving their problem-solving skills and algorithmic understanding.",
+  "tech_stack": {
+    "languages": [
+      "C++",
+      "Java",
+      "Markdown",
+      "Python"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Component-based",
+    "description": "The LeetCodeAnimation project follows a component-based architecture, which allows for modular and scalable development. The codebase is organized into reusable components, each responsible for a specific task or functionality, such as generating animations, rendering problem statements, or managing user interactions. This architectural pattern promotes code reuse, maintainability, and flexibility, as new problems and features can be easily added without disrupting the existing codebase. The project utilizes a combination of front-end technologies, including HTML, CSS, and JavaScript, to create the interactive animations and user interface. The animations are typically generated using JavaScript libraries like D3.js or custom animation frameworks, which provide the necessary tools for creating dynamic, data-driven visualizations. The project also leverages a modular file structure, where each problem's solution is encapsulated in a separate directory, making it easier to manage and expand the repository over time.The component-based approach allows the project to scale efficiently as new problems are added to the LeetCode platform. Each problem's solution can be developed and tested independently, reducing the risk of introducing bugs or regressions in the existing content. Additionally, this architecture enables the project maintainers to experiment with different visualization techniques or refine the existing animations without affecting the overall user experience."
+  },
+  "setup": {
+    "install": "To install the project dependencies, run:\n\n```pip install -r requirements.txt```",
+    "run": "To run the project locally, execute the following command:\n\n```python anima.py new 1 'Two Sum'```\nThis will generate a new problem solution directory and Markdown file template.",
+    "test": "The project does not include any automated tests, as it is primarily focused on creating visual animations and explanations. However, the maintainers manually verify the correctness and quality of each problem solution before adding it to the repository."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

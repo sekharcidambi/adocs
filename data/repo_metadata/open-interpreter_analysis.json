@@ -1,0 +1,53 @@
+{
+  "github_repo": "https://github.com/OpenInterpreter/open-interpreter",
+  "business_domain": "Developer Tools",
+  "overview": "Open Interpreter is an open-source project that allows large language models (LLMs) to run code locally on a user's computer. It provides a natural language interface to a user's computer, enabling them to perform a wide range of tasks such as creating and editing photos, videos, and PDFs, controlling a Chrome browser for research, and plotting, cleaning, and analyzing large datasets. The project aims to combine the power of GPT-4's Code Interpreter with the flexibility of a local development environment, overcoming the limitations of OpenAI's hosted and restricted service. Open Interpreter runs in the user's local environment, providing full access to the internet, no restrictions on time or file size, and the ability to utilize any package or library. This allows users to accomplish real-world tasks with the assistance of a language model while maintaining control and flexibility over their computing environment.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "JSON",
+      "Markdown",
+      "Python",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "React"
+    ],
+    "backend": [
+      "Node.js",
+      "FastAPI",
+      "Express"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "Elasticsearch",
+      "DynamoDB",
+      "SQLite"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "description": "Open Interpreter follows a microservices architecture, where the core functionality is divided into several loosely coupled components that communicate with each other through well-defined interfaces. The main components include the language model interface (using LiteLLM), the terminal interface, the code execution engine, and the file management system. The language model interface is responsible for interacting with the LLM, handling prompts, and processing the responses. The terminal interface provides the command-line interface and handles user input and output. The code execution engine is responsible for safely executing user-provided code, with the ability to stream the output back to the user. The file management system allows the user to interact with their local file system, such as creating, editing, and managing files and directories. This modular architecture allows for easier maintenance, testing, and scalability, as well as the ability to swap out components (e.g., using a different language model or code execution engine) without affecting the overall system. The microservices approach was chosen to provide flexibility, maintainability, and the ability to independently scale individual components as needed to handle increased usage and complexity."
+  },
+  "setup": {
+    "install": "pip install open-interpreter",
+    "run": "interpreter",
+    "test": "poetry run pytest -s -x"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

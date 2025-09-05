@@ -1,0 +1,82 @@
+{
+  "github_repo": "https://github.com/oven-sh/bun",
+  "business_domain": "Other",
+  "overview": "<p align=\"center\">",
+  "tech_stack": {
+    "languages": [
+      "C",
+      "C++",
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "Ruby",
+      "Rust",
+      "SQL",
+      "Shell",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Next.js",
+      "Bootstrap",
+      "Vue",
+      "Nuxt.js",
+      "Svelte",
+      "Ant Design",
+      "Tailwind CSS",
+      "Gatsby",
+      "Angular"
+    ],
+    "backend": [
+      "Node.js",
+      "Koa",
+      "Express",
+      "FastAPI",
+      "Spring",
+      "NestJS",
+      "Hapi"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "SQLite",
+      "PostgreSQL",
+      "Redis",
+      "MongoDB",
+      "MySQL",
+      "DynamoDB"
+    ],
+    "devops": [
+      "Docker",
+      "TypeScript",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "detected_patterns": [
+      "Microservices",
+      "Component_Based",
+      "Feature_Based"
+    ],
+    "description": "The project is built using a Microservices architecture with separate services."
+  },
+  "setup": {
+    "install": "## Install\n\nBun supports Linux (x64 & arm64), macOS (x64 & Apple Silicon) and Windows (x64).\n\n> **Linux users** — Kernel version 5.6 or higher is strongly recommended, but the minimum is 5.1.\n\n> **x64 users** — if you see \"illegal instruction\" or similar errors, check our [CPU requirements](https://bun.com/docs/installation#cpu-requirements-and-baseline-builds)",
+    "run": "bun run index.tsx             # TS and JSX supported out-of-the-box",
+    "test": "## Install\n\nBun supports Linux (x64 & arm64), macOS (x64 & Apple Silicon) and Windows (x64).\n\n> **Linux users** — Kernel version 5.6 or higher is strongly recommended, but the minimum is 5.1.\n\n> **x64 users** — if you see \"illegal instruction\" or similar errors, check our [CPU requirements](https://bun.com/docs/installation#cpu-requirements-and-baseline-builds)"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

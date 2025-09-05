@@ -1,0 +1,226 @@
+[
+  {
+    "title": "Apache OFBiz Framework Overview",
+    "children": [
+      {
+        "title": "Purpose and Scope",
+        "children": []
+      },
+      {
+        "title": "Enterprise Process Automation Capabilities",
+        "children": [
+          {
+            "title": "ERP Features",
+            "children": []
+          },
+          {
+            "title": "CRM Functionality",
+            "children": []
+          },
+          {
+            "title": "E-Commerce and E-Business",
+            "children": []
+          },
+          {
+            "title": "Supply Chain Management",
+            "children": []
+          },
+          {
+            "title": "Manufacturing Resource Planning",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "System Architecture",
+    "children": [
+      {
+        "title": "High-Level Architecture Overview",
+        "children": [
+          {
+            "title": "Framework Architecture Diagram",
+            "children": []
+          },
+          {
+            "title": "Component Interaction Model",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Framework Components",
+        "children": [
+          {
+            "title": "Core Framework Services",
+            "children": []
+          },
+          {
+            "title": "Entity Engine",
+            "children": []
+          },
+          {
+            "title": "Service Engine",
+            "children": []
+          },
+          {
+            "title": "Widget Framework",
+            "children": []
+          },
+          {
+            "title": "Security Framework",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Business Application Architecture",
+        "children": [
+          {
+            "title": "Application Module Structure",
+            "children": []
+          },
+          {
+            "title": "Data Model Architecture",
+            "children": []
+          },
+          {
+            "title": "Business Logic Layer",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Technical Stack and Dependencies",
+    "children": [
+      {
+        "title": "Core Technologies",
+        "children": []
+      },
+      {
+        "title": "Database Support",
+        "children": []
+      },
+      {
+        "title": "Web Framework Components",
+        "children": []
+      },
+      {
+        "title": "Build System Configuration",
+        "children": []
+      },
+      {
+        "title": "Key Dependencies Management",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Business Domain Implementation",
+    "children": [
+      {
+        "title": "Enterprise Workflow Patterns",
+        "children": []
+      },
+      {
+        "title": "Business Process Integration",
+        "children": []
+      },
+      {
+        "title": "Multi-tenant Architecture",
+        "children": []
+      },
+      {
+        "title": "Customization and Extension Points",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Getting Started",
+    "children": [
+      {
+        "title": "Prerequisites and System Requirements",
+        "children": []
+      },
+      {
+        "title": "Installation and Setup",
+        "children": []
+      },
+      {
+        "title": "Initial Configuration",
+        "children": []
+      },
+      {
+        "title": "Running OFBiz Applications",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Development and Customization",
+    "children": [
+      {
+        "title": "Development Environment Setup",
+        "children": []
+      },
+      {
+        "title": "Framework Extension Guidelines",
+        "children": []
+      },
+      {
+        "title": "Custom Application Development",
+        "children": []
+      },
+      {
+        "title": "Plugin and Component Development",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Deployment and Operations",
+    "children": [
+      {
+        "title": "Production Deployment Architecture",
+        "children": []
+      },
+      {
+        "title": "Scalability and Performance",
+        "children": []
+      },
+      {
+        "title": "Security Configuration",
+        "children": []
+      },
+      {
+        "title": "Monitoring and Maintenance",
+        "children": []
+      }
+    ]
+  },
+  {
+    "title": "Community and Support",
+    "children": [
+      {
+        "title": "Apache OFBiz Community",
+        "children": []
+      },
+      {
+        "title": "Contributing Guidelines",
+        "children": []
+      },
+      {
+        "title": "Release Management",
+        "children": []
+      },
+      {
+        "title": "Support Resources",
+        "children": []
+      }
+    ]
+  }
+]

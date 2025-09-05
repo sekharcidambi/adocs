@@ -1,0 +1,60 @@
+{
+  "github_repo": "https://github.com/excalidraw/excalidraw",
+  "business_domain": "Developer Tools",
+  "overview": "Excalidraw is an open-source virtual whiteboard tool that allows users to create hand-drawn-style diagrams, wireframes, and other visual content. It is designed to be collaborative and end-to-end encrypted, making it suitable for remote teams and secure projects. The Excalidraw editor supports a wide range of features, including an infinite canvas, dark mode, customization, image support, shape libraries, localization, export options, and a variety of drawing tools. The Excalidraw.com web application, which is part of this repository, adds additional features like Progressive Web App (PWA) support, real-time collaboration, end-to-end encryption, local-first support, and shareable links. Excalidraw aims to provide a free, open-source, and feature-rich diagramming solution that caters to the needs of developers, designers, and other professionals who require a flexible and collaborative whiteboarding tool.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Next.js",
+      "Bootstrap",
+      "Angular",
+      "Vue",
+      "Ant Design"
+    ],
+    "backend": [
+      "Express",
+      "Node.js",
+      "Hapi",
+      "Ruby on Rails",
+      "Koa"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "TypeScript",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Component-based",
+    "description": "The Excalidraw project follows a component-based architecture, which allows for modular and scalable development. The main Excalidraw editor is implemented as a React component that can be easily integrated into other applications. This component-based approach enables developers to customize and extend the functionality of Excalidraw to fit their specific needs. The architecture also includes separate components for various features, such as the canvas, drawing tools, collaboration, and export options. These components interact with each other through well-defined interfaces, promoting code reusability and maintainability. The component-based design also facilitates the addition of new features and plugins in the future, as the project continues to evolve. Additionally, the Excalidraw.com web application, which is part of the same repository, leverages this component-based architecture to provide a complete, end-to-end solution for users, including features like real-time collaboration and end-to-end encryption."
+  },
+  "setup": {
+    "install": "npm install react react-dom @excalidraw/excalidraw",
+    "run": "No specific run command provided, as Excalidraw is designed to be integrated into other applications.",
+    "test": "No specific test command provided, as the project does not include comprehensive testing documentation."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

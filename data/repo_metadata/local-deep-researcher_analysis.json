@@ -1,0 +1,44 @@
+{
+  "github_repo": "https://github.com/langchain-ai/local-deep-researcher",
+  "business_domain": "Education",
+  "overview": "Local Deep Researcher is a fully local web research assistant that uses any LLM hosted by Ollama or LMStudio. Give it a topic and it will generate a web search query, gather web search results, summar...",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "Markdown",
+      "Python"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [
+      "Hapi",
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "LLM_PROVIDER=lmstudio\nLOCAL_LLM=qwen_qwq-32b  # Use the exact model name as shown in LMStudio\nLMSTUDIO_BASE_URL=http://localhost:1234/v1",
+    "run": "git clone https://github.com/langchain-ai/local-deep-researcher.git\ncd local-deep-researcher",
+    "test": "git clone https://github.com/langchain-ai/local-deep-researcher.git\ncd local-deep-researcher"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

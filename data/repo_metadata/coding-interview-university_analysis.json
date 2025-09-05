@@ -1,0 +1,35 @@
+{
+  "github_repo": "https://github.com/jwasham/coding-interview-university",
+  "business_domain": "Other",
+  "overview": "> I originally created this as a short to-do list of study topics for becoming a software engineer,",
+  "tech_stack": {
+    "languages": [
+      "Markdown"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "run": "git clone https://github.com/<YOUR_GITHUB_USERNAME>/coding-interview-university.git\n    cd coding-interview-university\n    git remote add upstream https://github.com/jwasham/coding-interview-university.git\n    git remote set-url --push upstream DISABLE  # so that you don't push your personal progress back to the original repo",
+    "test": "git clone https://github.com/<YOUR_GITHUB_USERNAME>/coding-interview-university.git\n    cd coding-interview-university\n    git remote add upstream https://github.com/jwasham/coding-interview-university.git\n    git remote set-url --push upstream DISABLE  # so that you don't push your personal progress back to the original repo",
+    "install": "See README for installation instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

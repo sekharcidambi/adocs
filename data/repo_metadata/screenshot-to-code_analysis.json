@@ -1,0 +1,56 @@
+{
+  "github_repo": "https://github.com/abi/screenshot-to-code",
+  "business_domain": "Developer Tools",
+  "overview": "screenshot-to-code is a powerful tool that leverages AI to convert screenshots, mockups, and Figma designs into clean, functional code. It supports a wide range of web development stacks, including HTML + Tailwind, HTML + CSS, React + Tailwind, Vue + Tailwind, Bootstrap, Ionic + Tailwind, and SVG. The tool is designed to streamline the development process by automating the conversion of visual designs into production-ready code, saving developers time and effort. It utilizes advanced AI models, such as Claude Sonnet 3.7 and GPT-4o, to analyze the input images and generate the corresponding code. The project also includes experimental support for converting screen recordings into functional prototypes, further enhancing the developer's workflow. With a hosted version available and a focus on continuous improvement, screenshot-to-code aims to revolutionize the way designers and developers collaborate and bring ideas to life.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Tailwind CSS",
+      "Next.js",
+      "Vue",
+      "Bootstrap"
+    ],
+    "backend": [
+      "Node.js",
+      "FastAPI",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "description": "The screenshot-to-code project follows a microservices architecture, with a React/Vite frontend and a FastAPI backend. This architectural pattern was chosen to promote scalability, flexibility, and maintainability. The frontend is responsible for the user interface and interaction, while the backend handles the AI-powered code generation and processing. By separating the concerns into distinct services, the project can easily scale individual components as needed, and developers can work on the frontend and backend independently. The microservices approach also allows for the integration of different AI models, such as Claude Sonnet 3.7 and GPT-4o, without affecting the overall system. This modular design ensures that the project can adapt to changing requirements and technological advancements, making it a future-proof solution for developers."
+  },
+  "setup": {
+    "install": "cd backend\necho \"OPENAI_API_KEY=sk-your-key\" > .env\necho \"ANTHROPIC_API_KEY=your-key\" > .env\npoetry install\npoetry shell\npoetry run uvicorn main:app --reload --port 7001\n\ncd frontend\nyarn\nyarn dev",
+    "run": "poetry run uvicorn main:app --reload --port 7001 (backend)\nyarn dev (frontend)",
+    "test": "No specific test command provided in the documentation"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

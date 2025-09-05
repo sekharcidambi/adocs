@@ -1,0 +1,74 @@
+{
+  "github_repo": "https://github.com/Significant-Gravitas/AutoGPT",
+  "business_domain": "Other",
+  "overview": "<!-- Keep these links. Translations will automatically update with the README. -->",
+  "tech_stack": {
+    "languages": [
+      "C++",
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Kotlin",
+      "Markdown",
+      "Python",
+      "SQL",
+      "Shell",
+      "Swift",
+      "TypeScript",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Vue",
+      "Bootstrap",
+      "Ant Design"
+    ],
+    "backend": [
+      "Node.js",
+      "FastAPI",
+      "Spring",
+      "Express",
+      "Hapi",
+      "Koa"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "SQLite",
+      "DynamoDB",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Mvc",
+    "detected_patterns": [
+      "Mvc",
+      "Microservices",
+      "Component_Based"
+    ],
+    "description": "The project uses a Mvc architectural pattern."
+  },
+  "setup": {
+    "install": "curl -fsSL https://setup.agpt.co/install.sh -o install.sh && bash install.sh",
+    "run": "curl -fsSL https://setup.agpt.co/install.sh -o install.sh && bash install.sh",
+    "test": "$ ./run\nUsage: cli.py [OPTIONS] COMMAND [ARGS]...\n\nOptions:\n  --help  Show this message and exit.\n\nCommands:\n  agent      Commands to create, start and stop agents\n  benchmark  Commands to start the benchmark and list tests and categories\n  setup      Installs dependencies needed for your system."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

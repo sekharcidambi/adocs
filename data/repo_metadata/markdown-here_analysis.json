@@ -1,0 +1,58 @@
+{
+  "github_repo": "https://github.com/adam-p/markdown-here",
+  "business_domain": "Developer Tools",
+  "overview": "Markdown Here is a browser extension that allows users to write email in Markdown format and then render it as rich HTML before sending. This solves the problem of having to write email with code or formatting in a tedious way, as Markdown is much easier to work with. The extension supports features like syntax highlighting, TeX mathematical formulae, and inline image embedding. It works across multiple email and content platforms including Gmail, Hotmail, Yahoo, Google Groups, Blogger, Evernote, and WordPress. Markdown Here provides a convenient workflow for developers and technical users to compose professional-looking emails with code snippets, formatted text, and other rich content, without the hassle of manually formatting in HTML.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown"
+    ],
+    "frontend": [
+      "Next.js",
+      "React",
+      "Angular",
+      "Bootstrap",
+      "Ant Design"
+    ],
+    "backend": [
+      "Node.js",
+      "Express",
+      "Django",
+      "Spring",
+      "Ruby on Rails",
+      "Hapi"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "MySQL",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Browser Extension",
+    "description": "Markdown Here is implemented as a browser extension, which allows it to integrate directly with the email composition experience of various web-based email clients. The extension consists of a content script that runs in the context of the email composition page and handles the Markdown conversion, as well as a background script that manages the extension's functionality and user settings. The content script listens for user interactions like right-clicking in the email compose box or pressing a keyboard shortcut, then performs the Markdown-to-HTML conversion using the marked.js library and applies the result back to the email content. This architecture allows Markdown Here to seamlessly enhance the email writing experience without requiring any changes to the underlying email platforms. The extension pattern was chosen to provide a non-intrusive, platform-agnostic solution that can be easily installed and used by developers and technical users across different browsers and email services."
+  },
+  "setup": {
+    "install": "For Chrome: Go to the Chrome Web Store page and install normally. For Firefox and Thunderbird: Go to the Firefox Add-ons page and install normally. For Opera: Go to the Opera Add-ons store page and install normally.",
+    "run": "After installing, make sure to reload your webmail page or restart your browser before trying to use Markdown Here. Then, when composing an email, right-click in the compose box and choose the 'Markdown Toggle' option, or use the keyboard shortcut (Shift+Alt+M by default).",
+    "test": "To test the conversion, compose an email with some Markdown formatting, such as **bold text**, `inline code`, and ```fenced code blocks```. Then use the 'Markdown Toggle' command to render the Markdown as rich HTML."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

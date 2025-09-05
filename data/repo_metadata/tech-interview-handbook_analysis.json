@@ -1,0 +1,56 @@
+{
+  "github_repo": "https://github.com/yangshun/tech-interview-handbook",
+  "business_domain": "Developer Tools",
+  "overview": "The Tech Interview Handbook is a comprehensive resource for software engineers preparing for technical interviews. It covers a wide range of topics beyond just algorithmic coding questions, including best practices for coding interviews, behavioral interview questions, resume preparation, and more. The project aims to provide practical, curated content to help busy engineers navigate the interview process efficiently and land their dream jobs. It was created by Yangshun Tay, the author of the popular 'Blind 75' list of top LeetCode questions. The handbook has benefited over 1 million people and includes contributions from the open-source community. It is designed to be a one-stop-shop for all technical interview preparation needs, covering the entire interview lifecycle from application to offer negotiation.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "SQL",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Tailwind CSS",
+      "Next.js",
+      "Ant Design"
+    ],
+    "backend": [
+      "Node.js",
+      "Spring"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "MongoDB"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Documentation-driven",
+    "description": "The Tech Interview Handbook follows a documentation-driven approach, with the content primarily organized and presented through Markdown files in a GitHub repository. This allows for easy collaboration, version control, and distribution of the materials. The project uses a Docusaurus-based website to provide a better reading experience and navigation for users. The documentation is structured into various sections covering different aspects of the technical interview process, such as coding interview preparation, behavioral questions, resume guidance, and more. This modular, documentation-centric architecture enables the project to evolve and expand organically as new content is contributed by the open-source community. The use of Markdown and a static site generator like Docusaurus ensures the materials are easily accessible, maintainable, and shareable, making the Tech Interview Handbook a scalable and sustainable resource for software engineers."
+  },
+  "setup": {
+    "install": "No installation required, the content is available on the website and GitHub repository.",
+    "run": "No application to run, the content is presented as documentation.",
+    "test": "No automated tests, the project is focused on providing educational content."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

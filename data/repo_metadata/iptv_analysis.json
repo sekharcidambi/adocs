@@ -1,0 +1,47 @@
+{
+  "github_repo": "https://github.com/iptv-org/iptv",
+  "business_domain": "Developer Tools",
+  "overview": "The IPTV project is a comprehensive collection of publicly available IPTV (Internet Protocol television) channels from all over the world. It serves as a centralized repository for users to access a wide range of live TV streams, providing a valuable resource for those interested in consuming online television content. The project aims to simplify the process of finding and accessing IPTV streams by aggregating links and metadata for thousands of channels, categorized by country and region. Users can easily integrate these streams into their preferred media players or IPTV applications, allowing them to enjoy a diverse selection of live TV programming from the comfort of their own devices. The project is maintained by a community of contributors who work to continuously expand the collection, verify stream availability, and ensure the overall quality and reliability of the service.",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "TypeScript"
+    ],
+    "frontend": [
+      "React",
+      "Vue"
+    ],
+    "backend": [
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "TypeScript",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Monolith",
+    "description": "The IPTV project follows a monolithic architectural pattern, where the entire application and its functionality are contained within a single, self-contained repository. This approach allows for easier management, maintenance, and distribution of the project, as all the necessary components, including the channel data, playlists, scripts, and documentation, are centralized in one location. The monolithic structure simplifies the development and deployment processes, as changes and updates can be easily incorporated and distributed to users. Additionally, the monolithic design enables the project to maintain a consistent user experience and ensures that the various features and functionalities work seamlessly together. While a monolithic architecture may not offer the same level of scalability and flexibility as a microservices-based approach, it is well-suited for the IPTV project's primary purpose of aggregating and distributing IPTV channel links, as the project does not require complex, distributed systems or high-performance computing requirements. The simplicity and ease of management provided by the monolithic architecture align well with the project's goals of being a user-friendly and accessible resource for IPTV enthusiasts."
+  },
+  "setup": {
+    "install": "No installation is required. Users can simply access the playlists and integrate them into their preferred IPTV players or applications.",
+    "run": "To use the IPTV service, users can paste the link to one of the playlists into any video player that supports live streaming and press 'Open'.",
+    "test": "The project provides a script to test the links in the playlists. To run the tests, users can navigate to the project directory and execute the command: `npm run playlist:test path/to/playlist.m3u`."
+  },
+  "metadata": {
+    "stars": 96821,
+    "forks": 3950,
+    "open_issues": 456,
+    "created_at": "2018-11-14T22:00:57Z",
+    "updated_at": "2025-09-04T04:59:03Z",
+    "license": "The Unlicense",
+    "homepage": "https://iptv-org.github.io",
+    "status": "Active"
+  }
+}

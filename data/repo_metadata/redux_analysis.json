@@ -1,0 +1,54 @@
+{
+  "github_repo": "https://github.com/reduxjs/redux",
+  "business_domain": "AI/ML",
+  "overview": "Redux is a JS library for predictable and maintainable global state management.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Next.js"
+    ],
+    "backend": [
+      "Node.js",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "TypeScript",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Component_Based",
+    "detected_patterns": [
+      "Component_Based"
+    ],
+    "description": "The project uses a Component_Based architectural pattern."
+  },
+  "setup": {
+    "install": "We do not currently have official React Native templates, but recommend these templates for standard React Native and for Expo:\n\n- https://github.com/rahsheen/react-native-template-redux-typescript\n- https://github.com/rahsheen/expo-template-redux-typescript",
+    "run": "We do not currently have official React Native templates, but recommend these templates for standard React Native and for Expo:\n\n- https://github.com/rahsheen/react-native-template-redux-typescript\n- https://github.com/rahsheen/expo-template-redux-typescript",
+    "test": "We do not currently have official React Native templates, but recommend these templates for standard React Native and for Expo:\n\n- https://github.com/rahsheen/react-native-template-redux-typescript\n- https://github.com/rahsheen/expo-template-redux-typescript"
+  },
+  "metadata": {
+    "stars": 61332,
+    "forks": 15198,
+    "open_issues": 45,
+    "created_at": "2015-05-29T23:53:15Z",
+    "updated_at": "2025-09-04T00:46:04Z",
+    "license": "MIT License",
+    "homepage": "https://redux.js.org",
+    "status": "Active"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "github_repo": "https://github.com/NARKOZ/hacker-scripts",
+  "business_domain": "Developer Tools",
+  "overview": "The 'hacker-scripts' project is a collection of humorous and unconventional shell scripts that automate various tasks and workflows for a software engineer. The scripts were originally created by a build engineer who was known for his love of the terminal and automation. The scripts cover a wide range of functionalities, including sending automated text messages to the engineer's wife when he's working late, rolling back a client's staging database when certain keywords are detected in emails, sending automated sick day emails, and even controlling a networked coffee machine. The project serves as a lighthearted example of how far an engineer might go to automate repetitive or time-consuming tasks, and it has gained popularity in the developer community for its unique and humorous approach to automation.",
+  "tech_stack": {
+    "languages": [
+      "C#",
+      "Go",
+      "JSON",
+      "Java",
+      "JavaScript",
+      "Kotlin",
+      "Markdown",
+      "PHP",
+      "Python",
+      "R",
+      "Ruby",
+      "Scala",
+      "Shell"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [
+      "Node.js",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Shell Scripts",
+    "description": "The 'hacker-scripts' project is built using a collection of shell scripts, primarily written in Bash. Each script is designed to perform a specific task or workflow, such as sending text messages, managing email, or interacting with a coffee machine. The scripts are designed to be run as cron jobs, which allows them to be executed automatically at predefined intervals or based on specific conditions, such as the presence of active SSH sessions or the time of day. The scripts leverage various external tools and services, such as the Twilio API for sending text messages and the Gmail API for email management, to accomplish their tasks. This shell script-based architecture is well-suited for the project's purpose of automating repetitive and time-consuming tasks, as it allows for quick and flexible development, easy deployment, and integration with various external systems and services."
+  },
+  "setup": {
+    "install": "No installation required, just clone the repository and set up the necessary environment variables.",
+    "run": "Run the individual scripts using the provided cron job examples or manually from the command line.",
+    "test": "No specific testing instructions provided, but the scripts can be tested by running them manually and verifying the expected behavior."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

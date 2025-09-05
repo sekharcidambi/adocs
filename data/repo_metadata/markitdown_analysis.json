@@ -1,0 +1,48 @@
+{
+  "github_repo": "https://github.com/microsoft/markitdown",
+  "business_domain": "Developer Tools",
+  "overview": "MarkItDown is a lightweight Python utility for converting various file formats to Markdown for use with Large Language Models (LLMs) and related text analysis pipelines. It is designed to preserve important document structure and content, including headings, lists, tables, and links, making the output suitable for consumption by text analysis tools. MarkItDown supports a wide range of file formats, including PDF, PowerPoint, Word, Excel, images, audio, HTML, and various text-based formats. The project's primary goal is to provide a convenient way to prepare documents for use with LLMs, which often natively understand and incorporate Markdown formatting. MarkItDown is particularly useful for developers and researchers working with LLMs, as it simplifies the process of converting diverse file types into a format that can be easily processed and analyzed by these language models.",
+  "tech_stack": {
+    "languages": [
+      "HTML",
+      "JSON",
+      "Markdown",
+      "Python",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Modular",
+    "description": "The MarkItDown architecture follows a modular design pattern, with a core MarkItDown class that serves as the main entry point for the library. This class coordinates the conversion process, delegating the actual file format conversion to specialized DocumentConverter classes. The DocumentConverter classes are responsible for handling the parsing and transformation of specific file types, such as PDF, PowerPoint, Word, and others. This modular approach allows for easy extensibility, as new file format support can be added by implementing a new DocumentConverter class without modifying the core MarkItDown functionality. Additionally, MarkItDown supports a plugin system, which allows third-party developers to contribute custom converters or enhance the existing functionality. The modular design also promotes scalability, as the conversion process can be parallelized or distributed across multiple machines if needed. The architecture also includes optional support for Azure Document Intelligence, which can be used to leverage cloud-based document processing services for improved conversion accuracy and performance. Overall, the modular design of MarkItDown makes it a flexible and extensible tool for converting a wide range of file formats to Markdown for use with LLMs and other text analysis applications."
+  },
+  "setup": {
+    "install": "pip install 'markitdown[all]'",
+    "run": "markitdown path-to-file.pdf > document.md",
+    "test": "hatch test"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

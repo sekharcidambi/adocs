@@ -1,0 +1,68 @@
+{
+  "github_repo": "https://github.com/microsoft/PowerToys",
+  "business_domain": "SaaS",
+  "overview": "Microsoft PowerToys is a set of utilities for power users to tune and streamline their Windows experience for greater productivity. For more info on [PowerToys overviews and how to use the utilities][...",
+  "tech_stack": {
+    "languages": [
+      "C",
+      "C#",
+      "C++",
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "XML"
+    ],
+    "frontend": [
+      "Next.js",
+      "React",
+      "Angular",
+      "Vue",
+      "Ant Design",
+      "Bootstrap"
+    ],
+    "backend": [
+      "Express",
+      "Node.js",
+      "Django",
+      "Spring",
+      "Ruby on Rails",
+      "Hapi"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "MongoDB",
+      "SQLite"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Component_Based",
+    "detected_patterns": [
+      "Component_Based"
+    ],
+    "description": "The project uses a Component_Based architectural pattern."
+  },
+  "setup": {
+    "install": "powershell\nwinget install Microsoft.PowerToys -s winget",
+    "run": "powershell\nwinget install Microsoft.PowerToys -s winget",
+    "test": "powershell\nwinget install Microsoft.PowerToys -s winget"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

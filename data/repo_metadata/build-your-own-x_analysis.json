@@ -1,0 +1,36 @@
+{
+  "github_repo": "https://github.com/codecrafters-io/build-your-own-x",
+  "business_domain": "Developer Tools",
+  "overview": "The 'build-your-own-x' repository is a collection of tutorials and resources that guide developers in building their own versions of popular software systems and tools. The project aims to help developers deepen their understanding of computer science fundamentals, system design, and software engineering best practices by implementing core components from scratch. The tutorials cover a wide range of topics, including building a Git client, a web server, a database, a neural network, and more. By working through these hands-on projects, developers can gain practical experience, improve their problem-solving skills, and develop a better appreciation for the inner workings of the technologies they use daily. The project's goal is to empower developers to become more self-sufficient, curious, and capable of building their own custom solutions to meet their specific needs.",
+  "tech_stack": {
+    "languages": [
+      "Markdown"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Modular",
+    "description": "The 'build-your-own-x' project follows a modular architectural approach, where each tutorial and project is self-contained and focused on a specific software component or system. This modular design allows developers to work on individual projects independently, without the need to understand the entire codebase or system. Each tutorial typically includes a set of instructions, starter code, and tests to guide the developer through the implementation process. The modular structure also enables the project to be easily extended with new tutorials covering different software systems or tools. This approach promotes flexibility, scalability, and maintainability, as new content can be added or existing content can be updated without affecting the overall project structure. The modular architecture also encourages a hands-on, iterative learning process, where developers can experiment, test, and refine their implementations at their own pace."
+  },
+  "setup": {
+    "install": "No installation instructions provided in the documentation.",
+    "run": "No run instructions provided in the documentation.",
+    "test": "No test instructions provided in the documentation."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

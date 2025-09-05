@@ -1,0 +1,53 @@
+{
+  "github_repo": "https://github.com/comfyanonymous/ComfyUI",
+  "business_domain": "Developer Tools",
+  "overview": "ComfyUI is a powerful and modular visual AI engine and application that allows users to design and execute advanced Stable Diffusion pipelines using a graph/nodes/flowchart-based interface. It supports a wide range of image, video, audio, and 3D models, including SD1.x, SD2.x, SDXL, Stable Cascade, SD3, and many others. ComfyUI provides a user-friendly, code-free way to create complex Stable Diffusion workflows, with features like an asynchronous queue system, smart memory management, and the ability to load and use various types of AI models and embeddings. It is available on Windows, Linux, and macOS, and can be installed either through a desktop application, a portable Windows package, or a manual installation process. ComfyUI is designed to benefit developers, artists, and anyone interested in exploring the capabilities of Stable Diffusion and other AI models in a visual, interactive environment.",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "Markdown",
+      "Python",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "Angular",
+      "React"
+    ],
+    "backend": [
+      "Node.js",
+      "Koa",
+      "Hapi",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "SQLite",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Modular",
+    "description": "ComfyUI follows a modular architectural pattern, with a core repository that serves as the foundation for the application, and separate repositories for the desktop application and the frontend. This modular approach allows for independent development and release cycles for each component, enabling the team to quickly iterate on the core functionality, the user interface, and the desktop packaging. The core repository contains the main logic and implementation of the Stable Diffusion pipelines, model loading, and workflow execution, while the frontend repository handles the visual graph-based interface and user interactions. The desktop repository is responsible for packaging the core and frontend components into a standalone application for Windows and macOS. This modular architecture promotes flexibility, scalability, and maintainability, as new features and improvements can be easily integrated into the different components without disrupting the overall system. Additionally, the modular design allows for the potential integration of ComfyUI with other AI platforms or the development of custom nodes and workflows to suit specific user needs."
+  },
+  "setup": {
+    "install": "pip install comfy-cli\ncomfy install",
+    "run": "comfy start",
+    "test": "No specific test command provided in documentation"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "github_repo": "https://github.com/strapi/strapi",
+  "business_domain": "Other",
+  "overview": "<p align=\"center\">",
+  "tech_stack": {
+    "languages": [
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Shell",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Bootstrap",
+      "Next.js",
+      "Gatsby"
+    ],
+    "backend": [
+      "Node.js",
+      "Express",
+      "Spring",
+      "Koa"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "MySQL",
+      "SQLite",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "Jest",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Mvc",
+    "detected_patterns": [
+      "Mvc",
+      "Microservices",
+      "Component_Based",
+      "Feature_Based"
+    ],
+    "description": "The project uses a Mvc architectural pattern."
+  },
+  "setup": {
+    "install": "yarn create strapi",
+    "run": "yarn create strapi",
+    "test": "yarn create strapi"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

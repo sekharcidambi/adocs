@@ -1,0 +1,49 @@
+{
+  "github_repo": "https://github.com/AntonOsika/gpt-engineer",
+  "business_domain": "Other",
+  "overview": "The OG code genereation experimentation platform!",
+  "tech_stack": {
+    "languages": [
+      "HTML",
+      "JSON",
+      "Markdown",
+      "Python",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "React"
+    ],
+    "backend": [
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "SQLite"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "See README for installation instructions",
+    "run": "See README for running instructions",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

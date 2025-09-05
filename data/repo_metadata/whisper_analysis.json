@@ -1,0 +1,43 @@
+{
+  "github_repo": "https://github.com/openai/whisper",
+  "business_domain": "AI/ML",
+  "overview": "Whisper is a general-purpose speech recognition model. It is trained on a large dataset of diverse audio and is also a multitasking model that can perform multilingual speech recognition, speech trans...",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "Markdown",
+      "Python",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [],
+    "databases": [
+      "Elasticsearch",
+      "MongoDB"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "# on Ubuntu or Debian\nsudo apt update && sudo apt install ffmpeg\n\n# on Arch Linux\nsudo pacman -S ffmpeg\n\n# on MacOS using Homebrew (https://brew.sh/)\nbrew install ffmpeg\n\n# on Windows using Chocolatey (https://chocolatey.org/)\nchoco install ffmpeg\n\n# on Windows using Scoop (https://scoop.sh/)\nscoop install ffmpeg",
+    "run": "# on Ubuntu or Debian\nsudo apt update && sudo apt install ffmpeg\n\n# on Arch Linux\nsudo pacman -S ffmpeg\n\n# on MacOS using Homebrew (https://brew.sh/)\nbrew install ffmpeg\n\n# on Windows using Chocolatey (https://chocolatey.org/)\nchoco install ffmpeg\n\n# on Windows using Scoop (https://scoop.sh/)\nscoop install ffmpeg",
+    "test": "# on Ubuntu or Debian\nsudo apt update && sudo apt install ffmpeg\n\n# on Arch Linux\nsudo pacman -S ffmpeg\n\n# on MacOS using Homebrew (https://brew.sh/)\nbrew install ffmpeg\n\n# on Windows using Chocolatey (https://chocolatey.org/)\nchoco install ffmpeg\n\n# on Windows using Scoop (https://scoop.sh/)\nscoop install ffmpeg"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

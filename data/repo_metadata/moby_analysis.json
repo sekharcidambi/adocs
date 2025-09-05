@@ -1,0 +1,48 @@
+{
+  "github_repo": "https://github.com/moby/moby",
+  "business_domain": "Developer Tools",
+  "overview": "The Moby Project is an open-source project created by Docker to enable and accelerate software containerization. It provides a modular toolkit of components for building container-based systems, including tools for container build, registry, orchestration, runtime, and more. The project aims to be flexible, usable, and developer-focused, with a 'Lego set' of interchangeable components that can be assembled in diverse ways. Moby is intended for engineers, integrators, and enthusiasts who want to modify, hack, fix, experiment, and build custom container-based systems. It is not a commercially supported product, but rather an open-source platform for the container community to collaborate on and advance the state of the art in container technology.",
+  "tech_stack": {
+    "languages": [
+      "C",
+      "C++",
+      "Go",
+      "JSON",
+      "Markdown",
+      "Python",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "GitHub Actions",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Modular, Microservices",
+    "description": "The Moby Project follows a modular, microservices-based architecture. It is composed of numerous independent components that serve specific functions, such as the container build tools, registry, orchestration, runtime, and more. These components have well-defined APIs and can be swapped out or replaced as needed, allowing for a high degree of flexibility and customization. The modular design enables users to assemble the components in different ways to create custom container-based systems tailored to their specific requirements. This architectural pattern was chosen to promote experimentation, innovation, and rapid iteration within the container ecosystem, as opposed to a more opinionated, monolithic approach. The microservices-based structure also allows for better scalability, fault tolerance, and independent evolution of the individual components. Overall, the Moby Project's modular, microservices-based architecture reflects its goal of being a flexible, developer-focused platform for container technology."
+  },
+  "setup": {
+    "install": "docker buildx bake binary",
+    "run": "docker run -d moby/moby",
+    "test": "docker buildx bake test"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

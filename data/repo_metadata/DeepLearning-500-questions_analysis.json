@@ -1,0 +1,46 @@
+{
+  "github_repo": "https://github.com/scutan90/DeepLearning-500-questions",
+  "business_domain": "Developer Tools",
+  "overview": "This project is a collection of 500 questions and answers related to deep learning, designed as an interview preparation resource for AI engineers. The book covers a wide range of topics, including mathematical foundations, machine learning basics, and deep learning fundamentals. It also delves into classic neural network architectures like CNNs and RNNs, as well as applications of deep learning in computer vision such as object detection and image segmentation. Additionally, the book explores optimization methods, transfer learning, network architecture design, hyperparameter tuning, and model compression and acceleration. The content is based on the authors' experiences and common interview questions, aiming to help readers develop the ability to identify, solve, and extend problems in the field of deep learning and computer vision.",
+  "tech_stack": {
+    "languages": [
+      "HTML",
+      "JavaScript",
+      "Markdown"
+    ],
+    "frontend": [
+      "Vue",
+      "Next.js"
+    ],
+    "backend": [
+      "Express",
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "N/A (This is a book/documentation project, not a software application)",
+    "description": "This project does not have a specific software architecture, as it is a collection of educational content in the form of a book. The book is organized into 14 chapters that cover various topics related to deep learning, from mathematical foundations to practical applications and optimization techniques. The chapters are structured to provide a comprehensive overview of the deep learning field, starting with the basics and progressively delving into more advanced concepts and techniques. The book draws on the expertise of multiple authors, each contributing their knowledge and experience to create a valuable resource for AI engineers and researchers."
+  },
+  "setup": {
+    "install": "N/A (This is a book/documentation project, not a software application)",
+    "run": "N/A (This is a book/documentation project, not a software application)",
+    "test": "N/A (This is a book/documentation project, not a software application)"
+  },
+  "metadata": {
+    "stars": 56518,
+    "forks": 15982,
+    "open_issues": 120,
+    "created_at": "2018-06-27T06:36:45Z",
+    "updated_at": "2025-09-03T16:35:40Z",
+    "license": "GNU General Public License v3.0",
+    "homepage": "https://github.com/scutan90/DeepLearning-500-questions",
+    "status": "Active"
+  }
+}

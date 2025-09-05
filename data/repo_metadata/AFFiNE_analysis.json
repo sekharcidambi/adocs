@@ -1,0 +1,73 @@
+{
+  "github_repo": "https://github.com/toeverything/AFFiNE",
+  "business_domain": "Developer Tools",
+  "overview": "AFFiNE is an open-source, all-in-one workspace and operating system for building blocks that assemble a knowledge base. It is designed as a privacy-focused, local-first, and collaborative alternative to productivity tools like Notion and Miro. AFFiNE allows users to write, draw, and plan all in one place, with a true canvas that supports a wide range of content blocks, including rich text, sticky notes, embedded web pages, multi-view databases, linked pages, shapes, and even slides. The project aims to provide a hyper-fused platform for creative minds, with a multimodal AI partner that can assist with tasks like report writing, presentation creation, and prototyping. AFFiNE is built with a focus on local-first and real-time collaboration, allowing users to own their data and work together seamlessly across web and desktop clients. The project also offers the flexibility for users to self-host, fork, and build their own customized versions of AFFiNE.",
+  "tech_stack": {
+    "languages": [
+      "C",
+      "C++",
+      "CSS",
+      "HTML",
+      "JSON",
+      "Java",
+      "JavaScript",
+      "Kotlin",
+      "Markdown",
+      "Rust",
+      "SQL",
+      "Shell",
+      "Swift",
+      "TypeScript",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Vue",
+      "Angular",
+      "Ant Design",
+      "Bootstrap",
+      "Material-UI"
+    ],
+    "backend": [
+      "Node.js",
+      "NestJS",
+      "Express",
+      "Koa",
+      "Spring",
+      "Hapi"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "SQLite",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "TypeScript",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "description": "AFFiNE follows a microservices architecture, with the core functionality split across several interconnected components. The main components include the frontend web application, the Electron-based desktop client, and the backend server. The frontend is built using React and Vite, while the backend is written in Rust and utilizes the OctoBase database engine, also developed by the AFFiNE team. The use of microservices allows for better scalability, modularity, and flexibility, as different components can be independently developed, tested, and deployed. The architecture also includes a native module written in Rust, which provides low-level functionality like SQLite bindings, further improving performance and efficiency. The microservices approach enables AFFiNE to be self-hosted and customized by users, as they can manage, fork, and build their own versions of the application. The architectural decisions behind this pattern were driven by the project's goals of providing a privacy-focused, local-first, and highly customizable productivity tool for users."
+  },
+  "setup": {
+    "install": "yarn install",
+    "run": "yarn affine @affine/electron start",
+    "test": "yarn test"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

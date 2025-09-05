@@ -1,0 +1,57 @@
+{
+  "github_repo": "https://github.com/PaddlePaddle/PaddleOCR",
+  "business_domain": "Developer Tools",
+  "overview": "PaddleOCR is an industry-leading, production-ready OCR and document AI engine that converts documents and images into structured, AI-friendly data like JSON and Markdown with industry-leading accuracy. It offers end-to-end solutions from text extraction to intelligent document understanding, powering AI applications for developers, startups, and enterprises worldwide. With over 50,000 stars and deep integration into leading projects, PaddleOCR has become the premier solution for building intelligent document applications in the AI era. PaddleOCR provides an outstanding model library, including PP-OCRv5 for universal scene text recognition, PP-StructureV3 for complex document parsing, and PP-ChatOCRv4 for intelligent information extraction, along with user-friendly tools for model training, inference, and service deployment.",
+  "tech_stack": {
+    "languages": [
+      "C",
+      "C++",
+      "HTML",
+      "JSON",
+      "Java",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "Shell",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "Angular",
+      "React"
+    ],
+    "backend": [
+      "Express",
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Modular, Microservices",
+    "description": "PaddleOCR follows a modular, microservices-based architecture that allows for flexible, scalable, and extensible document AI solutions. The system is composed of several independent pipelines, each focused on a specific task like text recognition, document parsing, or information extraction. These pipelines can be used individually or combined to create end-to-end document processing workflows. The modular design allows new capabilities to be easily added, and the microservices approach enables high-performance, fault-tolerant deployment on heterogeneous hardware like CPUs, GPUs, and NPUs. The architectural decisions prioritize scalability, maintainability, and the ability to rapidly bring AI-powered document applications to production."
+  },
+  "setup": {
+    "install": "python -m pip install paddleocr",
+    "run": "paddleocr --image_dir <image_path>",
+    "test": "python tools/test_tipc/static/docs/test_inference_python.md"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

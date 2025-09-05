@@ -1,0 +1,84 @@
+{
+  "github_repo": "https://github.com/grafana/grafana",
+  "business_domain": "Other",
+  "overview": "The open-source platform for monitoring and observability",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "Go",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Ruby",
+      "SQL",
+      "Shell",
+      "TypeScript",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Next.js",
+      "Angular",
+      "Bootstrap",
+      "Ant Design",
+      "Material-UI",
+      "Vue"
+    ],
+    "backend": [
+      "Node.js",
+      "Express",
+      "Ruby on Rails",
+      "Hapi",
+      "Spring",
+      "ASP.NET",
+      "Django"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "MySQL",
+      "InfluxDB",
+      "MongoDB",
+      "Redis",
+      "Cassandra",
+      "DynamoDB",
+      "SQLite",
+      "Neo4j"
+    ],
+    "devops": [
+      "Cypress",
+      "Jest",
+      "TypeScript",
+      "ESLint",
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Mvc",
+    "detected_patterns": [
+      "Mvc",
+      "Microservices",
+      "Component_Based",
+      "Feature_Based"
+    ],
+    "description": "The project uses a Mvc architectural pattern."
+  },
+  "setup": {
+    "install": "See README for installation instructions",
+    "run": "See README for running instructions",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

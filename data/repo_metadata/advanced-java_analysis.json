@@ -1,0 +1,40 @@
+{
+  "github_repo": "https://github.com/doocs/advanced-java",
+  "business_domain": "Developer Tools",
+  "overview": "The advanced-java project is a comprehensive guide for Java developers looking to deepen their knowledge and skills in various areas of modern software engineering. It covers a wide range of topics, including high concurrency, distributed systems, high availability, microservices, and big data processing. The project aims to provide a complete and up-to-date reference for Java engineers working on complex, large-scale systems. It draws from the expertise of the author, Stone Shi, and the contributions of the Doocs open-source community. The project's goal is to equip developers with the necessary knowledge and best practices to tackle the challenges of building robust, scalable, and maintainable Java applications in the internet era.",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "Java",
+      "JavaScript",
+      "Markdown"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "GitHub Actions",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Monolith",
+    "description": "The advanced-java project follows a monolithic architectural pattern, where all the content and documentation is organized within a single GitHub repository. This approach was chosen to provide a cohesive and comprehensive learning experience for the target audience, which is Java developers looking to expand their knowledge in various domains. The monolithic structure allows for easy navigation, cross-referencing, and integration of the different topics covered, making it a valuable resource for self-study and reference. While a monolithic architecture may not be the most scalable or flexible approach for a large-scale application, it is well-suited for a knowledge-sharing project like advanced-java, where the focus is on delivering a structured and comprehensive learning experience. The project's maintainers have prioritized the ease of use and accessibility of the content over the potential benefits of a more modular or distributed architecture."
+  },
+  "setup": {
+    "install": "No installation required, as this is a documentation-only project.",
+    "run": "No running required, as this is a documentation-only project.",
+    "test": "No testing required, as this is a documentation-only project."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

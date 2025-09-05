@@ -1,0 +1,65 @@
+{
+  "github_repo": "https://github.com/louislam/uptime-kuma",
+  "business_domain": "Developer Tools",
+  "overview": "Uptime Kuma is an open-source, self-hosted monitoring tool that allows users to monitor the uptime and performance of their websites, servers, and other online services. It provides a comprehensive set of features, including monitoring for HTTP(S), TCP, keyword matching, JSON queries, ping, DNS records, push notifications, Steam game servers, and Docker containers. The tool offers a reactive, fast, and visually appealing user interface, with support for multiple languages and status pages that can be mapped to specific domains. Uptime Kuma also provides a wide range of notification options, including Telegram, Discord, Gotify, Slack, Pushover, and email, as well as the ability to monitor at 20-second intervals. The project was created by the developer Louis Lam, who was looking for a self-hosted monitoring tool similar to Uptime Robot but found the existing options to be unstable or no longer maintained. Uptime Kuma aims to fill this gap by providing a reliable, feature-rich, and user-friendly monitoring solution for developers, businesses, and end-users alike.",
+  "tech_stack": {
+    "languages": [
+      "C#",
+      "CSS",
+      "Go",
+      "HTML",
+      "JSON",
+      "Java",
+      "JavaScript",
+      "Markdown",
+      "PHP",
+      "Python",
+      "SQL",
+      "Shell",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "Vue",
+      "Next.js",
+      "Bootstrap"
+    ],
+    "backend": [
+      "Node.js",
+      "Express",
+      "Hapi"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "SQLite",
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "TypeScript",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Monolith",
+    "description": "Uptime Kuma follows a monolithic architecture, where the frontend and backend components are tightly coupled and deployed together. The frontend is built using Vue.js 3 and Vite.js, while the backend is implemented with Node.js and Express.js. The frontend and backend share the same codebase and dependencies, with the frontend being built into the `dist` directory and served by the Express.js server. This monolithic approach was chosen to simplify the development and deployment process, as well as to facilitate the tight integration between the user interface and the monitoring functionality. The backend is responsible for handling the monitoring tasks, such as checking the status of the configured endpoints, managing notifications, and storing the monitoring data. The frontend provides the user interface for configuring and managing the monitors, as well as visualizing the monitoring data. The monolithic architecture allows for a seamless user experience and easy communication between the frontend and backend components, which is particularly important for a real-time monitoring tool like Uptime Kuma. While a microservices-based architecture could provide more scalability and flexibility, the project's current scope and user base do not necessitate such a complex setup, and the monolithic approach has proven to be a suitable and maintainable solution for Uptime Kuma."
+  },
+  "setup": {
+    "install": "docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:1",
+    "run": "node server/server.js",
+    "test": "npm test"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "github_repo": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+  "business_domain": "Developer Tools",
+  "overview": "The Microsoft Activation Scripts (MAS) project is an open-source tool that provides a comprehensive solution for activating Windows and Office products. It features a variety of activation methods, including HWID, Ohook, TSforge, KMS38, and Online KMS, allowing users to activate their software legally and reliably. The project aims to simplify the activation process and provide advanced troubleshooting capabilities to users who may encounter issues during activation. MAS is designed to benefit both individual users and IT professionals who need to manage software activation across multiple systems. By offering a user-friendly interface and a range of activation options, MAS helps users overcome activation challenges and ensure the continued functionality of their Microsoft products.",
+  "tech_stack": {
+    "languages": [
+      "HTML",
+      "Markdown"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Script-based",
+    "description": "The Microsoft Activation Scripts (MAS) project follows a script-based architectural pattern. The core functionality of the project is implemented using a combination of PowerShell and batch scripts. This approach allows for a high degree of flexibility and customization, as the scripts can be easily modified or extended to support new activation methods or address specific user requirements. The script-based architecture also enables the project to be platform-independent, allowing it to be used on various Windows operating systems, from Windows Vista to the latest versions. The use of PowerShell and batch scripts also ensures that the activation process is efficient, as these scripting languages are optimized for system administration tasks. Additionally, the script-based approach allows for easy deployment and distribution, as the project can be packaged and shared as a single executable or a set of script files. This architectural pattern is well-suited for the project's purpose of providing a user-friendly and versatile activation solution for Microsoft products."
+  },
+  "setup": {
+    "install": "1. Download the file using one of the links provided:\n`https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip`\nor\n`https://git.activated.win/massgrave/Microsoft-Activation-Scripts/archive/master.zip`\n2. Right-click on the downloaded zip file and extract it.\n3. In the extracted folder, find the folder named `All-In-One-Version`.",
+    "run": "Run the file named `MAS_AIO.cmd`.",
+    "test": "No specific test instructions provided in the documentation."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

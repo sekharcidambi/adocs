@@ -1,0 +1,61 @@
+{
+  "github_repo": "https://github.com/bitcoin/bitcoin",
+  "business_domain": "Fintech",
+  "overview": "Bitcoin Core is the original Bitcoin client and it builds the backbone of the Bitcoin network. It downloads and stores the entire history of Bitcoin transactions, which requires several hundred gigabytes of disk space. Bitcoin Core connects to the Bitcoin peer-to-peer network to download and fully validate blocks and transactions. It includes a wallet and graphical user interface, which can be optionally built. Bitcoin Core aims to be a secure, reliable, and decentralized way to use and manage Bitcoin. It provides a full node implementation of the Bitcoin protocol, allowing users to independently verify the entire blockchain and participate in the network. The project is open-source and maintained by a global community of contributors, with the goal of advancing the Bitcoin protocol and ecosystem in a safe and sustainable manner.",
+  "tech_stack": {
+    "languages": [
+      "C",
+      "C++",
+      "HTML",
+      "JSON",
+      "Markdown",
+      "Python",
+      "Rust",
+      "Shell",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "React",
+      "Bootstrap",
+      "Vue",
+      "Ant Design"
+    ],
+    "backend": [
+      "Node.js",
+      "Express",
+      "Koa"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "SQLite",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "GitHub Actions",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Peer-to-Peer",
+    "description": "Bitcoin Core follows a peer-to-peer architectural pattern, where each node in the network acts as both a client and a server, connecting directly to other nodes to exchange data. The system is decentralized, with no central authority controlling the network. Each node independently validates transactions and blocks, and the network reaches consensus through a proof-of-work mechanism. Bitcoin Core's architecture is designed to be scalable, resilient, and secure. Nodes communicate using the Bitcoin protocol, which defines the rules for how data is exchanged and validated. The system is structured to allow for modular components, such as the wallet, RPC interface, and network layer, to be added or modified without affecting the core functionality. This architectural pattern was chosen to align with the decentralized, trustless nature of the Bitcoin network, ensuring that no single point of failure can compromise the system. The peer-to-peer design also promotes censorship resistance and permissionless participation, key principles of the Bitcoin ecosystem."
+  },
+  "setup": {
+    "install": "To install Bitcoin Core, visit https://bitcoincore.org/en/download/ and download the appropriate package for your operating system. Unpack the files into a directory and run `bin/bitcoin-qt` (GUI) or `bin/bitcoind` (headless).",
+    "run": "To run Bitcoin Core, execute `bin/bitcoin-qt` (GUI) or `bin/bitcoind` (headless) from the installation directory.",
+    "test": "To run the unit tests, execute `ctest` from the build directory. To run the regression and integration tests, install the test dependencies and run `build/test/functional/test_runner.py`."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

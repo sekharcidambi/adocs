@@ -1,0 +1,39 @@
+{
+  "github_repo": "https://github.com/meilisearch/meilisearch",
+  "business_domain": "Other",
+  "overview": "<p align=\"center\">",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "Markdown",
+      "Rust",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "See README for installation instructions",
+    "run": "See README for running instructions",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

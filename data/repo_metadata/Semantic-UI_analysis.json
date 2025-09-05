@@ -1,0 +1,49 @@
+{
+  "github_repo": "https://github.com/Semantic-Org/Semantic-UI",
+  "business_domain": "Other",
+  "overview": "Key Features",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown"
+    ],
+    "frontend": [
+      "Next.js",
+      "React"
+    ],
+    "backend": [
+      "Node.js",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "npm install semantic-ui  # Use themes, import build/watch tasks into your own gulpfile.",
+    "test": "npm install semantic-ui  # Use themes, import build/watch tasks into your own gulpfile.",
+    "run": "See README for running instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

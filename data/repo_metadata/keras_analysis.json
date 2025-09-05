@@ -1,0 +1,52 @@
+{
+  "github_repo": "https://github.com/keras-team/keras",
+  "business_domain": "Developer Tools",
+  "overview": "Keras 3 is a multi-backend deep learning framework that allows developers to build and train models for a wide range of applications, including computer vision, natural language processing, audio processing, timeseries forecasting, recommender systems, and more. It provides an accelerated model development experience by leveraging the high-level API and easy-to-debug runtimes like PyTorch or JAX eager execution. Keras 3 also delivers state-of-the-art performance by allowing users to pick the backend that is fastest for their model architecture, often JAX, which can provide speedups ranging from 20% to 350% compared to other frameworks. Additionally, Keras 3 supports datacenter-scale training, allowing developers to scale confidently from their laptops to large clusters of GPUs or TPUs. With nearly three million developers already using Keras, it has become a popular choice for both burgeoning startups and global enterprises looking to harness the power of deep learning.",
+  "tech_stack": {
+    "languages": [
+      "Markdown",
+      "Python",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [
+      "Ant Design",
+      "Next.js",
+      "Angular",
+      "React"
+    ],
+    "backend": [
+      "Node.js",
+      "Hapi",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Modular",
+    "description": "Keras 3 follows a modular architecture, where the core functionality is provided by a set of interoperable modules that can be used independently or in combination. The main modules include the high-level Keras API for building and training models, backend-specific implementations for TensorFlow, JAX, and PyTorch, and utility functions for data preprocessing, metrics, and other common deep learning tasks. This modular design allows Keras 3 to be backend-agnostic, enabling developers to write code that can run on top of different deep learning frameworks without being locked into a specific one. The architecture also supports extensibility, allowing users to create custom components, such as layers, models, and metrics, that can be used across different backends. This flexibility and modularity make Keras 3 a future-proof choice for deep learning development, as it avoids framework lock-in and allows developers to leverage the strengths of various deep learning libraries as needed."
+  },
+  "setup": {
+    "install": "pip install keras --upgrade",
+    "run": "python my_script.py",
+    "test": "pytest keras"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

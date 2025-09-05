@@ -1,0 +1,62 @@
+{
+  "github_repo": "https://github.com/nestjs/nest",
+  "business_domain": "Other",
+  "overview": "<p align=\"center\">",
+  "tech_stack": {
+    "languages": [
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Shell",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "Bootstrap"
+    ],
+    "backend": [
+      "Node.js",
+      "NestJS",
+      "Express",
+      "Spring"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "Redis",
+      "MongoDB",
+      "MySQL",
+      "PostgreSQL"
+    ],
+    "devops": [
+      "Docker",
+      "TypeScript",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Mvc",
+    "detected_patterns": [
+      "Mvc",
+      "Microservices",
+      "Feature_Based"
+    ],
+    "description": "The project uses a Mvc architectural pattern."
+  },
+  "setup": {
+    "install": "See README for installation instructions",
+    "run": "See README for running instructions",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

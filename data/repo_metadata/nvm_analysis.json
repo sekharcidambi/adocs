@@ -1,0 +1,43 @@
+{
+  "github_repo": "https://github.com/nvm-sh/nvm",
+  "business_domain": "Developer Tools",
+  "overview": "nvm (Node Version Manager) is an open-source command-line tool that allows developers to easily install, manage, and switch between multiple versions of Node.js on their local development machines. It provides a simple and efficient way to work with different Node.js versions, which is particularly useful for developers who need to test and debug their applications across various Node.js environments. nvm supports a wide range of operating systems, including macOS, Linux, and Windows, making it a cross-platform solution. It simplifies the process of installing and managing Node.js, allowing developers to quickly switch between versions without the need to manually install or uninstall them. This helps ensure compatibility and consistency across different development environments, enabling developers to test their applications against specific Node.js versions and ensure their code works as expected.",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [
+      "Node.js"
+    ],
+    "databases": [],
+    "devops": [
+      "Travis CI",
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Command-line Tool",
+    "description": "nvm is designed as a command-line tool that interacts with the local file system and environment variables to manage Node.js installations. The architecture follows a simple, lightweight, and modular design, with the core functionality implemented in a Bash script. This script handles the installation, management, and switching of Node.js versions, as well as providing utility functions for querying and manipulating the installed versions. The script is self-contained and does not require any external dependencies, making it easy to install and use across different operating systems. The modular design allows for easy extensibility, with the ability to add new features or modify existing ones without affecting the core functionality. This architectural pattern is well-suited for a command-line tool like nvm, as it provides a straightforward and efficient way to manage the target runtime environment (Node.js) without the need for a complex, heavyweight application."
+  },
+  "setup": {
+    "install": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash",
+    "run": "nvm use <version>",
+    "test": "nvm --version"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

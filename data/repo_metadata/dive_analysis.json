@@ -1,0 +1,38 @@
+{
+  "github_repo": "https://github.com/wagoodman/dive",
+  "business_domain": "Developer Tools",
+  "overview": "Dive is a powerful tool designed to help developers and DevOps engineers explore and analyze Docker images. It provides a comprehensive breakdown of the contents of each layer within a Docker image, allowing users to understand the composition of their images and identify ways to optimize them. Dive's key features include visualizing the file tree, indicating changes between layers, estimating image efficiency, and providing quick build/analysis cycles. This tool is particularly useful for developers who want to reduce the size of their Docker images, as it helps them identify and remove unnecessary files or layers. Dive supports multiple image sources, including Docker and Podman, and can be integrated into CI/CD pipelines to ensure image efficiency is maintained throughout the development process. With its intuitive user interface and extensive documentation, Dive has become a valuable asset in the Docker ecosystem, empowering developers to build more efficient and optimized container images.",
+  "tech_stack": {
+    "languages": [
+      "Go",
+      "Markdown",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Command-line Tool",
+    "description": "Dive is designed as a command-line tool that interacts with Docker or Podman container engines to analyze Docker images. The architecture follows a typical command-line tool pattern, where the user invokes the `dive` command and provides the necessary arguments, such as the Docker image to analyze. The tool then fetches the specified image, parses its layers and file contents, and presents the information in a user-friendly, interactive interface. The architecture is designed to be modular, allowing for the addition of support for new container engines or image sources in the future. The tool also includes a configuration system that allows users to customize various aspects of the user interface and analysis, such as keybindings, file filtering, and CI integration. The overall architecture prioritizes ease of use, flexibility, and extensibility, making Dive a versatile tool for Docker image optimization and analysis."
+  },
+  "setup": {
+    "install": "DIVE_VERSION=$(curl -sL \"https://api.github.com/repos/wagoodman/dive/releases/latest\" | grep '\"tag_name\":' | sed -E 's/.*\"v([^\"]+)\".*/\\1/') && curl -fOL \"https://github.com/wagoodman/dive/releases/download/v${DIVE_VERSION}/dive_${DIVE_VERSION}_linux_amd64.deb\" && sudo apt install ./dive_${DIVE_VERSION}_linux_amd64.deb",
+    "run": "dive <your-image-tag>",
+    "test": "CI=true dive <your-image>"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

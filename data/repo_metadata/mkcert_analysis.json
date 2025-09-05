@@ -1,0 +1,37 @@
+{
+  "github_repo": "https://github.com/FiloSottile/mkcert",
+  "business_domain": "Developer Tools",
+  "overview": "mkcert is a simple tool for making locally-trusted development certificates. It automatically creates and installs a local Certificate Authority (CA) in the system root store, and generates locally-trusted certificates. This solves the problem of using certificates from real CAs for development, which can be dangerous or impossible for hosts like `example.test`, `localhost`, or `127.0.0.1`. Self-signed certificates cause trust errors, but managing your own CA usually involves complex commands, specialized knowledge, and manual steps. mkcert streamlines this process, requiring no configuration, and generates certificates that are trusted by the local system, major browsers, and Java. It does not automatically configure servers to use the certificates, leaving that up to the user.",
+  "tech_stack": {
+    "languages": [
+      "Go",
+      "Markdown"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Command-line Tool",
+    "description": "mkcert is a standalone command-line tool written in Go. It operates by generating a local Certificate Authority (CA) and installing it in the system's trusted root store. This allows mkcert to then generate locally-trusted SSL/TLS certificates for development use. The tool is designed to be simple and easy to use, with a focus on automating the process of managing a local CA and generating certificates. It supports multiple target platforms and root stores, including macOS, Windows, Linux, Firefox, Chrome, and Java. The architectural decisions, such as using a command-line interface and generating a local CA, make mkcert well-suited for its primary purpose of simplifying the process of creating trusted development certificates without the complexity of working with real CAs."
+  },
+  "setup": {
+    "install": "brew install mkcert",
+    "run": "mkcert -install",
+    "test": "mkcert example.com \"*.example.com\" example.test localhost 127.0.0.1 ::1"
+  },
+  "metadata": {
+    "stars": 56351,
+    "forks": 2955,
+    "open_issues": 161,
+    "created_at": "2018-06-25T05:33:03Z",
+    "updated_at": "2025-09-04T01:26:53Z",
+    "license": "BSD 3-Clause \"New\" or \"Revised\" License",
+    "homepage": "https://mkcert.dev",
+    "status": "Active"
+  }
+}

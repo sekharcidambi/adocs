@@ -1,0 +1,61 @@
+{
+  "github_repo": "https://github.com/facebook/docusaurus",
+  "business_domain": "Developer Tools",
+  "overview": "Docusaurus is an open-source project for building, deploying, and maintaining websites for open-source projects. It is designed to be simple to set up and get running quickly, with features like localization support, customizability, and a built-in blog. Docusaurus aims to handle the website build process so project maintainers can focus on their content and code. It provides a set of key pages and sections out-of-the-box, including a home page, documentation section, and blog, while also allowing for extensive customization to ensure a unique site. Docusaurus is used by many open-source projects at Meta and is intended to help scale and support the documentation needs of these projects. The project is open to contributions from the community, with a focus on making it easy for new contributors to get involved through beginner-friendly issues and a welcoming community.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Shell",
+      "TypeScript",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Next.js",
+      "Vue",
+      "Bootstrap",
+      "Gatsby",
+      "Material-UI"
+    ],
+    "backend": [
+      "Express",
+      "Node.js",
+      "ASP.NET",
+      "Ruby on Rails"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "DynamoDB",
+      "MongoDB"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Component-based",
+    "description": "Docusaurus follows a component-based architecture, where the application is built up from reusable UI components. This allows for a high degree of customizability, as site owners can compose pages from these components and style them to match their branding and design. The core Docusaurus framework provides a set of base components that handle common website functionality, such as the sidebar, navbar, and blog. Site owners can then extend or override these components as needed. The component-based approach also enables features like live reloading and hot module replacement during development, as individual components can be updated without a full page refresh. This architecture decision was made to prioritize flexibility and ease of customization, as Docusaurus is designed to support a wide variety of open-source projects with different needs and design requirements. The modular, composable nature of the components allows site owners to quickly build and iterate on their documentation websites."
+  },
+  "setup": {
+    "install": "npm init docusaurus@latest",
+    "run": "yarn workspace website start",
+    "test": "yarn test"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

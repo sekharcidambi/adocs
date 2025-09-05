@@ -1,0 +1,36 @@
+{
+  "github_repo": "https://github.com/Developer-Y/cs-video-courses",
+  "business_domain": "Developer Tools",
+  "overview": "The cs-video-courses repository is a comprehensive collection of high-quality computer science video courses from various Massive Open Online Course (MOOC) platforms. The project aims to provide a centralized resource for students, professionals, and lifelong learners to access a wide range of computer science topics, including algorithms, data structures, programming languages, software engineering, and more. The repository is curated to ensure that only the most comprehensive and detailed courses are included, focusing on those that can cover a subject or topic in-depth, rather than shorter, more superficial offerings. The goal is to create a valuable resource for the computer science community, making it easier to discover and access high-quality educational content from reputable sources.",
+  "tech_stack": {
+    "languages": [
+      "Markdown"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Repository",
+    "description": "The cs-video-courses repository follows a simple repository-based architectural pattern. It is a collection of links and metadata for various computer science video courses hosted on different MOOC platforms and video-sharing sites. The repository is organized into sections and subsections based on the specific computer science topics covered, such as Algorithms, Data Structures, Programming Languages, and Software Engineering. This structure allows users to easily navigate and discover relevant courses based on their interests and learning needs. The repository is maintained by a community of contributors who follow a set of guidelines to ensure the quality and relevance of the included courses. The decentralized nature of the repository, with courses hosted on external platforms, allows for scalability and flexibility, as new courses can be easily added without the need for a complex backend infrastructure."
+  },
+  "setup": {
+    "install": "No installation required. Users can access the repository through the GitHub URL.",
+    "run": "No application to run. Users can browse and access the video courses directly from the linked platforms.",
+    "test": "No tests available. This is a curated repository of external video courses."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

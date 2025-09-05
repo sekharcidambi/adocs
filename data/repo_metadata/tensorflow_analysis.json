@@ -1,0 +1,72 @@
+{
+  "github_repo": "https://github.com/tensorflow/tensorflow",
+  "business_domain": "Other",
+  "overview": "<div align=\"center\">",
+  "tech_stack": {
+    "languages": [
+      "C",
+      "C#",
+      "C++",
+      "CSS",
+      "Go",
+      "HTML",
+      "JSON",
+      "Java",
+      "MATLAB",
+      "Markdown",
+      "Python",
+      "Shell",
+      "Swift",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "Angular",
+      "Ant Design",
+      "React",
+      "Bootstrap"
+    ],
+    "backend": [
+      "Express",
+      "Node.js",
+      "Hapi",
+      "Flask",
+      "Spring"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis",
+      "Cassandra",
+      "SQLite"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Mvc",
+    "detected_patterns": [
+      "Mvc",
+      "Microservices"
+    ],
+    "description": "The project uses a Mvc architectural pattern."
+  },
+  "setup": {
+    "install": "$ pip install tensorflow",
+    "test": "$ python",
+    "run": "See README for running instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

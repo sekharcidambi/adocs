@@ -1,0 +1,43 @@
+{
+  "github_repo": "https://github.com/etcd-io/etcd",
+  "business_domain": "AI/ML",
+  "overview": "**Note**: The main branch may be in an *unstable or even broken state* during development. For stable versions, see [releases][github-release].",
+  "tech_stack": {
+    "languages": [
+      "Go",
+      "JSON",
+      "Markdown",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "detected_patterns": [
+      "Microservices"
+    ],
+    "description": "The project is built using a Microservices architecture with separate services."
+  },
+  "setup": {
+    "install": "/tmp/etcd-download-test/etcd",
+    "run": "/tmp/etcd-download-test/etcd",
+    "test": "/tmp/etcd-download-test/etcd"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

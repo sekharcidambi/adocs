@@ -1,0 +1,57 @@
+{
+  "github_repo": "https://github.com/marktext/marktext",
+  "business_domain": "Developer Tools",
+  "overview": "MarkText is a next-generation, open-source Markdown editor that is focused on speed and usability. It provides a simple and elegant interface for writing and editing Markdown documents, with a real-time preview (WYSIWYG) feature. MarkText supports the CommonMark, GitHub Flavored Markdown, and Pandoc Markdown specifications, as well as various Markdown extensions like math expressions, front matter, and emojis. It aims to offer a distraction-free writing experience with features like paragraph and inline style shortcuts, output to HTML and PDF, and multiple editing modes like Source Code, Typewriter, and Focus. MarkText is available for Linux, macOS, and Windows platforms, and is constantly being improved based on user feedback and contributions from the open-source community.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "XML",
+      "YAML"
+    ],
+    "frontend": [
+      "Vue",
+      "React",
+      "Next.js",
+      "Bootstrap"
+    ],
+    "backend": [
+      "Node.js",
+      "Ruby on Rails",
+      "Django",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "devops": [
+      "Docker",
+      "Babel",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Electron-based, Renderer-Main Process Architecture",
+    "description": "MarkText is built using the Electron framework, which allows it to be a desktop application that runs on top of web technologies like HTML, CSS, and JavaScript. The application follows a Renderer-Main Process architecture, where the Main Process is responsible for managing the application lifecycle, handling native OS interactions, and controlling the Editor Windows. The Renderer Process, on the other hand, is responsible for the user interface and the core editing functionality. The Renderer Process hosts the Muya module, which is the heart of MarkText and provides the real-time preview and Markdown editing capabilities. Muya is designed to be a single-threaded, asynchronous module that uses a virtual DOM to efficiently render the Markdown content. This architectural pattern was chosen to leverage the strengths of Electron, which allows for building cross-platform desktop applications using web technologies, while also providing a clear separation of concerns between the Main and Renderer processes. This separation ensures that the core editing functionality remains responsive and performant, while the Main Process handles the more resource-intensive native OS interactions."
+  },
+  "setup": {
+    "install": "For macOS, you can download the latest `marktext-%version%.dmg` from the release page or install using Homebrew Cask: `brew install --cask mark-text`. For Windows, download and run the `marktext-setup-%version%.exe` installer. For Linux, follow the instructions in the [Linux installation guide](docs/LINUX.md).",
+    "run": "After installation, you can launch MarkText by searching for it in your application launcher or by running the `marktext` command in your terminal.",
+    "test": "To run the tests, execute `yarn run test` in the project directory."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

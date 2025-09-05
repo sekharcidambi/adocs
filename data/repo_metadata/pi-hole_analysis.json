@@ -1,0 +1,41 @@
+{
+  "github_repo": "https://github.com/pi-hole/pi-hole",
+  "business_domain": "Developer Tools",
+  "overview": "Pi-hole is an open-source network-wide ad blocker that protects your devices from unwanted content without installing any client-side software. It acts as a DNS sinkhole, intercepting DNS requests and blocking ads, trackers, and other unwanted content at the network level. Pi-hole is easy to install, lightweight, and scalable, capable of handling hundreds of millions of queries. It provides a robust command-line interface and an optional web-based dashboard for managing and configuring the ad blocker. Pi-hole is designed to be versatile, with features like built-in DHCP server support and the ability to block ads on non-browser devices like mobile apps and smart TVs. The project is maintained by a team of volunteer developers and relies on user support to cover ongoing costs and continue innovating.",
+  "tech_stack": {
+    "languages": [
+      "Markdown",
+      "Python",
+      "SQL",
+      "Shell"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "description": "The Pi-hole architecture follows a microservices pattern, with the core functionality split across several components. The main components are: 1) FTLDNS, a lightweight, purpose-built daemon that provides the statistics and API for the web interface; 2) the command-line interface (CLI) that allows for full administration of Pi-hole without the web interface; and 3) the optional web-based dashboard that provides a user-friendly GUI for managing and configuring Pi-hole. These components are designed to be modular and loosely coupled, allowing for easy maintenance, scalability, and extensibility. The microservices architecture also enables Pi-hole to be deployed in a variety of environments, from a single Raspberry Pi to server-grade hardware, depending on the required scale and performance. This modular design, along with the use of open-source technologies, makes Pi-hole a flexible and adaptable solution for network-wide ad blocking."
+  },
+  "setup": {
+    "install": "curl -sSL https://install.pi-hole.net | bash",
+    "run": "sudo bash basic-install.sh",
+    "test": "pihole -t"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

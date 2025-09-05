@@ -1,0 +1,48 @@
+{
+  "github_repo": "https://github.com/jgraph/drawio-desktop",
+  "business_domain": "Developer Tools",
+  "overview": "drawio-desktop is a diagramming desktop application based on Electron that wraps the core draw.io editor. It provides a standalone, offline-capable diagramming tool for users who need to create and edit diagrams without relying on an internet connection. The application is designed to be completely isolated from the internet, apart from the update process, which checks GitHub for newer versions and downloads them from an AWS S3 bucket. The primary objectives of drawio-desktop are security and isolation, ensuring that no diagram data or usage analytics are ever sent externally. The application is available for free under the Apache 2.0 license, allowing users to utilize it for any purpose without modifying the code.",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL"
+    ],
+    "devops": [
+      "Travis CI",
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Electron",
+    "description": "The drawio-desktop application follows the Electron architectural pattern, which allows the development of desktop applications using web technologies such as HTML, CSS, and JavaScript. The Electron framework provides a runtime environment that combines Chromium for the rendering engine and Node.js for the backend, enabling the creation of cross-platform desktop applications. In the case of drawio-desktop, the core draw.io editor is integrated as a submodule, and the Electron runtime is used to package and distribute the application. This approach allows the drawio-desktop project to leverage the existing draw.io codebase and functionality while providing a standalone, desktop-based experience. The Electron pattern was chosen for its ability to deliver a native-like desktop application with the benefits of web-based development, as well as its strong security features, which align with the project's primary objectives of isolation and security."
+  },
+  "setup": {
+    "install": "git clone --recursive https://github.com/jgraph/drawio-desktop.git",
+    "run": "npm start",
+    "test": "No specific test command provided in the documentation"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

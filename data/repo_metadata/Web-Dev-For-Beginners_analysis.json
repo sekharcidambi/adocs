@@ -1,0 +1,53 @@
+{
+  "github_repo": "https://github.com/microsoft/Web-Dev-For-Beginners",
+  "business_domain": "Education",
+  "overview": "The Web-Dev-For-Beginners repository is a comprehensive 12-week curriculum created by Microsoft Cloud Advocates to teach the fundamentals of web development. The curriculum covers JavaScript, CSS, and HTML through 24 hands-on lessons and projects, including building a terrarium, browser extension, typing game, and space game. The goal is to provide a structured learning path for beginners to enhance their skills and knowledge retention through project-based pedagogy. The curriculum includes pre-lecture quizzes, written lessons, knowledge checks, challenges, and post-lecture quizzes to engage learners and assess their understanding. The repository also supports multi-language translations to make the content accessible to a global audience. Additionally, the project encourages collaboration and community engagement through a discussion forum where learners can connect with peers and experts to work on the projects together.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "Vue"
+    ],
+    "frontend": [
+      "Next.js",
+      "Vue",
+      "React"
+    ],
+    "backend": [
+      "Node.js",
+      "Flask",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Monolith",
+    "description": "The Web-Dev-For-Beginners project follows a monolithic architecture, where all the lessons, projects, and supporting materials are contained within a single repository. This approach simplifies the overall structure and makes it easier for learners to navigate and access the complete curriculum. The monolithic design allows for seamless integration of the various components, such as the written lessons, quizzes, and project guides, ensuring a cohesive learning experience. This architecture was chosen to provide a self-contained and easy-to-use resource for beginners, without the complexity of a distributed or microservices-based system. The monolithic structure also facilitates the translation and localization of the content, as all the necessary files are centralized. This architectural decision aligns with the project's goal of delivering a comprehensive and accessible web development curriculum for beginners."
+  },
+  "setup": {
+    "install": "To get started, you can either fork the repository or clone it using the following command:\n\n`git clone https://github.com/microsoft/Web-Dev-For-Beginners.git`",
+    "run": "The curriculum can be run locally using a text editor like Visual Studio Code or in a browser-based Codespace environment. No additional setup is required beyond cloning the repository.",
+    "test": "The project does not include automated tests, but learners can assess their understanding through the pre-lecture quizzes, knowledge checks, and post-lecture quizzes provided in the curriculum."
+  },
+  "metadata": {
+    "stars": 91689,
+    "forks": 13980,
+    "open_issues": 41,
+    "created_at": "2020-11-10T02:44:00Z",
+    "updated_at": "2025-09-04T05:02:44Z",
+    "license": "MIT License",
+    "homepage": "",
+    "status": "Active"
+  }
+}

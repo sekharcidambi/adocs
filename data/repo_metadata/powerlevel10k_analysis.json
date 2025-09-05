@@ -1,0 +1,37 @@
+{
+  "github_repo": "https://github.com/romkatv/powerlevel10k",
+  "business_domain": "Gaming",
+  "overview": "https://gitter.im/powerlevel10k/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)",
+  "tech_stack": {
+    "languages": [
+      "C++",
+      "Markdown",
+      "Shell"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "zsh\n# Show prompt segment \"kubecontext\" only when the command you are typing invokes one of these tools.\ntypeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens'",
+    "run": "zsh\n# Show prompt segment \"kubecontext\" only when the command you are typing invokes one of these tools.\ntypeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens'",
+    "test": "zsh\n# Show prompt segment \"kubecontext\" only when the command you are typing invokes one of these tools.\ntypeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens'"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

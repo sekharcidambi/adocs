@@ -1,0 +1,41 @@
+{
+  "github_repo": "https://github.com/ossu/computer-science",
+  "business_domain": "Education",
+  "overview": "<div align=\"center\" style=\"text-align: center\">",
+  "tech_stack": {
+    "languages": [
+      "HTML",
+      "Markdown",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Component_Based",
+    "detected_patterns": [
+      "Component_Based"
+    ],
+    "description": "The project uses a Component_Based architectural pattern."
+  },
+  "setup": {
+    "install": "See README for installation instructions",
+    "run": "See README for running instructions",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 191451,
+    "forks": 23907,
+    "open_issues": 15,
+    "created_at": "2014-05-04T00:18:39Z",
+    "updated_at": "2025-09-04T04:59:30Z",
+    "license": "MIT License",
+    "homepage": "",
+    "status": "Active"
+  }
+}

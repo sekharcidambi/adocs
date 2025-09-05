@@ -1,0 +1,66 @@
+{
+  "github_repo": "https://github.com/ventoy/Ventoy",
+  "business_domain": "Developer Tools",
+  "overview": "Ventoy is an open-source tool that allows users to create bootable USB drives for a wide range of operating systems, including Windows, Linux, Unix, ChromeOS, and more. With Ventoy, users can simply copy ISO/WIM/IMG/VHD(x)/EFI files to the USB drive, and Ventoy will provide a boot menu to select and boot the desired image. This eliminates the need to format the disk repeatedly, as Ventoy supports both MBR and GPT partition styles. Ventoy supports a variety of file systems, including FAT32, exFAT, NTFS, UDF, XFS, and Ext2/3/4, and can handle ISO files larger than 4GB. The project also includes features like password protection, Linux persistence, auto-installation support, and a highly customizable theme and menu system.",
+  "tech_stack": {
+    "languages": [
+      "Assembly",
+      "C",
+      "C++",
+      "CSS",
+      "DenizenScript",
+      "Dockerfile",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Linker Script",
+      "M4",
+      "Makefile",
+      "Markdown",
+      "Perl",
+      "Python",
+      "QMake",
+      "Roff",
+      "SCSS",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "Bootstrap"
+    ],
+    "backend": [
+      "Node.js",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "Redis",
+      "PostgreSQL"
+    ],
+    "devops": [
+      "Docker",
+      "GitHub Actions",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Modular",
+    "description": "Ventoy follows a modular architecture, with various components responsible for different functionalities. The core Ventoy component handles the boot menu, file browsing, and image selection, while other modules provide specialized capabilities like secure boot support, auto-installation, and persistence. This modular design allows Ventoy to be easily extended and customized through a plugin framework, enabling developers to add new features or modify existing ones without affecting the core functionality. The architecture also promotes scalability, as individual components can be updated or replaced independently, and the system can adapt to support new hardware, file formats, or operating systems as they emerge. The modular approach also simplifies the build process, allowing developers to compile and package only the necessary components for a specific use case or target platform."
+  },
+  "setup": {
+    "install": "See https://www.ventoy.net/en/doc_start.html for detailed installation instructions.",
+    "run": "To use Ventoy, simply copy the desired ISO/WIM/IMG/VHD(x)/EFI files to the Ventoy USB drive, and the Ventoy boot menu will appear, allowing you to select and boot the image.",
+    "test": "Ventoy provides a comprehensive list of tested ISO files at https://www.ventoy.net/en/isolist.html, which can be used to verify the functionality of the tool."
+  },
+  "metadata": {
+    "stars": 70384,
+    "forks": 4465,
+    "open_issues": 956,
+    "created_at": "2020-03-10T15:19:19Z",
+    "updated_at": "2025-09-04T02:51:11Z",
+    "license": "GNU General Public License v3.0",
+    "homepage": "https://www.ventoy.net",
+    "status": "Active"
+  }
+}

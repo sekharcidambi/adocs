@@ -1,0 +1,53 @@
+{
+  "github_repo": "https://github.com/nvbn/thefuck",
+  "business_domain": "Developer Tools",
+  "overview": "The Fuck is a magnificent open-source command-line tool that automatically corrects errors in previous console commands. It is inspired by a tweet and designed to save time and frustration by fixing common mistakes, such as mistyped commands, incorrect arguments, and missing dependencies. The Fuck analyzes the previous command, determines the appropriate correction, and executes the fixed command, allowing users to quickly recover from errors without having to retype the entire command. It supports a wide range of programming languages, frameworks, and tools, including Git, Docker, Pip, Gradle, and many others. The Fuck is highly customizable, with the ability to create custom rules, and has an experimental instant mode for even faster corrections. It is a valuable productivity tool for developers, system administrators, and anyone who frequently uses the command line.",
+  "tech_stack": {
+    "languages": [
+      "Markdown",
+      "Python",
+      "Shell",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "React",
+      "Angular"
+    ],
+    "backend": [
+      "Express",
+      "Node.js",
+      "Django",
+      "Ruby on Rails"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "Redis",
+      "PostgreSQL",
+      "DynamoDB"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Rule-based",
+    "description": "The Fuck follows a rule-based architectural pattern, where it uses a set of predefined rules to analyze the previous command and determine the appropriate correction. Each rule is a Python function that checks for a specific type of error and generates the corrected command. The rules are organized into different categories, such as Git, Docker, and Python, to handle a wide range of command-line tools and frameworks. When a user runs the 'fuck' command, The Fuck iterates through the available rules, applies them to the previous command, and selects the most suitable correction to execute. This modular, rule-based design allows The Fuck to be easily extended with new rules to support additional tools and use cases. The architecture also includes features like automatic rule selection, confirmation prompts, and recursive execution, making The Fuck a flexible and powerful command-line tool."
+  },
+  "setup": {
+    "install": "pip install thefuck",
+    "run": "eval $(thefuck --alias)",
+    "test": "pytest"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "github_repo": "https://github.com/Chalarangelo/30-seconds-of-code",
+  "business_domain": "Developer Tools",
+  "overview": "30 seconds of code is a community-driven project that provides a collection of reusable code snippets to help developers level up their skills. The project aims to offer a curated library of concise, well-explained, and easy-to-understand code examples across various programming languages and frameworks. The website allows users to search, browse, and explore these code snippets, which cover a wide range of topics, from basic JavaScript functions to advanced data structures and algorithms. The project is maintained by Angelos Chalaris and is powered by Netlify, Astro, and GitHub. The content is licensed under the CC-BY-4.0 License, and the website's design and photography are provided by Unsplash. While new content contributions are not accepted at this time, users can report issues or suggest improvements by opening GitHub issues.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Next.js"
+    ],
+    "backend": [
+      "Express",
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL"
+    ],
+    "devops": [
+      "Docker",
+      "ESLint",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Component-based",
+    "description": "The 30 seconds of code project follows a component-based architecture, where the website is built using the Astro static site generator. Astro is a modern, opinionated web framework that allows developers to create fast, content-focused websites and applications using a component-based approach. In this architecture, the website is composed of reusable components, such as the header, footer, and individual code snippet cards, which can be easily composed and customized to create the final web pages. This component-based approach promotes modularity, maintainability, and scalability, as changes to one component do not affect the rest of the website. Additionally, Astro's server-side rendering (SSR) capabilities and support for static site generation (SSG) enable the project to deliver a fast and efficient user experience, which is crucial for a website focused on providing code snippets and educational content. The choice of this architectural pattern aligns well with the project's goals of creating a curated, content-rich website that is easy to navigate and maintain."
+  },
+  "setup": {
+    "install": "No installation instructions provided in the documentation.",
+    "run": "No run/start instructions provided in the documentation.",
+    "test": "No test instructions provided in the documentation."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

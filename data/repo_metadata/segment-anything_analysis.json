@@ -1,0 +1,51 @@
+{
+  "github_repo": "https://github.com/facebookresearch/segment-anything",
+  "business_domain": "Other",
+  "overview": "Please check out our new release on **Segment Anything Model 2 (SAM 2)**.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "Shell",
+      "TypeScript"
+    ],
+    "frontend": [
+      "React",
+      "Tailwind CSS",
+      "Next.js"
+    ],
+    "backend": [
+      "Node.js"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "pip install git+https://github.com/facebookresearch/segment-anything.git",
+    "run": "pip install git+https://github.com/facebookresearch/segment-anything.git",
+    "test": "pip install git+https://github.com/facebookresearch/segment-anything.git"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

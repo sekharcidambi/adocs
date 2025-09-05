@@ -1,0 +1,55 @@
+{
+  "github_repo": "https://github.com/fatedier/frp",
+  "business_domain": "Developer Tools",
+  "overview": "frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. It can be used to proxy TCP/UDP/HTTP/HTTPS traffic. The main purpose of frp is to establish a secure connection from a public network to a local network. It supports various types of proxy protocols, including TCP, UDP, HTTP, and HTTPS. frp is designed to be highly configurable and extensible, with features like load balancing, authentication, and logging. It is particularly useful for developers, system administrators, and businesses that need to access local services from the internet, such as web servers, SSH servers, or internal APIs. frp provides a secure and reliable way to expose local services without compromising network security, making it a valuable tool for a wide range of applications.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "Go",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Shell",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "Vue",
+      "React",
+      "Next.js"
+    ],
+    "backend": [
+      "Spring",
+      "Node.js",
+      "Express"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Client-Server",
+    "description": "The frp system follows a client-server architectural pattern. The frp server (frps) runs on a public-facing server and listens for incoming connections from frp clients (frpc). The frp clients are responsible for establishing a secure connection to the frp server and forwarding local traffic through the proxy. The frp server handles the incoming connections, manages the proxy sessions, and routes the traffic between the client and the local service. This architecture allows for a flexible and scalable deployment, as multiple frp clients can connect to a single frp server, enabling access to various local services from the public network. The client-server design also provides a clear separation of concerns, with the server handling the public-facing aspects of the system and the clients managing the local network connections. This architectural pattern is well-suited for the frp project, as it enables secure and reliable remote access to local services, while maintaining a clear separation of responsibilities between the client and server components."
+  },
+  "setup": {
+    "install": "Download the appropriate binary for your platform from the GitHub releases page and extract it. No additional installation is required.",
+    "run": "For the server (frps), run the following command: ./frps -c frps.toml\nFor the client (frpc), run the following command: ./frpc -c frpc.toml",
+    "test": "To test the setup, you can use the built-in HTTP proxy example. In the frpc.toml file, add the following configuration:\n\n[http]\ntype = http\nlocal_port = 8080\ncustom_domains = test.frp.com\n\nThen, run frpc and access the local service at http://test.frp.com."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

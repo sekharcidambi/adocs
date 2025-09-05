@@ -1,0 +1,43 @@
+{
+  "github_repo": "https://github.com/mark3labs/mcp-go",
+  "business_domain": "Other",
+  "overview": "<!-- omit in toc -->",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "Go",
+      "JSON",
+      "Markdown",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "GitHub Actions",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "go get github.com/mark3labs/mcp-go",
+    "run": "That's it!\n\nMCP Go handles all the complex protocol details and server management, so you can focus on building great tools. It aims to be high-level and easy to use.\n\n### Key features:\n* **Fast**: High-level interface means less code and faster development\n* **Simple**: Build MCP servers with minimal boilerplate\n* **Complete***: MCP Go aims to provide a full implementation of the core MCP specification\n\n(\\*emphasis on *aims*)\n\n🚨 🚧 🏗️ *MCP Go is under active development, as is the MCP specification itself. Core features are working but some advanced capabilities are still in progress.* \n\n\n<!-- omit in toc -->\n## Table of Contents\n\n- [Installation](#installation)\n- [Quickstart](#quickstart)\n- [What is MCP?](#what-is-mcp)\n- [Core Concepts](#core-concepts)\n  - [Server](#server)\n  - [Resources](#resources)\n  - [Tools](#tools)\n  - [Prompts](#prompts)\n- [Examples](#examples)\n- [Extras](#extras)\n  - [Transports](#transports)\n  - [Session Management](#session-management)\n    - [Basic Session Handling](#basic-session-handling)\n    - [Per-Session Tools](#per-session-tools)\n    - [Tool Filtering](#tool-filtering)\n    - [Working with Context](#working-with-context)\n  - [Request Hooks](#request-hooks)\n  - [Tool Handler Middleware](#tool-handler-middleware)\n  - [Regenerating Server Code](#regenerating-server-code)\n\n## Installation",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

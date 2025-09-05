@@ -1,0 +1,43 @@
+{
+  "github_repo": "https://github.com/CorentinJ/Real-Time-Voice-Cloning",
+  "business_domain": "Education",
+  "overview": "This repository is an implementation of [Transfer Learning from Speaker Verification to",
+  "tech_stack": {
+    "languages": [
+      "Markdown",
+      "Python"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [
+      "Express",
+      "Hapi"
+    ],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "install": "See README for installation instructions",
+    "run": "See README for running instructions",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

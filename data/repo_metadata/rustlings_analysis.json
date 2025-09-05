@@ -1,0 +1,41 @@
+{
+  "github_repo": "https://github.com/rust-lang/rustlings",
+  "business_domain": "Developer Tools",
+  "overview": "Rustlings is a collection of small exercises to get you used to reading and writing Rust code. It is designed to be used in parallel with reading the official Rust book, providing a hands-on, interactive way to learn the Rust programming language. The exercises cover a wide range of Rust concepts, from basic syntax and data types to more advanced topics like ownership, borrowing, and error handling. By completing these exercises, users can build a solid foundation in Rust and develop the skills necessary to write robust, efficient, and safe Rust applications. Rustlings is an open-source project maintained by the Rust community, and it serves as a valuable resource for both beginner and experienced Rust developers looking to improve their coding skills.",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "Markdown",
+      "Rust",
+      "Shell"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Component-based",
+    "description": "The Rustlings project follows a component-based architecture, where each exercise is a self-contained module that can be run and tested independently. The project is organized into a set of directories, with each directory representing a specific topic or concept in Rust. Within each topic directory, there are individual exercise files that contain the exercise instructions, starter code, and test cases. This modular structure allows for easy addition, modification, and testing of new exercises without affecting the rest of the project. The project also includes a command-line interface (CLI) tool that provides functionality for running, testing, and managing the exercises. This CLI tool acts as the central entry point for users, providing a seamless and user-friendly experience. The component-based architecture of Rustlings promotes scalability, maintainability, and flexibility, making it easy to expand the project with new exercises and features as the Rust language evolves."
+  },
+  "setup": {
+    "install": "To install Rustlings, follow the instructions on the project website: https://rustlings.rust-lang.org",
+    "run": "Once installed, you can run the Rustlings exercises using the command: `rustlings run`",
+    "test": "To run the tests for a specific exercise, use the command: `rustlings run <exercise_name>`"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

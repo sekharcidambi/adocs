@@ -1,0 +1,38 @@
+{
+  "github_repo": "https://github.com/thedaviddias/Front-End-Checklist",
+  "business_domain": "Other",
+  "overview": "The Front-End Checklist is an exhaustive list of all elements you need to have / to test before launching your website /",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "description": "Architectural pattern not clearly identified."
+  },
+  "setup": {
+    "run": "html\n<!doctype html><!-- HTML5 -->",
+    "test": "html\n<!doctype html><!-- HTML5 -->",
+    "install": "See README for installation instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

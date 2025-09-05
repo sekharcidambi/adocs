@@ -1,0 +1,53 @@
+{
+  "github_repo": "https://github.com/obsproject/obs-studio",
+  "business_domain": "Other",
+  "overview": "OBS Studio <https://obsproject.com>",
+  "tech_stack": {
+    "languages": [
+      "C",
+      "C++",
+      "CSS",
+      "HTML",
+      "JSON",
+      "MATLAB",
+      "Markdown",
+      "Python",
+      "Shell",
+      "Swift",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js"
+    ],
+    "backend": [],
+    "databases": [
+      "Elasticsearch"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Microservices",
+    "detected_patterns": [
+      "Microservices"
+    ],
+    "description": "The project is built using a Microservices architecture with separate services."
+  },
+  "setup": {
+    "install": "See README for installation instructions",
+    "run": "See README for running instructions",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

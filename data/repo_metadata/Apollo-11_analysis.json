@@ -1,0 +1,39 @@
+{
+  "github_repo": "https://github.com/chrislgarry/Apollo-11",
+  "business_domain": "Aerospace/Space Technology",
+  "overview": "This repository contains the original source code for the Apollo 11 guidance computer (AGC) used in the Command Module (Comanche055) and Lunar Module (Luminary099) during the historic moon landing mission. The code was digitized from paper printouts by the Virtual AGC and MIT Museum teams. The goal of this project is to preserve and provide access to the original Apollo 11 source code, which is in the public domain. The code includes the Colossus 2A program for the Command Module and the Luminary 1A program for the Lunar Module. This source code is a valuable historical artifact that provides insight into the technology and engineering behind the Apollo 11 mission, one of humanity's greatest technological achievements. Researchers, historians, and space enthusiasts can explore and analyze this code to better understand the systems that enabled the first manned lunar landing.",
+  "tech_stack": {
+    "languages": [
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "YAML"
+    ],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Monolithic",
+    "description": "The Apollo 11 guidance computer (AGC) architecture was a monolithic design, with a single centralized processor responsible for all mission-critical functions. The AGC was a digital computer that used fixed-point arithmetic and had limited memory and processing power by modern standards, but was highly reliable and optimized for the specific requirements of the Apollo spacecraft. The AGC code was organized into various modules and subroutines that handled tasks such as navigation, guidance, control, and display/input processing. These components interacted through a shared memory space and a well-defined set of interfaces. The monolithic architecture was chosen for its simplicity, robustness, and real-time performance, which were essential for the safety-critical nature of the Apollo mission. Despite the constraints of the hardware, the AGC software was designed with modularity and maintainability in mind, allowing for efficient development, testing, and deployment of updates during the mission."
+  },
+  "setup": {
+    "install": "The original Apollo 11 source code is provided for historical and educational purposes. To compile the code, users are recommended to use the Virtual AGC project, which provides the necessary tools and emulation environment.",
+    "run": "The compiled AGC code would be executed on the actual Apollo 11 spacecraft hardware, which is no longer available. The Virtual AGC project allows users to run and simulate the AGC code in a modern computing environment.",
+    "test": "The Virtual AGC project includes tools for testing and validating the AGC code, such as unit tests and integration tests. Users can use these tools to verify the correctness of the transcribed code compared to the original scans."
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

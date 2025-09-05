@@ -1,0 +1,61 @@
+{
+  "github_repo": "https://github.com/geekan/MetaGPT",
+  "business_domain": "Developer Tools",
+  "overview": "MetaGPT is a multi-agent framework that aims to enable GPT-based language models to collaborate and tackle complex software engineering tasks. It takes a one-line requirement as input and generates user stories, competitive analysis, requirements, data structures, APIs, and documents. Internally, MetaGPT includes different agent roles such as product managers, architects, project managers, and engineers, providing the entire software development lifecycle with carefully orchestrated standard operating procedures (SOPs). The core philosophy is that 'Code = SOP(Team)', where MetaGPT materializes SOPs and applies them to teams composed of large language models (LLMs). By assigning different roles to GPTs, MetaGPT forms a collaborative entity to address more complex tasks that a single GPT may struggle with.",
+  "tech_stack": {
+    "languages": [
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "Shell",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "React",
+      "Bootstrap",
+      "Next.js",
+      "Vue",
+      "Tailwind CSS"
+    ],
+    "backend": [
+      "Node.js",
+      "Express",
+      "Flask",
+      "Hapi",
+      "Spring"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "DynamoDB",
+      "PostgreSQL",
+      "Redis",
+      "MySQL"
+    ],
+    "devops": [
+      "Docker",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Multi-Agent System",
+    "description": "MetaGPT follows a multi-agent system architecture, where different agent roles (e.g., product managers, architects, project managers, engineers) are implemented as separate language models that collaborate to tackle software engineering tasks. The agents communicate and coordinate through a central orchestration mechanism that manages the overall workflow. This architectural pattern was chosen to leverage the strengths of individual agents while enabling them to work together synergistically, similar to how a software company operates. The multi-agent approach allows for scalability, as new agent roles can be added to the system, and it also provides flexibility in adapting to different software development scenarios. Additionally, the modular design of the agents promotes reusability and maintainability of the system. The overall architecture aims to simulate the collaborative nature of a software company, where each agent contributes its expertise to the collective effort, resulting in more comprehensive and high-quality software solutions."
+  },
+  "setup": {
+    "install": "pip install --upgrade metagpt",
+    "run": "metagpt \"Create a 2048 game\"",
+    "test": "metagpt \"Run data analysis on sklearn Iris dataset, include a plot\""
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}

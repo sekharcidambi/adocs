@@ -1,0 +1,77 @@
+{
+  "github_repo": "https://github.com/n8n-io/n8n",
+  "business_domain": "AI/ML",
+  "overview": "n8n is a workflow automation platform that gives technical teams the flexibility of code with the speed of no-code. With 400+ integrations, native AI capabilities, and a fair-code license, n8n lets yo...",
+  "tech_stack": {
+    "languages": [
+      "CSS",
+      "HTML",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "Python",
+      "Shell",
+      "TypeScript",
+      "YAML"
+    ],
+    "frontend": [
+      "Next.js",
+      "Vue",
+      "React",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Gatsby",
+      "Angular",
+      "Ant Design"
+    ],
+    "backend": [
+      "Node.js",
+      "Express",
+      "Koa",
+      "Flask",
+      "Hapi"
+    ],
+    "databases": [
+      "Elasticsearch",
+      "PostgreSQL",
+      "Redis",
+      "MySQL",
+      "SQLite",
+      "MongoDB",
+      "DynamoDB",
+      "Cassandra"
+    ],
+    "devops": [
+      "Docker",
+      "Jest",
+      "TypeScript",
+      "Docker Compose"
+    ]
+  },
+  "architecture": {
+    "pattern": "Mvc",
+    "detected_patterns": [
+      "Mvc",
+      "Microservices",
+      "Layered",
+      "Component_Based",
+      "Feature_Based"
+    ],
+    "description": "The project uses a Mvc architectural pattern."
+  },
+  "setup": {
+    "install": "npx n8n",
+    "run": "npx n8n",
+    "test": "See README for testing instructions"
+  },
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "",
+    "updated_at": "",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  }
+}
