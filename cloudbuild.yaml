@@ -1,0 +1,48 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t', 'gcr.io/$PROJECT_ID/adocs:$BUILD_ID',
+      '-t', 'gcr.io/$PROJECT_ID/adocs:latest',
+      '.'
+    ]
+    dir: '.'
+
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/adocs:$BUILD_ID']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/adocs:latest']
+
+  # Deploy container image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: [
+      'run', 'deploy', 'adocs',
+      '--image', 'gcr.io/$PROJECT_ID/adocs:$BUILD_ID',
+      '--region', 'us-central1',
+      '--platform', 'managed',
+      '--allow-unauthenticated',
+      '--port', '8000',
+      '--memory', '2Gi',
+      '--cpu', '2',
+      '--max-instances', '10',
+      '--min-instances', '0',
+      '--concurrency', '80',
+      '--timeout', '3600',
+      '--set-env-vars', 'PYTHONUNBUFFERED=1,GCS_BUCKET_NAME=adocs-backend-adocs-storage',
+      '--set-secrets', 'ANTHROPIC_API_KEY=anthropic-api-key:latest,GITHUB_TOKEN=github-token:latest'
+    ]
+
+# Store images in Google Container Registry
+images:
+  - 'gcr.io/$PROJECT_ID/adocs:$BUILD_ID'
+  - 'gcr.io/$PROJECT_ID/adocs:latest'
+
+# Build options for faster builds
+options:
+  machineType: 'E2_HIGHCPU_8'
+  diskSizeGb: 100
+  logging: CLOUD_LOGGING_ONLY

@@ -1,0 +1,453 @@
+{
+  "sections": [
+    {
+      "title": "Overview",
+      "children": [
+        {
+          "title": "What is Hyperswitch Card Vault (Tartarus)?",
+          "children": []
+        },
+        {
+          "title": "Key Features and Capabilities",
+          "children": []
+        },
+        {
+          "title": "Security and Compliance",
+          "children": [
+            {
+              "title": "PCI DSS Compliance",
+              "children": []
+            },
+            {
+              "title": "Data Encryption Standards",
+              "children": []
+            },
+            {
+              "title": "Security Certifications",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Performance Characteristics",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "System Architecture",
+      "children": [
+        {
+          "title": "High-Level Architecture",
+          "children": []
+        },
+        {
+          "title": "Layered Architecture Pattern",
+          "children": [
+            {
+              "title": "Presentation Layer",
+              "children": []
+            },
+            {
+              "title": "Business Logic Layer",
+              "children": []
+            },
+            {
+              "title": "Data Access Layer",
+              "children": []
+            },
+            {
+              "title": "Storage Layer",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Core Components",
+          "children": [
+            {
+              "title": "Vault Engine",
+              "children": []
+            },
+            {
+              "title": "Encryption Service",
+              "children": []
+            },
+            {
+              "title": "Access Control Manager",
+              "children": []
+            },
+            {
+              "title": "Audit Logger",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Data Flow Architecture",
+          "children": [
+            {
+              "title": "Data Ingestion Flow",
+              "children": []
+            },
+            {
+              "title": "Data Retrieval Flow",
+              "children": []
+            },
+            {
+              "title": "Data Tokenization Process",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Security Framework",
+      "children": [
+        {
+          "title": "Encryption and Tokenization",
+          "children": [
+            {
+              "title": "Encryption Algorithms",
+              "children": []
+            },
+            {
+              "title": "Key Management",
+              "children": []
+            },
+            {
+              "title": "Tokenization Strategies",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Access Control and Authentication",
+          "children": [
+            {
+              "title": "Authentication Mechanisms",
+              "children": []
+            },
+            {
+              "title": "Authorization Policies",
+              "children": []
+            },
+            {
+              "title": "API Security",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Audit and Monitoring",
+          "children": [
+            {
+              "title": "Audit Trail Management",
+              "children": []
+            },
+            {
+              "title": "Security Monitoring",
+              "children": []
+            },
+            {
+              "title": "Compliance Reporting",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Management",
+      "children": [
+        {
+          "title": "Supported Data Types",
+          "children": [
+            {
+              "title": "Payment Card Details",
+              "children": []
+            },
+            {
+              "title": "Bank Account Information",
+              "children": []
+            },
+            {
+              "title": "Personal Identifiable Information",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Data Storage and Retrieval",
+          "children": [
+            {
+              "title": "Storage Mechanisms",
+              "children": []
+            },
+            {
+              "title": "Data Indexing",
+              "children": []
+            },
+            {
+              "title": "Query Optimization",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Data Lifecycle Management",
+          "children": [
+            {
+              "title": "Data Retention Policies",
+              "children": []
+            },
+            {
+              "title": "Data Purging",
+              "children": []
+            },
+            {
+              "title": "Backup and Recovery",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "API Reference",
+      "children": [
+        {
+          "title": "Authentication and Authorization",
+          "children": []
+        },
+        {
+          "title": "Vault Operations",
+          "children": [
+            {
+              "title": "Store Sensitive Data",
+              "children": []
+            },
+            {
+              "title": "Retrieve Data",
+              "children": []
+            },
+            {
+              "title": "Update Data",
+              "children": []
+            },
+            {
+              "title": "Delete Data",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Token Management",
+          "children": [
+            {
+              "title": "Generate Tokens",
+              "children": []
+            },
+            {
+              "title": "Validate Tokens",
+              "children": []
+            },
+            {
+              "title": "Revoke Tokens",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Error Handling and Status Codes",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Installation and Setup",
+      "children": [
+        {
+          "title": "System Requirements",
+          "children": []
+        },
+        {
+          "title": "Installation Methods",
+          "children": [
+            {
+              "title": "Docker Deployment",
+              "children": []
+            },
+            {
+              "title": "Kubernetes Deployment",
+              "children": []
+            },
+            {
+              "title": "Bare Metal Installation",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Configuration",
+          "children": [
+            {
+              "title": "Environment Variables",
+              "children": []
+            },
+            {
+              "title": "Configuration Files",
+              "children": []
+            },
+            {
+              "title": "Security Configuration",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Initial Setup and Verification",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Operations and Monitoring",
+      "children": [
+        {
+          "title": "Performance Monitoring",
+          "children": [
+            {
+              "title": "Metrics and KPIs",
+              "children": []
+            },
+            {
+              "title": "Performance Tuning",
+              "children": []
+            },
+            {
+              "title": "Load Testing",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Health Checks and Diagnostics",
+          "children": []
+        },
+        {
+          "title": "Logging and Troubleshooting",
+          "children": [
+            {
+              "title": "Log Configuration",
+              "children": []
+            },
+            {
+              "title": "Common Issues and Solutions",
+              "children": []
+            },
+            {
+              "title": "Debug Mode",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Scaling and High Availability",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Development and Integration",
+      "children": [
+        {
+          "title": "Development Environment Setup",
+          "children": []
+        },
+        {
+          "title": "SDK and Client Libraries",
+          "children": []
+        },
+        {
+          "title": "Integration Patterns",
+          "children": [
+            {
+              "title": "Payment Gateway Integration",
+              "children": []
+            },
+            {
+              "title": "E-commerce Platform Integration",
+              "children": []
+            },
+            {
+              "title": "Custom Application Integration",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Testing and Validation",
+          "children": [
+            {
+              "title": "Unit Testing",
+              "children": []
+            },
+            {
+              "title": "Integration Testing",
+              "children": []
+            },
+            {
+              "title": "Security Testing",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Compliance and Governance",
+      "children": [
+        {
+          "title": "Regulatory Compliance",
+          "children": [
+            {
+              "title": "PCI DSS Requirements",
+              "children": []
+            },
+            {
+              "title": "GDPR Compliance",
+              "children": []
+            },
+            {
+              "title": "Regional Compliance Standards",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Data Governance",
+          "children": [
+            {
+              "title": "Data Classification",
+              "children": []
+            },
+            {
+              "title": "Data Privacy Controls",
+              "children": []
+            },
+            {
+              "title": "Data Subject Rights",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Risk Management",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

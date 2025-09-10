@@ -1,0 +1,59 @@
+# Cloud Build configuration with extended timeout for long-running analyses
+# Includes Docker build optimizations for faster builds
+steps:
+  # Pull previous image for cache (ignore if doesn't exist)
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
+    args: ['-c', 'set +e; docker pull gcr.io/$PROJECT_ID/adocs:latest || echo "No previous image found, continuing without cache"; set -e']
+
+  # Build the container image with cache-from and BuildKit
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '--cache-from', 'gcr.io/$PROJECT_ID/adocs:latest',
+      '--build-arg', 'BUILDKIT_INLINE_CACHE=1',
+      '-t', 'gcr.io/$PROJECT_ID/adocs:$BUILD_ID',
+      '-t', 'gcr.io/$PROJECT_ID/adocs:latest',
+      '.'
+    ]
+    env:
+      - 'DOCKER_BUILDKIT=1'
+    dir: '.'
+
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/adocs:$BUILD_ID']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/adocs:latest']
+
+  # Deploy container image to Cloud Run with extended timeout
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: [
+      'run', 'deploy', 'adocs',
+      '--image', 'gcr.io/$PROJECT_ID/adocs:$BUILD_ID',
+      '--region', 'us-central1',
+      '--platform', 'managed',
+      '--allow-unauthenticated',
+      '--port', '8000',
+      '--memory', '4Gi',  # Increased memory for better performance
+      '--cpu', '4',       # Increased CPU for faster processing
+      '--max-instances', '5',  # Reduced max instances to prevent resource contention
+      '--min-instances', '1',  # Keep one instance warm to avoid cold starts
+      '--concurrency', '1',    # Process one request at a time to avoid timeouts
+      '--timeout', '3600',     # 60 minutes timeout (maximum allowed)
+      '--set-env-vars', 'PYTHONUNBUFFERED=1,GCS_BUCKET_NAME=adocs-backend-adocs-storage',
+      '--set-secrets', 'ANTHROPIC_API_KEY=anthropic-api-key:latest,GITHUB_TOKEN=github-token:latest'
+    ]
+
+# Store these images in Google Container Registry automatically after the build
+images:
+  - 'gcr.io/$PROJECT_ID/adocs:$BUILD_ID'
+  - 'gcr.io/$PROJECT_ID/adocs:latest'
+
+# Use high-memory machine type for PyTorch dependencies
+options:
+  machineType: 'E2_HIGHCPU_8'
+  diskSizeGb: 100
+  logging: CLOUD_LOGGING_ONLY

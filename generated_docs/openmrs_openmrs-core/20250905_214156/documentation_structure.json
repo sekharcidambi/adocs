@@ -1,0 +1,120 @@
+[
+  {
+    "title": "Overview",
+    "children": [
+      {
+        "title": "What is OpenMRS Core?",
+        "children": []
+      },
+      {
+        "title": "System Architecture",
+        "children": [
+          {
+            "title": "Overall Architecture",
+            "children": []
+          },
+          {
+            "title": "API Layer Design",
+            "children": []
+          },
+          {
+            "title": "Web Application Structure",
+            "children": []
+          },
+          {
+            "title": "Data Flow and Processing",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Core Components",
+        "children": [
+          {
+            "title": "API Framework",
+            "children": []
+          },
+          {
+            "title": "Web Application Layer",
+            "children": []
+          },
+          {
+            "title": "Service Layer",
+            "children": []
+          },
+          {
+            "title": "Data Access Layer",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Key Features",
+        "children": [
+          {
+            "title": "Medical Records Management",
+            "children": []
+          },
+          {
+            "title": "Patient Data Processing",
+            "children": []
+          },
+          {
+            "title": "Healthcare Workflow Support",
+            "children": []
+          },
+          {
+            "title": "Extensibility and Modularity",
+            "children": []
+          },
+          {
+            "title": "Multi-tenant Support",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Integration Points",
+        "children": [
+          {
+            "title": "REST API Endpoints",
+            "children": []
+          },
+          {
+            "title": "Module System",
+            "children": []
+          },
+          {
+            "title": "Database Integration",
+            "children": []
+          },
+          {
+            "title": "External System Interfaces",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Security and Compliance",
+        "children": [
+          {
+            "title": "Authentication Framework",
+            "children": []
+          },
+          {
+            "title": "Authorization Model",
+            "children": []
+          },
+          {
+            "title": "Data Privacy Controls",
+            "children": []
+          },
+          {
+            "title": "Audit and Logging",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -212,6 +212,31 @@ Based on all the information above, generate the `documentation_structure` JSON 
 
 The documentation structure should be comprehensive and include all necessary sections for the project type, technology stack, and business domain. Consider the patterns from the similar repositories but adapt them to the specific needs of this new repository.
 
+### CRITICAL: Required JSON Format
+The response MUST follow this exact structure:
+```json
+{{
+  "sections": [
+    {{
+      "title": "Section Title",
+      "children": [
+        {{
+          "title": "Subsection Title",
+          "children": []
+        }}
+      ]
+    }}
+  ]
+}}
+```
+
+IMPORTANT FORMAT RULES:
+1. Each section MUST be an object with "title" and "children" properties
+2. "title" must be a string
+3. "children" must be an array of objects (even if empty)
+4. Do NOT use strings or arrays directly in the sections array
+5. All section objects must have the same structure
+
 Return only the JSON structure, no additional text.
 """
         

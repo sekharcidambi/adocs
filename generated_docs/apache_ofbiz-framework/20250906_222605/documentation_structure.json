@@ -1,0 +1,154 @@
+[
+  {
+    "title": "Apache OFBiz Framework Overview",
+    "children": [
+      {
+        "title": "Purpose and Scope",
+        "children": []
+      },
+      {
+        "title": "Enterprise Applications Overview",
+        "children": [
+          {
+            "title": "ERP Components",
+            "children": []
+          },
+          {
+            "title": "CRM Components",
+            "children": []
+          },
+          {
+            "title": "E-Commerce Components",
+            "children": []
+          },
+          {
+            "title": "Supply Chain Management",
+            "children": []
+          },
+          {
+            "title": "Manufacturing Resource Planning",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Framework Architecture",
+        "children": [
+          {
+            "title": "High-Level Architecture Overview",
+            "children": []
+          },
+          {
+            "title": "Framework Components",
+            "children": []
+          },
+          {
+            "title": "Entity Engine Architecture",
+            "children": []
+          },
+          {
+            "title": "Service Engine Architecture",
+            "children": []
+          },
+          {
+            "title": "Widget Framework",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Business Process Automation",
+        "children": [
+          {
+            "title": "Workflow Engine",
+            "children": []
+          },
+          {
+            "title": "Business Rules Management",
+            "children": []
+          },
+          {
+            "title": "Process Integration Patterns",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Security and Scalability",
+        "children": [
+          {
+            "title": "Security Framework",
+            "children": []
+          },
+          {
+            "title": "Scalability Considerations",
+            "children": []
+          },
+          {
+            "title": "Performance Optimization",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Getting Started",
+        "children": [
+          {
+            "title": "Prerequisites and Requirements",
+            "children": []
+          },
+          {
+            "title": "Installation and Setup",
+            "children": []
+          },
+          {
+            "title": "Configuration Guide",
+            "children": []
+          },
+          {
+            "title": "Running OFBiz Applications",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Development and Customization",
+        "children": [
+          {
+            "title": "Framework Extension Points",
+            "children": []
+          },
+          {
+            "title": "Custom Application Development",
+            "children": []
+          },
+          {
+            "title": "Data Model Customization",
+            "children": []
+          },
+          {
+            "title": "Build System and Tools",
+            "children": []
+          }
+        ]
+      },
+      {
+        "title": "Deployment and Operations",
+        "children": [
+          {
+            "title": "Deployment Architecture",
+            "children": []
+          },
+          {
+            "title": "Production Configuration",
+            "children": []
+          },
+          {
+            "title": "Monitoring and Maintenance",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

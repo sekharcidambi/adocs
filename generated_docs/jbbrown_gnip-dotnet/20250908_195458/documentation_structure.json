@@ -1,0 +1,253 @@
+{
+  "sections": [
+    {
+      "title": "Overview",
+      "children": [
+        {
+          "title": "What is Gnip .NET API Client?",
+          "children": []
+        },
+        {
+          "title": "Purpose and Scope",
+          "children": []
+        },
+        {
+          "title": "Key Features",
+          "children": []
+        },
+        {
+          "title": "System Requirements",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Getting Started",
+      "children": [
+        {
+          "title": "Installation",
+          "children": [
+            {
+              "title": "NuGet Package Installation",
+              "children": []
+            },
+            {
+              "title": "Manual Installation",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Quick Start Guide",
+          "children": []
+        },
+        {
+          "title": "Authentication Setup",
+          "children": []
+        },
+        {
+          "title": "Basic Configuration",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Architecture",
+      "children": [
+        {
+          "title": "Event-Driven Architecture Overview",
+          "children": []
+        },
+        {
+          "title": "Core Components",
+          "children": [
+            {
+              "title": "API Client",
+              "children": []
+            },
+            {
+              "title": "Event Handlers",
+              "children": []
+            },
+            {
+              "title": "Data Models",
+              "children": []
+            },
+            {
+              "title": "Connection Management",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Event Flow and Processing",
+          "children": []
+        },
+        {
+          "title": "Error Handling Strategy",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "API Reference",
+      "children": [
+        {
+          "title": "Client Classes",
+          "children": [
+            {
+              "title": "GnipClient",
+              "children": []
+            },
+            {
+              "title": "StreamingClient",
+              "children": []
+            },
+            {
+              "title": "HistoricalClient",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Data Models",
+          "children": [
+            {
+              "title": "Activity Models",
+              "children": []
+            },
+            {
+              "title": "Rule Models",
+              "children": []
+            },
+            {
+              "title": "Configuration Models",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Event Interfaces",
+          "children": []
+        },
+        {
+          "title": "Exception Types",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Usage Examples",
+      "children": [
+        {
+          "title": "Real-time Streaming",
+          "children": []
+        },
+        {
+          "title": "Historical Data Retrieval",
+          "children": []
+        },
+        {
+          "title": "Rule Management",
+          "children": []
+        },
+        {
+          "title": "Event Processing Patterns",
+          "children": []
+        },
+        {
+          "title": "Error Handling Examples",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Configuration",
+      "children": [
+        {
+          "title": "Connection Settings",
+          "children": []
+        },
+        {
+          "title": "Authentication Configuration",
+          "children": []
+        },
+        {
+          "title": "Retry Policies",
+          "children": []
+        },
+        {
+          "title": "Logging Configuration",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Advanced Topics",
+      "children": [
+        {
+          "title": "Custom Event Handlers",
+          "children": []
+        },
+        {
+          "title": "Performance Optimization",
+          "children": []
+        },
+        {
+          "title": "Scaling Considerations",
+          "children": []
+        },
+        {
+          "title": "Integration Patterns",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Development",
+      "children": [
+        {
+          "title": "Building from Source",
+          "children": []
+        },
+        {
+          "title": "Running Tests",
+          "children": []
+        },
+        {
+          "title": "Contributing Guidelines",
+          "children": []
+        },
+        {
+          "title": "Development Environment Setup",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Troubleshooting",
+      "children": [
+        {
+          "title": "Common Issues",
+          "children": []
+        },
+        {
+          "title": "Connection Problems",
+          "children": []
+        },
+        {
+          "title": "Authentication Errors",
+          "children": []
+        },
+        {
+          "title": "Performance Issues",
+          "children": []
+        },
+        {
+          "title": "Debugging Tips",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

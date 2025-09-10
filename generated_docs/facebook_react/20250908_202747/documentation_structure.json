@@ -1,0 +1,399 @@
+{
+  "sections": [
+    {
+      "title": "React Overview",
+      "children": [
+        {
+          "title": "What is React?",
+          "children": []
+        },
+        {
+          "title": "Core Philosophy and Design Principles",
+          "children": []
+        },
+        {
+          "title": "React Ecosystem",
+          "children": []
+        },
+        {
+          "title": "When to Use React",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Getting Started",
+      "children": [
+        {
+          "title": "Installation and Setup",
+          "children": []
+        },
+        {
+          "title": "Creating Your First React App",
+          "children": []
+        },
+        {
+          "title": "Development Environment Setup",
+          "children": []
+        },
+        {
+          "title": "Hello World Example",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Core Concepts",
+      "children": [
+        {
+          "title": "Components",
+          "children": [
+            {
+              "title": "Functional Components",
+              "children": []
+            },
+            {
+              "title": "Class Components",
+              "children": []
+            },
+            {
+              "title": "Component Composition",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "JSX",
+          "children": [
+            {
+              "title": "JSX Syntax",
+              "children": []
+            },
+            {
+              "title": "JSX Expressions",
+              "children": []
+            },
+            {
+              "title": "JSX Best Practices",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Props",
+          "children": [
+            {
+              "title": "Passing Props",
+              "children": []
+            },
+            {
+              "title": "Props Validation",
+              "children": []
+            },
+            {
+              "title": "Default Props",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "State Management",
+          "children": [
+            {
+              "title": "useState Hook",
+              "children": []
+            },
+            {
+              "title": "State Updates",
+              "children": []
+            },
+            {
+              "title": "State Best Practices",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hooks",
+      "children": [
+        {
+          "title": "Built-in Hooks",
+          "children": [
+            {
+              "title": "useState",
+              "children": []
+            },
+            {
+              "title": "useEffect",
+              "children": []
+            },
+            {
+              "title": "useContext",
+              "children": []
+            },
+            {
+              "title": "useReducer",
+              "children": []
+            },
+            {
+              "title": "useMemo and useCallback",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Custom Hooks",
+          "children": [
+            {
+              "title": "Creating Custom Hooks",
+              "children": []
+            },
+            {
+              "title": "Hook Patterns",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Rules of Hooks",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Advanced Concepts",
+      "children": [
+        {
+          "title": "Context API",
+          "children": [
+            {
+              "title": "Creating Context",
+              "children": []
+            },
+            {
+              "title": "Provider and Consumer",
+              "children": []
+            },
+            {
+              "title": "Context Best Practices",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Error Boundaries",
+          "children": []
+        },
+        {
+          "title": "Refs and DOM Manipulation",
+          "children": [
+            {
+              "title": "useRef Hook",
+              "children": []
+            },
+            {
+              "title": "Forward Refs",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Higher-Order Components",
+          "children": []
+        },
+        {
+          "title": "Render Props",
+          "children": []
+        },
+        {
+          "title": "Code Splitting and Lazy Loading",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Performance Optimization",
+      "children": [
+        {
+          "title": "React.memo",
+          "children": []
+        },
+        {
+          "title": "useMemo and useCallback",
+          "children": []
+        },
+        {
+          "title": "Virtual DOM and Reconciliation",
+          "children": []
+        },
+        {
+          "title": "Profiling and Debugging",
+          "children": []
+        },
+        {
+          "title": "Bundle Optimization",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Testing",
+      "children": [
+        {
+          "title": "Testing Philosophy",
+          "children": []
+        },
+        {
+          "title": "Unit Testing Components",
+          "children": []
+        },
+        {
+          "title": "Testing Hooks",
+          "children": []
+        },
+        {
+          "title": "Integration Testing",
+          "children": []
+        },
+        {
+          "title": "Testing Best Practices",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "TypeScript Integration",
+      "children": [
+        {
+          "title": "Setting up React with TypeScript",
+          "children": []
+        },
+        {
+          "title": "Typing Components",
+          "children": []
+        },
+        {
+          "title": "Typing Props and State",
+          "children": []
+        },
+        {
+          "title": "Typing Hooks",
+          "children": []
+        },
+        {
+          "title": "Advanced TypeScript Patterns",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Build and Deployment",
+      "children": [
+        {
+          "title": "Build Process",
+          "children": [
+            {
+              "title": "Webpack Configuration",
+              "children": []
+            },
+            {
+              "title": "Build Optimization",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Server-Side Rendering",
+          "children": [
+            {
+              "title": "Next.js Integration",
+              "children": []
+            },
+            {
+              "title": "SSR Best Practices",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Deployment Strategies",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Contributing",
+      "children": [
+        {
+          "title": "Development Setup",
+          "children": []
+        },
+        {
+          "title": "Code Style and Guidelines",
+          "children": []
+        },
+        {
+          "title": "Pull Request Process",
+          "children": []
+        },
+        {
+          "title": "Issue Reporting",
+          "children": []
+        },
+        {
+          "title": "Community Guidelines",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "API Reference",
+      "children": [
+        {
+          "title": "React API",
+          "children": [
+            {
+              "title": "React.Component",
+              "children": []
+            },
+            {
+              "title": "React.createElement",
+              "children": []
+            },
+            {
+              "title": "React.Fragment",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Hooks API",
+          "children": []
+        },
+        {
+          "title": "Utilities",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Migration Guides",
+      "children": [
+        {
+          "title": "Upgrading to Latest Version",
+          "children": []
+        },
+        {
+          "title": "Class to Hooks Migration",
+          "children": []
+        },
+        {
+          "title": "Legacy API Migration",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

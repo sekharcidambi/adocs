@@ -1,0 +1,17 @@
+# Backend ADocS Services Environment Variables
+# Copy this file to .env and configure your API keys
+
+# GitHub API Token (optional but recommended)
+# Get one from: https://github.com/settings/tokens
+# This increases API rate limits from 60 to 5000 requests per hour
+GITHUB_TOKEN=your_github_token_here
+
+# Anthropic Claude API Key (required for AI features)
+# Get one from: https://console.anthropic.com/
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+
+# Python Path Configuration
+PYTHONPATH=/Users/sekharcidambi/adocs
+
+# Logging Level (optional)
+# LOG_LEVEL=INFO

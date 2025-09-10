@@ -1,0 +1,30 @@
+{
+  "github_url": "https://github.com/jbbrown/gnip-dotnet.git",
+  "name": "gnip-dotnet",
+  "description": "",
+  "overview": "= Gnip .Net API Client",
+  "business_domain": "Web Development",
+  "tech_stack": {
+    "languages": [],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": []
+  },
+  "architecture": {
+    "pattern": "Event-driven",
+    "description": "Event-driven architecture pattern"
+  },
+  "readme": "= Gnip .Net API Client\n\nThis library provides a .Net API for accessing\n{Gnip}[http://gnipcentral.com] web services.  There are two basic\nroles for using Gnip: subscribers and publishers.  This library\nprovides a single API for both roles.\n\n== Consumer\n\n=== Example 1: Retrieve all recent activities at a publisher\n\nAs a consumer one thing you might be interested in immediately is to\ngrab recent activity at a particular publisher.  To do this you must\ncreate a connection to Gnip using your user name and password.  Once\nthat connection is established you can get the publisher and request\nit's activities stream.\n\n\tusing Gnip;\n\t...\n\n\tConnection gnip = new Connection(\"me@mydomain.com\", \"my-password\");\n\n\tPublisher digg = gnip.GetPublisher(\"digg\");\n\tActivities activities = gnip.GetActivities(digg);\n\n=== Example 2: Retrieve all activities at a publisher around a specific time\n\nSome times you will want to get activity information from before now.\nDoing this look much like getting the recent activity, except that you\npast a time when getting the activity stream.  This will return the\nactivity stream as it existed around that time.  The results will be\ninclude some activities before and after the time you specify.\n\n\tusing Gnip;\n\t...\n\n\tConnection gnip = new Connection(\"me@mydomain.com\", \"my-password\");\n\n\tPublisher digg = gnip.GetPublisher(\"digg\");\n\tActivities activities = gnip.GetActivities(digg, DateTime.Now);\n\n=== Example 3: Create an activity stream that includes only activities\n    done by users you care about.\n\nIf you would like to filter a set of publishers by the user that\nperformed the activity you may create a collection to do so.  Once\ncreated a collection's activity stream is retrieved much like a\npublishers.  Activity that has already occured will not be included in\na collection.  Therefore any new collection will be empty until some\nnew matching activity has occured.\n\nNote: Collection names must be unique across the system so you might\nwant to attach your username to the logical name of any collections\nyou create.\n\n\tusing Gnip;\n\t...\n\n\tConnection gnip = new Connection(\"me@mydomain.com\", \"my-password\");\n\n\tPublisher digg = new Publisher(\"digg\");\n\n\tCollection myCollection = new Collection(\"myCollection\");\n\tmyCollection.Uids.Add(new Uid(digg), \"Burento\");\n\n\tgnip.Create(myCollection);\n\tActivities activities = gnip.GetActivities(myCollection);\n\n=== Example 4: Delete a collection\n\nIf you decide you no longer need a collection you have created in the\npast you can remove it.\n\n\tusing Gnip;\n\t...\n\n\tConnection gnip = new Connection(\"me@mydomain.com\", \"my-password\");\n\n\tCollection myCollection = gnip.GetCollection(\"myCollection\");\n\tgnip.Delete(myCollection);\n\n== Publisher\n\n=== Example 1: Create a publisher and publish some activities\n\nIf you are interested in publishing activity you will need to create a\npublisher.  Once the publisher resource is created, activities can be\npublished in it's activity stream.\n\n\tusing Gnip;\n\t...\n\n\tConnection gnip = new Connection(\"me@mydomain.com\", \"my-password\");\n\n\tPublisher publisher = new Publisher(\"myservice\");\n\tgnip.Create(publisher);\n\t\n\tActivities activities = new Activities();\n\tactivities.Add(new Activity(\"joe\", \"post\", DateTime.now, \"http://mydomain.com/joe/my-new-blog-post\"));\n\tgnip.Publish(publisher, activities);\n",
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "2008-07-09 14:41:49 -0700",
+    "updated_at": "2008-07-09 14:41:49 -0700",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  },
+  "generated_at": "20250908_195458"
+}

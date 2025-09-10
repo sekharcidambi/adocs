@@ -1,0 +1,16 @@
+{
+  "github_url": "https://github.com/openmrs/openmrs-core",
+  "overview": "OpenMRS API and web application code",
+  "business_domain": "Software Development",
+  "architecture": {
+    "pattern": "Library/Utility",
+    "description": "A library/utility built with "
+  },
+  "tech_stack": {
+    "languages": [],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": []
+  }
+}

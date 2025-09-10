@@ -56,3 +56,4 @@ knowledge_base.pkl
 
 # Keep generated_docs but ignore large files
 generated_docs/*/knowledge_base.pkl
+

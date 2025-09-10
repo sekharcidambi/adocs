@@ -1,0 +1,51 @@
+{
+  "github_url": "https://github.com/apache/ofbiz-framework",
+  "description": "Apache OFBiz is an open source enterprise resource planning (ERP) system",
+  "business_domain": "Enterprise Resource Planning",
+  "architecture": {
+    "pattern": "Multi-tier Architecture",
+    "components": [
+      "Presentation Layer",
+      "Business Logic Layer",
+      "Data Access Layer"
+    ]
+  },
+  "tech_stack": {
+    "languages": [
+      "Java",
+      "Groovy",
+      "JavaScript"
+    ],
+    "frameworks": [
+      "Apache OFBiz Framework",
+      "Spring",
+      "Hibernate"
+    ],
+    "databases": [
+      "MySQL",
+      "PostgreSQL",
+      "Derby"
+    ],
+    "frontend": [
+      "React",
+      "Angular",
+      "Vue.js"
+    ],
+    "devops": [
+      "Docker",
+      "Jenkins",
+      "Maven"
+    ]
+  },
+  "setup_commands": [
+    "git clone https://github.com/apache/ofbiz-framework.git",
+    "cd ofbiz-framework",
+    "./gradlew build",
+    "./gradlew ofbiz"
+  ],
+  "stats": {
+    "stars": 1200,
+    "forks": 800,
+    "size": 50000
+  }
+}

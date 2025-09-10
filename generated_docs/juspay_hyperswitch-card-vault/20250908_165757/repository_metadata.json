@@ -1,0 +1,30 @@
+{
+  "github_url": "https://github.com/juspay/hyperswitch-card-vault.git",
+  "name": "hyperswitch-card-vault",
+  "description": "",
+  "overview": "The Hyperswitch Card Vault (Tartarus) is a highly performant and a secure vault to save sensitive data such as payment card details, bank account details etc.",
+  "business_domain": "Data Science",
+  "tech_stack": {
+    "languages": [],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": []
+  },
+  "architecture": {
+    "pattern": "Layered",
+    "description": "Layered architecture pattern"
+  },
+  "readme": "# Tartarus - Rust Locker\n\n\n## Overview\n\nThe Hyperswitch Card Vault (Tartarus) is a highly performant and a secure vault to save sensitive data such as payment card details, bank account details etc.\n\nIt is designed in an polymorphic manner to handle and store any type of sensitive information making it highly scalable with extensive coverage of payment methods and processors.\n\nTartarus is built with a GDPR compliant personal identifiable information (PII) storage and secure encryption algorithms to be fully compliant with PCI DSS requirements.\n\nHere's a quick guide to [Get Started](./docs/guides/setup.md) with setting up Tartarus.\n\n### How does Tartarus work?\n\n- Your application will communicate with Tartarus via a middleware.\n- All requests and responses to and from the middleware are signed and encrypted with the JWS and JWE algorithms.\n- The locker supports CRD APIs on the /data and /cards endpoints - <API Reference to be linked>\n- Cards are stored against the combination of merchant and customer identifiers.\n- Internal hashing checks are in place to avoid data duplication.\n\n![General Work Flow](./docs/imgs/general-block-diagram.png)\n\n### Key Hierarchy\n\n- Master Key - AES generated key to that is encrypted/decrypted by the custodian keys to run the locker and associated configurations.\n- Custodian Keys - AES generated key that is used to encrypt and decrypt the master key. It broken into two keys (key 1 and key 2) and available with two custodians to enhance security.\n\n![Key Hierarchy](./docs/imgs/locker-key-hierarchy.png)\n\n### Setup Guide\n\nFollow this guide to setup Tartarus - [Get Started](./docs/guides/setup.md)\n",
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "2025-04-23 11:34:38 +0000",
+    "updated_at": "2025-04-23 11:34:38 +0000",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  },
+  "generated_at": "20250908_165757"
+}

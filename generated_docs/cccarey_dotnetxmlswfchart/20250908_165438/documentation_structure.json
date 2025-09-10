@@ -1,0 +1,266 @@
+{
+  "sections": [
+    {
+      "title": "DotNetXmlSwfChart Overview",
+      "children": [
+        {
+          "title": "Purpose and Scope",
+          "children": []
+        },
+        {
+          "title": "Introduction to XML-based SWF Charts",
+          "children": []
+        },
+        {
+          "title": "High-Level Architecture",
+          "children": [
+            {
+              "title": "System Architecture Diagram",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Component Organization",
+          "children": [
+            {
+              "title": "Chart Components",
+              "children": []
+            },
+            {
+              "title": "XML Processing Components",
+              "children": []
+            },
+            {
+              "title": "SWF Rendering Components",
+              "children": []
+            },
+            {
+              "title": "Data Binding Components",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Component Interdependencies",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Data Processing Pipeline",
+      "children": [
+        {
+          "title": "XML Data Ingestion",
+          "children": [
+            {
+              "title": "XML Schema Validation",
+              "children": []
+            },
+            {
+              "title": "Data Parsing Flow",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Chart Data Transformation",
+          "children": [
+            {
+              "title": "Data Mapping",
+              "children": []
+            },
+            {
+              "title": "Data Aggregation",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "SWF Generation Pipeline",
+          "children": [
+            {
+              "title": "Chart Rendering Process",
+              "children": []
+            },
+            {
+              "title": "Flash Output Generation",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Chart System Architecture",
+      "children": [
+        {
+          "title": "Chart Types and Templates",
+          "children": [
+            {
+              "title": "Supported Chart Types",
+              "children": []
+            },
+            {
+              "title": "Template System",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Styling and Theming",
+          "children": [
+            {
+              "title": "Style Configuration",
+              "children": []
+            },
+            {
+              "title": "Theme Variables",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Interactive Features",
+          "children": [
+            {
+              "title": "User Interaction Handling",
+              "children": []
+            },
+            {
+              "title": "Animation System",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "XML Configuration System",
+      "children": [
+        {
+          "title": "Configuration Schema",
+          "children": [
+            {
+              "title": "Chart Configuration Elements",
+              "children": []
+            },
+            {
+              "title": "Data Source Configuration",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Configuration Processing",
+          "children": [
+            {
+              "title": "XML Parsing Engine",
+              "children": []
+            },
+            {
+              "title": "Configuration Validation",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "SWF Integration Layer",
+      "children": [
+        {
+          "title": "Flash Runtime Integration",
+          "children": [
+            {
+              "title": "SWF File Structure",
+              "children": []
+            },
+            {
+              "title": "ActionScript Interface",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Browser Embedding",
+          "children": [
+            {
+              "title": "HTML Integration",
+              "children": []
+            },
+            {
+              "title": "JavaScript API",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Science Integration",
+      "children": [
+        {
+          "title": "Data Analysis Features",
+          "children": [
+            {
+              "title": "Statistical Functions",
+              "children": []
+            },
+            {
+              "title": "Data Visualization Patterns",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Export and Reporting",
+          "children": [
+            {
+              "title": "Chart Export Options",
+              "children": []
+            },
+            {
+              "title": "Report Generation",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Deep Dive: Chart Component Implementation",
+      "children": [
+        {
+          "title": ".NET Implementation Details",
+          "children": []
+        },
+        {
+          "title": "XML Processing Implementation",
+          "children": []
+        },
+        {
+          "title": "SWF Generation Implementation",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "Extension Points and Customization",
+      "children": [
+        {
+          "title": "Custom Chart Types",
+          "children": []
+        },
+        {
+          "title": "Plugin Architecture",
+          "children": []
+        },
+        {
+          "title": "API Extension Points",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

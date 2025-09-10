@@ -1,136 +1,210 @@
 #!/usr/bin/env python3
 """
-ADocS Service - Python service wrapper for the ADocS documentation structure generator.
-This service can be called from Node.js/Next.js applications to generate documentation structures.
+ADocS Service - Main service orchestrator for all ADocS operations.
+This service provides a clean interface for all frontend operations.
 """
 
 import json
 import sys
 import os
 import logging
+import asyncio
 from typing import Dict, Any, Optional
 
-# Add the src directory to the path so we can import the modules
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+# Add services directory to path
+sys.path.append(os.path.join(os.path.dirname(__file__), 'services'))
 
-from src.generator import DocStructureGenerator
+from services.repository_service import RepositoryService
+from services.documentation_service import DocumentationService
+from services.analysis_service import AnalysisService
+from services.wiki_service import WikiService
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 class ADocSService:
-    """Service wrapper for ADocS documentation structure generation."""
+    """Main ADocS service orchestrator."""
     
-    def __init__(self, knowledge_base_path: str = None):
+    def __init__(self, github_token: str = None, anthropic_api_key: str = None):
         """
         Initialize the ADocS service.
         
         Args:
-            knowledge_base_path: Path to the knowledge base pickle file
+            github_token: GitHub API token for repository access
+            anthropic_api_key: Anthropic API key for content generation
         """
-        if knowledge_base_path is None:
-            knowledge_base_path = os.path.join(os.path.dirname(__file__), 'knowledge_base.pkl')
+        self.github_token = github_token or os.getenv('GITHUB_TOKEN')
+        self.anthropic_api_key = anthropic_api_key or os.getenv('ANTHROPIC_API_KEY')
         
-        self.knowledge_base_path = knowledge_base_path
-        self.generator = None
+        # Initialize all services
+        self.repository_service = RepositoryService(self.github_token, self.anthropic_api_key)
+        self.documentation_service = DocumentationService(self.github_token, self.anthropic_api_key)
+        self.analysis_service = AnalysisService(self.github_token, self.anthropic_api_key)
+        self.wiki_service = WikiService(self.github_token, self.anthropic_api_key)
         
-        logger.info(f"ADocS Service initialized with knowledge base: {knowledge_base_path}")
+        logger.info("ADocS Service initialized with all sub-services")
     
-    def _initialize_generator(self):
-        """Initialize the DocStructureGenerator if not already done."""
-        if self.generator is None:
-            try:
-                self.generator = DocStructureGenerator(self.knowledge_base_path)
-                logger.info("DocStructureGenerator initialized successfully")
-            except Exception as e:
-                logger.error(f"Failed to initialize DocStructureGenerator: {e}")
-                raise
-    
-    def generate_documentation_structure(self, repo_metadata: Dict[str, Any], api_key: Optional[str] = None) -> Dict[str, Any]:
+    def get_repositories(self, docs_type: str = 'docs') -> Dict[str, Any]:
         """
-        Generate documentation structure for a repository.
+        Get list of repositories for which cached documentation exists.
         
         Args:
-            repo_metadata: Repository metadata dictionary
-            api_key: Anthropic API key (optional, can use environment variable)
+            docs_type: Type of documentation ('docs' or 'wiki')
             
         Returns:
-            Generated documentation structure
+            Dictionary with success status and list of repositories
         """
-        try:
-            self._initialize_generator()
-            
-            logger.info(f"Generating documentation structure for repository: {repo_metadata.get('github_url', 'Unknown')}")
-            
-            # Generate the documentation structure using the RAG approach
-            doc_structure = self.generator.generate(repo_metadata, api_key=api_key)
-            
-            logger.info("Documentation structure generated successfully")
-            return doc_structure
-            
-        except Exception as e:
-            logger.error(f"Error generating documentation structure: {e}")
-            raise
+        logger.info(f"Getting repositories for docs_type: {docs_type}")
+        return self.repository_service.get_repositories(docs_type)
     
-    def get_knowledge_base_stats(self) -> Dict[str, Any]:
+    def get_documentation(self, repo_url: str, docs_type: str = 'docs') -> Dict[str, Any]:
         """
-        Get statistics about the knowledge base.
+        Get complete documentation for a repository.
         
+        Args:
+            repo_url: GitHub repository URL
+            docs_type: Type of documentation ('docs' or 'wiki')
+            
         Returns:
-            Knowledge base statistics
+            Dictionary with documentation content
         """
-        try:
-            self._initialize_generator()
-            return self.generator.get_knowledge_base_stats()
-        except Exception as e:
-            logger.error(f"Error getting knowledge base stats: {e}")
-            raise
+        logger.info(f"Getting documentation for {repo_url} (type: {docs_type})")
+        return self.documentation_service.get_documentation(repo_url, docs_type)
+    
+    def get_documentation_section(self, repo_url: str, section: str, docs_type: str = 'docs') -> Dict[str, Any]:
+        """
+        Get specific documentation section for a repository.
+        
+        Args:
+            repo_url: GitHub repository URL
+            section: Section name to retrieve
+            docs_type: Type of documentation ('docs' or 'wiki')
+            
+        Returns:
+            Dictionary with section content
+        """
+        logger.info(f"Getting section '{section}' for {repo_url} (type: {docs_type})")
+        return self.documentation_service.get_documentation_section(repo_url, section, docs_type)
+    
+    async def analyze_repository(self, repo_url: str) -> Dict[str, Any]:
+        """
+        Analyze a repository and generate documentation structure.
+        
+        Args:
+            repo_url: GitHub repository URL
+            
+        Returns:
+            Dictionary with analysis results
+        """
+        logger.info(f"Analyzing repository: {repo_url}")
+        return await self.analysis_service.analyze_repository(repo_url)
+    
+    async def generate_wiki(self, repo_url: str) -> Dict[str, Any]:
+        """
+        Generate enhanced wiki-style documentation from existing documentation.
+        
+        Args:
+            repo_url: GitHub repository URL
+            
+        Returns:
+            Dictionary with wiki generation results
+        """
+        logger.info(f"Generating wiki for repository: {repo_url}")
+        return await self.wiki_service.generate_wiki(repo_url)
+    
+    def get_repository_info(self, repo_url: str, docs_type: str = 'docs') -> Dict[str, Any]:
+        """
+        Get detailed information about a specific repository.
+        
+        Args:
+            repo_url: GitHub repository URL
+            docs_type: Type of documentation ('docs' or 'wiki')
+            
+        Returns:
+            Dictionary with repository information
+        """
+        logger.info(f"Getting repository info for {repo_url} (type: {docs_type})")
+        return self.repository_service.get_repository_info(repo_url, docs_type)
+
 
 def main():
     """Main function to handle command line usage."""
     if len(sys.argv) < 2:
         print("Usage: python adocs_service.py <command> [args...]")
         print("Commands:")
-        print("  generate <metadata_json> [api_key] - Generate documentation structure")
-        print("  stats - Get knowledge base statistics")
+        print("  get-repositories [docs_type] - Get list of repositories with cached docs")
+        print("  get-documentation <repo_url> [docs_type] - Get complete documentation")
+        print("  get-section <repo_url> <section> [docs_type] - Get specific section")
+        print("  analyze <repo_url> - Analyze repository and generate docs")
+        print("  generate-wiki <repo_url> - Generate enhanced wiki documentation")
+        print("  get-info <repo_url> [docs_type] - Get repository information")
         sys.exit(1)
-    
+
     command = sys.argv[1]
-    service = ADocSService()
-    
+
     try:
-        if command == "generate":
-            if len(sys.argv) < 3:
-                print("Error: generate command requires metadata JSON")
-                sys.exit(1)
-            
-            # Parse metadata JSON
-            metadata_json = sys.argv[2]
-            repo_metadata = json.loads(metadata_json)
-            
-            # Get API key if provided
-            api_key = sys.argv[3] if len(sys.argv) > 3 else None
-            
-            # Generate documentation structure
-            result = service.generate_documentation_structure(repo_metadata, api_key)
-            
-            # Output result as JSON
+        # Initialize service
+        service = ADocSService()
+
+        if command == "get-repositories":
+            docs_type = sys.argv[2] if len(sys.argv) > 2 else 'docs'
+            result = service.get_repositories(docs_type)
             print(json.dumps(result, indent=2))
-            
-        elif command == "stats":
-            # Get knowledge base statistics
-            stats = service.get_knowledge_base_stats()
-            print(json.dumps(stats, indent=2))
-            
+
+        elif command == "get-documentation":
+            if len(sys.argv) < 3:
+                print("Error: get-documentation command requires repository URL")
+                sys.exit(1)
+            repo_url = sys.argv[2]
+            docs_type = sys.argv[3] if len(sys.argv) > 3 else 'docs'
+            result = service.get_documentation(repo_url, docs_type)
+            print(json.dumps(result, indent=2))
+
+        elif command == "get-section":
+            if len(sys.argv) < 4:
+                print("Error: get-section command requires repository URL and section name")
+                sys.exit(1)
+            repo_url = sys.argv[2]
+            section = sys.argv[3]
+            docs_type = sys.argv[4] if len(sys.argv) > 4 else 'docs'
+            result = service.get_documentation_section(repo_url, section, docs_type)
+            print(json.dumps(result, indent=2))
+
+        elif command == "analyze":
+            if len(sys.argv) < 3:
+                print("Error: analyze command requires repository URL")
+                sys.exit(1)
+            repo_url = sys.argv[2]
+            result = asyncio.run(service.analyze_repository(repo_url))
+            print(json.dumps(result, indent=2))
+
+        elif command == "generate-wiki":
+            if len(sys.argv) < 3:
+                print("Error: generate-wiki command requires repository URL")
+                sys.exit(1)
+            repo_url = sys.argv[2]
+            result = asyncio.run(service.generate_wiki(repo_url))
+            print(json.dumps(result, indent=2))
+
+        elif command == "get-info":
+            if len(sys.argv) < 3:
+                print("Error: get-info command requires repository URL")
+                sys.exit(1)
+            repo_url = sys.argv[2]
+            docs_type = sys.argv[3] if len(sys.argv) > 3 else 'docs'
+            result = service.get_repository_info(repo_url, docs_type)
+            print(json.dumps(result, indent=2))
+
         else:
             print(f"Unknown command: {command}")
             sys.exit(1)
-            
+
     except Exception as e:
         logger.error(f"Error in main: {e}")
-        print(json.dumps({"error": str(e)}))
+        print(json.dumps({"success": False, "error": str(e)}))
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()

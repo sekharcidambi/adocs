@@ -1,0 +1,30 @@
+{
+  "github_url": "https://github.com/cccarey/dotnetxmlswfchart.git",
+  "name": "dotnetxmlswfchart",
+  "description": "",
+  "overview": "DotNetXmlSwfChart",
+  "business_domain": "Data Science",
+  "tech_stack": {
+    "languages": [],
+    "frontend": [],
+    "backend": [],
+    "databases": [],
+    "devops": []
+  },
+  "architecture": {
+    "pattern": "Component-based",
+    "description": "Component-based architecture pattern"
+  },
+  "readme": "DotNetXmlSwfChart\n.NET Libraries for XmlSwfChart\nhttp://www.maani.us/xml_charts/\n\nLicensed under MIT license.  See LICENSE file.\n\ncccarey - 20080602",
+  "metadata": {
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "created_at": "2008-06-02 08:20:01 -0700",
+    "updated_at": "2008-06-02 08:20:01 -0700",
+    "license": "",
+    "homepage": "",
+    "status": "Active"
+  },
+  "generated_at": "20250908_165438"
+}
