@@ -1,4 +1,11 @@
+# =============================================================================
+# ADocS Project .gitignore
+# Comprehensive ignore patterns for Python ML/AI project with cloud deployment
+# =============================================================================
+
+# =============================================================================
 # Python
+# =============================================================================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -21,21 +28,37 @@ wheels/
 *.egg
 MANIFEST
 
-# Virtual environments
+# =============================================================================
+# Virtual Environments
+# =============================================================================
 venv/
 env/
 ENV/
 env.bak/
 venv.bak/
+.venv/
+.env/
+.ENV/
+.env.bak/
+.venv.bak/
 
-# IDE
+# =============================================================================
+# IDE and Editor Files
+# =============================================================================
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
 
-# OS
+# =============================================================================
+# Operating System Files
+# =============================================================================
 .DS_Store
 .DS_Store?
 ._*
@@ -43,17 +66,204 @@ venv.bak/
 .Trashes
 ehthumbs.db
 Thumbs.db
+desktop.ini
 
-# Logs
+# =============================================================================
+# Environment and Configuration Files
+# =============================================================================
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+.env.development
+*.env
+config.ini
+config.cfg
+secrets.json
+credentials.json
+
+# =============================================================================
+# Logs and Debugging
+# =============================================================================
 *.log
+logs/
+*.log.*
+debug.log
+error.log
+access.log
+*.out
+*.err
 
-# Temporary files
+# =============================================================================
+# Temporary Files
+# =============================================================================
 *.tmp
 *.temp
+temp/
+tmp/
+.tmp/
+.temp/
 
-# Knowledge base (large file)
-knowledge_base.pkl
+# =============================================================================
+# Machine Learning and AI Models
+# =============================================================================
+# Large model files
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.pb
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.bin
+*.onnx
 
-# Keep generated_docs but ignore large files
-generated_docs/*/knowledge_base.pkl
+# Model directories
+models/
+checkpoints/
+weights/
+pretrained/
+
+# Exception: Keep the main knowledge base file
+!knowledge_base.pkl
+
+# =============================================================================
+# Data Files
+# =============================================================================
+# Large data files (keep structure, ignore content)
+data/*.json
+data/*.csv
+data/*.parquet
+data/*.feather
+data/*.pkl
+data/*.pickle
+
+# Generated data
+generated_data/
+processed_data/
+raw_data/
+datasets/
+
+# =============================================================================
+# Generated Documentation
+# =============================================================================
+# Keep structure but ignore large generated content
+generated_docs/*/large_*.md
+generated_docs/*/temp_*.md
+
+# Generated wiki docs (if they become large)
+generated_wiki_docs/temp_*
+
+# =============================================================================
+# Cloud and Deployment
+# =============================================================================
+# Google Cloud
+.gcloud/
+gcloud-config/
+service-account*.json
+*.key
+*.pem
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+.docker/
+
+# Kubernetes
+*.kubeconfig
+kubeconfig
+
+# =============================================================================
+# Testing and Coverage
+# =============================================================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# =============================================================================
+# Jupyter Notebooks
+# =============================================================================
+.ipynb_checkpoints/
+*.ipynb
+
+# =============================================================================
+# Package Managers
+# =============================================================================
+# Node.js (if any frontend components)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =============================================================================
+# Database Files
+# =============================================================================
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+
+# =============================================================================
+# Cache and Temporary ML Files
+# =============================================================================
+.cache/
+cache/
+*.cache
+transformers_cache/
+huggingface_cache/
+
+# =============================================================================
+# API Keys and Secrets
+# =============================================================================
+api_keys.txt
+secrets.txt
+*.key
+*.pem
+*.p12
+*.pfx
+
+# =============================================================================
+# Backup Files
+# =============================================================================
+*.bak
+*.backup
+*.old
+*.orig
+
+# =============================================================================
+# Large Files (over 10MB)
+# =============================================================================
+# Uncomment if you want to ignore all large files
+# *.{zip,tar,gz,rar,7z}
+
+# =============================================================================
+# Project Specific
+# =============================================================================
+# Sample data that shouldn't be committed
+sample_*.json
+test_*.json
+debug_*.json
+
+# Generated analysis files
+*_analysis_*.json
+*_metadata_*.json
+
+# =============================================================================
+# Keep Important Files
+# =============================================================================
+# Force include important files that might be ignored
+!.env.example
+!requirements*.txt
+!README.md
+!docs/
+!scripts/
 
