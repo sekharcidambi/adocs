@@ -50,7 +50,8 @@ steps:
       '--min-instances', '1',      # Keep one instance warm to avoid cold starts
       '--concurrency', '1',        # Process one request at a time to avoid timeouts
       '--timeout', '3600',         # 60 minutes timeout (maximum allowed for long analyses)
-      '--set-env-vars', 'PYTHONUNBUFFERED=1,GCS_BUCKET_NAME=adocs-backend-adocs-storage',
+      '--set-env-vars', 
+      'PYTHONUNBUFFERED=1,GCS_BUCKET_NAME=adocs-backend-adocs-storage,ENABLE_CUSTOM_SECTIONS=true,CUSTOM_DOCS_BUCKET=adocs-custom-docs,CONFIG_FILE_PATH=config/repository_config.yaml',
       '--set-secrets', 'ANTHROPIC_API_KEY=anthropic-api-key:latest,GITHUB_TOKEN=github-token:latest'
     ]
 

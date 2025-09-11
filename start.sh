@@ -51,7 +51,7 @@ fi
 
 # Start the FastAPI service with Gunicorn for production
 echo "🌐 Starting FastAPI service on port 8000..."
-exec gunicorn fastapi_service_gcs:app \
+exec gunicorn fastapi_service_enhanced:app \
     --bind 0.0.0.0:8000 \
     --workers 2 \
     --worker-class uvicorn.workers.UvicornWorker \

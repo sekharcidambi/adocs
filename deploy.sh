@@ -20,7 +20,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-PROJECT_ID=${PROJECT_ID:-"your-project-id"}
+PROJECT_ID=${PROJECT_ID:-"adocs-backend"}
 REGION=${REGION:-"us-central1"}
 SERVICE_NAME="adocs"
 CONFIG_FILE="cloudbuild.yaml"

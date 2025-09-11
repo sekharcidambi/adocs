@@ -1,0 +1,91 @@
+# Repository-specific configuration for ADocS
+# This file allows injection of custom sections and GCS paths for specific repositories
+
+repositories:
+  # Example: React repository with custom sections
+  "https://github.com/facebook/react":
+    custom_sections:
+      - name: "Getting Started"
+        gcs_path: "custom_docs/react/getting-started.md"
+        priority: 1
+        description: "Quick start guide for React development"
+        icon: "🚀"
+      - name: "Advanced Patterns"
+        gcs_path: "custom_docs/react/advanced-patterns.md"
+        priority: 5
+        description: "Advanced React patterns and best practices"
+        icon: "⚡"
+      - name: "Performance Guide"
+        gcs_path: "custom_docs/react/performance.md"
+        priority: 3
+        description: "React performance optimization guide"
+        icon: "⚡"
+    
+    # Override default GCS path structure
+    gcs_path_override: "custom_docs/react/"
+    
+    # Custom metadata
+    custom_metadata:
+      maintainer: "Facebook"
+      category: "Frontend Framework"
+      difficulty: "Intermediate"
+      tags: ["javascript", "frontend", "ui", "react"]
+
+  # Example: Apache OFBiz with custom sections
+  "https://github.com/apache/ofbiz-framework":
+    custom_sections:
+      - name: "Domain Model"
+        gcs_path: "custom_docs/ofbiz/domain_summary.md"
+        priority: 2
+        description: "Domain Model Overview"
+        icon: "🏢"
+    
+    custom_metadata:
+      maintainer: "Apache"
+      category: "Enterprise Framework"
+      difficulty: "Advanced"
+      tags: ["java", "enterprise", "framework", "ofbiz"]
+
+
+# Global configuration
+global_config:
+  # Default GCS bucket for custom docs
+  custom_docs_bucket: "adocs-custom-docs"
+  
+  # Fallback behavior when custom sections are not found
+  fallback_to_generated: true
+  
+  # Cache TTL for custom sections (in seconds)
+  cache_ttl: 3600
+  
+  # Enable/disable custom sections
+  enable_custom_sections: true
+  
+  # Section injection strategy
+  injection_strategy: "merge"  # Options: prepend, append, replace, merge
+
+# Section templates for common patterns
+section_templates:
+  getting_started:
+    name: "Getting Started"
+    icon: "🚀"
+    priority: 1
+    description: "Quick start guide"
+  
+  architecture:
+    name: "Architecture"
+    icon: "🏗️"
+    priority: 2
+    description: "System architecture overview"
+  
+  api_reference:
+    name: "API Reference"
+    icon: "📚"
+    priority: 3
+    description: "Complete API documentation"
+  
+  deployment:
+    name: "Deployment"
+    icon: "🚀"
+    priority: 4
+    description: "Deployment and operations guide"

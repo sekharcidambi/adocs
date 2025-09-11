@@ -401,6 +401,29 @@ class CloudStorageService:
             logger.error(f"Error deleting repository documentation: {e}")
             return False
     
+    def get_raw_file_content(self, gcs_path: str) -> Optional[str]:
+        """
+        Get raw file content from GCS by path.
+        
+        Args:
+            gcs_path: Full GCS path to the file (e.g., 'custom_docs/repo/file.md')
+            
+        Returns:
+            File content or None if not found
+        """
+        try:
+            blob = self.bucket.blob(gcs_path)
+            if blob.exists():
+                content = blob.download_as_text()
+                logger.info(f"Successfully retrieved file content from: {gcs_path}")
+                return content
+            else:
+                logger.warning(f"File not found in GCS: {gcs_path}")
+                return None
+        except Exception as e:
+            logger.error(f"Error retrieving file content from {gcs_path}: {e}")
+            return None
+
     def get_storage_stats(self) -> Dict[str, Any]:
         """
         Get storage statistics.
