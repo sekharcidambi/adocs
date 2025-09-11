@@ -60,8 +60,10 @@ data/
 .env.local
 .env.*.local
 
-# Cloud Build files
-cloudbuild*.yaml
+# Cloud Build files (keep only the main cloudbuild.yaml)
+cloudbuild-simple.yaml
+cloudbuildoptimized.yaml
+cloudbuild-extended-timeout.yaml
 Dockerfile*
 
 # Temporary files
