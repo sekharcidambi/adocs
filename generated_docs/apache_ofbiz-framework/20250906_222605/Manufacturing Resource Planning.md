@@ -1,207 +1,396 @@
-## Manufacturing Resource Planning
+# Manufacturing Resource Planning
 
 ## Overview
 
-The Manufacturing Resource Planning (MRP) module in Apache OFBiz provides comprehensive functionality for production planning, inventory management, and resource optimization within the enterprise framework. This module integrates seamlessly with OFBiz's service-oriented architecture, leveraging the entity engine and workflow management capabilities to deliver a complete manufacturing solution.
+Manufacturing Resource Planning (MRP) in Apache OFBiz is a comprehensive enterprise resource planning module that manages the complete manufacturing lifecycle from demand forecasting to production execution. The MRP system integrates seamlessly with OFBiz's inventory management, purchasing, and accounting modules to provide end-to-end manufacturing operations support.
 
-The MRP implementation follows OFBiz's standard patterns, utilizing XML-based entity definitions, service definitions, and screen configurations to provide a flexible and extensible manufacturing management system. The module is built on top of the core OFBiz framework components including the Entity Engine, Service Engine, and Widget Framework.
+The OFBiz MRP implementation follows industry-standard MRP II principles while leveraging the framework's flexible entity engine and service-oriented architecture to deliver scalable manufacturing solutions for businesses of all sizes.
 
-## Core Components and Architecture
+## Architecture and Core Components
 
 ### Entity Model Structure
 
-The MRP module defines its data model through XML entity definitions located in the `applications/manufacturing/entitydef/` directory. Key entities include:
+The MRP module is built upon OFBiz's robust entity framework, utilizing key entities that represent manufacturing concepts:
 
 ```xml
-<entity entity-name="ProductionRun" package-name="org.apache.ofbiz.manufacturing.mrp">
-    <field name="productionRunId" type="id-ne"/>
+<!-- Core MRP Entities -->
+<entity entity-name="MrpEvent" package-name="org.apache.ofbiz.manufacturing.mrp">
+    <field name="mrpEventId" type="id-ne"/>
     <field name="productId" type="id"/>
+    <field name="mrpEventTypeId" type="id"/>
+    <field name="eventDate" type="date-time"/>
+    <field name="quantity" type="fixed-point"/>
     <field name="facilityId" type="id"/>
-    <field name="workEffortName" type="name"/>
+    <prim-key field="mrpEventId"/>
+</entity>
+
+<entity entity-name="MrpEventType" package-name="org.apache.ofbiz.manufacturing.mrp">
+    <field name="mrpEventTypeId" type="id-ne"/>
     <field name="description" type="description"/>
-    <field name="quantityToProduce" type="fixed-point"/>
-    <field name="quantityProduced" type="fixed-point"/>
-    <field name="estimatedStartDate" type="date-time"/>
-    <field name="estimatedCompletionDate" type="date-time"/>
-    <prim-key field="productionRunId"/>
+    <prim-key field="mrpEventTypeId"/>
 </entity>
 ```
 
-The MRP system utilizes several interconnected entities:
-- **MrpEvent**: Represents supply and demand events in the planning horizon
-- **ProductionRun**: Manages manufacturing orders and production schedules
-- **WorkEffort**: Handles task management and resource allocation
-- **InventoryItem**: Tracks raw materials and finished goods inventory
-- **ProductFacility**: Manages product-facility relationships and safety stock levels
-
 ### Service Layer Implementation
 
-The MRP services are defined in `applications/manufacturing/servicedef/services_mrp.xml` and implemented in Java classes within the `org.apache.ofbiz.manufacturing.mrp` package. Core services include:
-
-```xml
-<service name="runMrp" engine="java" 
-         location="org.apache.ofbiz.manufacturing.mrp.MrpServices" 
-         invoke="runMrp" auth="true">
-    <description>Run MRP for a facility</description>
-    <attribute name="facilityId" type="String" mode="IN" optional="false"/>
-    <attribute name="mrpName" type="String" mode="IN" optional="true"/>
-    <attribute name="defaultYearsOffset" type="Integer" mode="IN" optional="true"/>
-</service>
-```
-
-Key service implementations:
-
-- **runMrp**: Executes the main MRP calculation algorithm
-- **createProductionRun**: Generates production orders based on MRP recommendations
-- **explodeBomComponent**: Performs bill-of-materials explosion for material requirements
-- **calculateInventoryAvailableToPromise**: Computes ATP quantities for planning
-
-## MRP Algorithm Implementation
-
-### Planning Process Flow
-
-The MRP engine follows a systematic approach implemented in the `MrpServices.java` class:
-
-1. **Demand Collection**: Gathers requirements from sales orders, forecasts, and safety stock
-2. **Supply Analysis**: Evaluates existing inventory, scheduled receipts, and production capacity
-3. **Net Requirements Calculation**: Determines shortfalls requiring action
-4. **Time-Phased Planning**: Schedules production and procurement activities
-5. **Capacity Validation**: Verifies resource availability and constraints
+The MRP functionality is exposed through OFBiz services, following the framework's service-oriented architecture:
 
 ```java
-public static Map<String, Object> runMrp(DispatchContext dctx, Map<String, ? extends Object> context) {
-    Delegator delegator = dctx.getDelegator();
-    LocalDispatcher dispatcher = dctx.getDispatcher();
+// Example MRP Service Implementation
+public class MrpServices {
     
-    String facilityId = (String) context.get("facilityId");
-    String mrpName = (String) context.get("mrpName");
-    
-    // Initialize MRP events and process demand/supply
-    List<GenericValue> mrpEvents = FastList.newInstance();
-    
-    // Process sales orders and forecasts
-    processDemandEvents(delegator, facilityId, mrpEvents);
-    
-    // Process inventory and scheduled receipts
-    processSupplyEvents(delegator, facilityId, mrpEvents);
-    
-    // Execute MRP logic
-    executeMrpLogic(delegator, dispatcher, mrpEvents);
-    
-    return ServiceUtil.returnSuccess();
-}
-```
-
-### Bill of Materials Processing
-
-The BOM explosion functionality recursively processes product structures to determine component requirements:
-
-```java
-private static void explodeBom(Delegator delegator, String productId, 
-                              BigDecimal quantity, Map<String, BigDecimal> requirements) {
-    try {
-        List<GenericValue> bomComponents = EntityQuery.use(delegator)
-            .from("ProductAssoc")
-            .where("productId", productId, "productAssocTypeId", "MANUF_COMPONENT")
-            .filterByDate()
-            .queryList();
+    public static Map<String, Object> executeMrp(DispatchContext dctx, 
+            Map<String, ? extends Object> context) {
+        Delegator delegator = dctx.getDelegator();
+        LocalDispatcher dispatcher = dctx.getDispatcher();
+        GenericValue userLogin = (GenericValue) context.get("userLogin");
+        
+        String facilityId = (String) context.get("facilityId");
+        Integer defaultYearsOffset = (Integer) context.get("defaultYearsOffset");
+        
+        try {
+            // Initialize MRP run
+            Map<String, Object> mrpContext = UtilMisc.toMap(
+                "facilityId", facilityId,
+                "userLogin", userLogin
+            );
             
-        for (GenericValue component : bomComponents) {
-            BigDecimal componentQty = component.getBigDecimal("quantity");
-            BigDecimal totalRequired = quantity.multiply(componentQty);
+            // Execute MRP calculation logic
+            Map<String, Object> result = dispatcher.runSync("runMrpCalculation", mrpContext);
             
-            String componentProductId = component.getString("productIdTo");
-            requirements.put(componentProductId, 
-                           requirements.getOrDefault(componentProductId, BigDecimal.ZERO)
-                           .add(totalRequired));
+            return ServiceUtil.returnSuccess("MRP execution completed successfully");
+            
+        } catch (GenericServiceException e) {
+            Debug.logError(e, "Error executing MRP: " + e.getMessage(), MODULE);
+            return ServiceUtil.returnError("MRP execution failed: " + e.getMessage());
         }
-    } catch (GenericEntityException e) {
-        Debug.logError(e, "Error exploding BOM for product: " + productId, module);
     }
 }
 ```
 
-## Integration Points
+## Key Features and Functionality
 
-### ERP Module Integration
+### 1. Demand Planning and Forecasting
 
-The MRP system integrates extensively with other OFBiz applications:
+The MRP system processes various demand sources to create comprehensive demand plans:
 
-- **Order Management**: Consumes sales order demand and generates purchase requisitions
-- **Inventory Management**: Updates stock levels and reservation quantities
-- **Accounting**: Creates financial transactions for production costs and inventory valuations
-- **Human Resources**: Interfaces with workforce scheduling and capacity planning
-- **Facility Management**: Coordinates with warehouse operations and material handling
+#### Sales Order Integration
+```groovy
+// Groovy script for processing sales order demand
+import org.apache.ofbiz.entity.util.EntityQuery
 
-### Workflow Integration
-
-Production runs leverage OFBiz's WorkEffort framework for task management:
-
-```xml
-<service name="createProductionRunTasksFromRoutingTasks" engine="java"
-         location="org.apache.ofbiz.manufacturing.jobshopmgt.ProductionRunServices"
-         invoke="createProductionRunTasksFromRoutingTasks">
-    <attribute name="productionRunId" type="String" mode="IN" optional="false"/>
-    <attribute name="routing" type="GenericValue" mode="IN" optional="true"/>
-    <attribute name="workEffortId" type="String" mode="OUT" optional="true"/>
-</service>
-```
-
-## Configuration and Customization
-
-### MRP Parameters
-
-System-wide MRP parameters are configured through the `MrpEventType` and `ProductFacility` entities:
-
-```xml
-<ProductFacility productId="PROD_001" facilityId="WebStoreWarehouse"
-                 minimumStock="10.0" reorderQuantity="100.0"
-                 daysToShip="2" lastInventoryCount="2023-01-15 00:00:00"/>
-```
-
-### Custom Planning Strategies
-
-Organizations can extend the MRP functionality by implementing custom services:
-
-```java
-@Override
-public Map<String, Object> customMrpStrategy(DispatchContext dctx, 
-                                           Map<String, Object> context) {
-    // Custom logic for specialized planning requirements
-    // Integration with external planning systems
-    // Industry-specific calculations
+def processSalesOrderDemand() {
+    def salesOrders = EntityQuery.use(delegator)
+        .from("OrderHeader")
+        .where("orderTypeId", "SALES_ORDER", 
+               "statusId", "ORDER_APPROVED")
+        .queryList()
     
-    return ServiceUtil.returnSuccess("Custom MRP strategy executed");
+    salesOrders.each { order ->
+        def orderItems = order.getRelated("OrderItem", null, null, false)
+        orderItems.each { item ->
+            // Create MRP events for sales demand
+            def mrpEvent = delegator.makeValue("MrpEvent", [
+                mrpEventId: delegator.getNextSeqId("MrpEvent"),
+                productId: item.productId,
+                mrpEventTypeId: "SALES_ORDER_SHIP",
+                eventDate: order.shipByDate,
+                quantity: item.quantity,
+                facilityId: order.facilityId
+            ])
+            mrpEvent.create()
+        }
+    }
 }
 ```
 
-## Performance Considerations
+#### Forecast Management
+```xml
+<!-- Service definition for forecast processing -->
+<service name="processForecastDemand" engine="java"
+         location="org.apache.ofbiz.manufacturing.mrp.MrpServices" 
+         invoke="processForecastDemand">
+    <description>Process forecast demand for MRP</description>
+    <attribute name="facilityId" type="String" mode="IN" optional="false"/>
+    <attribute name="forecastId" type="String" mode="IN" optional="true"/>
+    <attribute name="fromDate" type="Timestamp" mode="IN" optional="true"/>
+    <attribute name="thruDate" type="Timestamp" mode="IN" optional="true"/>
+</service>
+```
 
-### Database Optimization
+### 2. Bill of Materials (BOM) Processing
 
-The MRP module includes several performance optimizations:
+The MRP system leverages OFBiz's product configuration capabilities to process multi-level BOMs:
 
-- **Indexed Views**: Pre-calculated inventory positions for faster queries
-- **Batch Processing**: Bulk operations for large-scale planning runs
-- **Caching Strategies**: Frequently accessed BOM and routing data caching
+```java
+public static Map<String, Object> explodeBom(DispatchContext dctx, 
+        Map<String, ? extends Object> context) {
+    
+    String productId = (String) context.get("productId");
+    BigDecimal quantity = (BigDecimal) context.get("quantity");
+    String facilityId = (String) context.get("facilityId");
+    
+    try {
+        // Get BOM components
+        List<GenericValue> bomComponents = EntityQuery.use(delegator)
+            .from("ProductAssoc")
+            .where("productId", productId,
+                   "productAssocTypeId", "MANUF_COMPONENT")
+            .filterByDate()
+            .queryList();
+        
+        List<Map<String, Object>> explodedComponents = new ArrayList<>();
+        
+        for (GenericValue component : bomComponents) {
+            BigDecimal componentQuantity = component.getBigDecimal("quantity")
+                .multiply(quantity);
+            
+            Map<String, Object> componentInfo = UtilMisc.toMap(
+                "productId", component.getString("productIdTo"),
+                "quantity", componentQuantity,
+                "requiredByDate", context.get("requiredByDate")
+            );
+            
+            explodedComponents.add(componentInfo);
+            
+            // Recursive explosion for sub-assemblies
+            if (isAssembly(component.getString("productIdTo"))) {
+                Map<String, Object> subResult = explodeBom(dctx, componentInfo);
+                explodedComponents.addAll((List) subResult.get("components"));
+            }
+        }
+        
+        return ServiceUtil.returnSuccess("BOM exploded successfully", 
+            UtilMisc.toMap("components", explodedComponents));
+            
+    } catch (GenericEntityException e) {
+        return ServiceUtil.returnError("Error exploding BOM: " + e.getMessage());
+    }
+}
+```
 
-### Scalability Features
+### 3. Inventory Planning and Safety Stock
 
-- **Facility-based Partitioning**: Parallel processing across multiple facilities
-- **Incremental Planning**: Net-change MRP for reduced processing time
-- **Background Processing**: Asynchronous
+The system calculates optimal inventory levels considering lead times, safety stock, and reorder points:
 
-## Repository Context
+```groovy
+// Safety stock calculation service
+def calculateSafetyStock() {
+    def products = EntityQuery.use(delegator)
+        .from("Product")
+        .where("productTypeId", "FINISHED_GOOD")
+        .queryList()
+    
+    products.each { product ->
+        def demandHistory = getDemandHistory(product.productId, 12) // 12 months
+        def avgDemand = demandHistory.sum() / demandHistory.size()
+        def demandVariability = calculateStandardDeviation(demandHistory)
+        
+        // Safety stock = Z-score * sqrt(lead time) * demand variability
+        def leadTime = getLeadTime(product.productId)
+        def serviceLevel = 0.95 // 95% service level
+        def zScore = 1.65 // Z-score for 95% service level
+        
+        def safetyStock = zScore * Math.sqrt(leadTime) * demandVariability
+        
+        // Update product facility record
+        def productFacility = EntityQuery.use(delegator)
+            .from("ProductFacility")
+            .where("productId", product.productId, "facilityId", facilityId)
+            .queryOne()
+        
+        if (productFacility) {
+            productFacility.minimumStock = safetyStock
+            productFacility.store()
+        }
+    }
+}
+```
 
-- **Repository**: [https://github.com/apache/ofbiz-framework](https://github.com/apache/ofbiz-framework)
-- **Description**: No description available
-- **Business Domain**: Software Development
-- **Architecture Pattern**: Library/Utility
+### 4. Production Planning and Scheduling
 
-## Technology Stack
+#### Work Order Generation
+```java
+public static Map<String, Object> createProductionRuns(DispatchContext dctx, 
+        Map<String, ? extends Object> context) {
+    
+    Delegator delegator = dctx.getDelegator();
+    LocalDispatcher dispatcher = dctx.getDispatcher();
+    
+    try {
+        // Get MRP events requiring production
+        List<GenericValue> productionEvents = EntityQuery.use(delegator)
+            .from("MrpEvent")
+            .where("mrpEventTypeId", "PLANNED_PRODUCTION")
+            .orderBy("eventDate")
+            .queryList();
+        
+        for (GenericValue event : productionEvents) {
+            // Create production run
+            Map<String, Object> productionRunContext = UtilMisc.toMap(
+                "productId", event.getString("productId"),
+                "quantity", event.getBigDecimal("quantity"),
+                "startDate", calculateStartDate(event.getTimestamp("eventDate")),
+                "facilityId", event.getString("facilityId"),
+                "userLogin", context.get("userLogin")
+            );
+            
+            Map<String, Object> result = dispatcher.runSync(
+                "createProductionRun", productionRunContext);
+            
+            if (ServiceUtil.isError(result)) {
+                Debug.logError("Failed to create production run for product: " + 
+                    event.getString("productId"), MODULE);
+            }
+        }
+        
+        return ServiceUtil.returnSuccess("Production runs created successfully");
+        
+    } catch (Exception e) {
+        return ServiceUtil.returnError("Error creating production runs: " + 
+            e.getMessage());
+    }
+}
+```
 
----
+#### Capacity Planning
+```xml
+<!-- Routing and capacity entities -->
+<entity entity-name="WorkEffort" package-name="org.apache.ofbiz.workeffort.workeffort">
+    <field name="workEffortId" type="id-ne"/>
+    <field name="workEffortTypeId" type="id"/>
+    <field name="currentStatusId" type="id"/>
+    <field name="estimatedMilliSeconds" type="numeric"/>
+    <field name="actualMilliSeconds" type="numeric"/>
+    <field name="facilityId" type="id"/>
+    <prim-key field="workEffortId"/>
+</entity>
+```
 
-*Generated by ADocS (Automated Documentation Structure) on 2025-09-06 22:31:34*
+## Configuration and Setup
 
-*For the most up-to-date information, visit the [original repository](https://github.com/apache/ofbiz-framework)*
+### 1. MRP Parameters Configuration
+
+Configure MRP parameters through the OFBiz entity engine:
+
+```xml
+<!-- MRP Configuration Data -->
+<entity-engine-xml>
+    <MrpEventType mrpEventTypeId="SALES_ORDER_SHIP" description="Sales Order Shipment"/>
+    <MrpEventType mrpEventTypeId="PURCHASE_ORDER_RECEIPT" description="Purchase Order Receipt"/>
+    <MrpEventType mrpEventTypeId="PLANNED_PRODUCTION" description="Planned Production"/>
+    <MrpEventType mrpEventTypeId="INVENTORY_ON_HAND" description="Inventory On Hand"/>
+    
+    <ProductFacility productId="PRODUCT_001" facilityId="WebStoreWarehouse" 
+                     minimumStock="100" reorderQuantity="500" daysToShip="2"/>
+</entity-engine-xml>
+```
+
+### 2. Service Definitions
+
+```xml
+<!-- services.xml for MRP module -->
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
+    
+    <service name="runMrp" engine="java"
+             location="org.apache.ofbiz.manufacturing.mrp.MrpServices" 
+             invoke="executeMrp">
+        <description>Execute MRP for a facility</description>
+        <attribute name="facilityId" type="String" mode="IN" optional="false"/>
+        <attribute name="defaultYearsOffset" type="Integer" mode="IN" optional="true"/>
+        <attribute name="mrpName" type="String" mode="IN" optional="true"/>
+    </service>
+    
+    <service name="initMrpEvents" engine="java"
+             location="org.apache.ofbiz.manufacturing.mrp.MrpServices" 
+             invoke="initMrpEvents">
+        <description>Initialize MRP events from existing data</description>
+        <attribute name="facilityId" type="String" mode="IN" optional="false"/>
+        <attribute name="mrpId" type="String" mode="OUT" optional="false"/>
+    </service>
+</services>
+```
+
+## Integration Points
+
+### 1. Inventory Management Integration
+
+The MRP system seamlessly integrates with OFBiz inventory management:
+
+```java
+// Integration with inventory services
+public static Map<String, Object> updateInventoryFromMrp(DispatchContext dctx, 
+        Map<String, ? extends Object> context) {
+    
+    LocalDispatcher dispatcher = dctx.getDispatcher();
+    
+    try {
+        // Get inventory variance from MRP recommendations
+        List<GenericValue> inventoryVariances = getInventoryVariances(context);
+        
+        for (GenericValue variance : inventoryVariances) {
+            if (variance.getBigDecimal("varianceQuantity").compareTo(BigDecimal.ZERO) > 0) {
+                // Create inventory adjustment
+                Map<String, Object> adjustmentContext = UtilMisc.toMap(
+                    "inventoryItemId", variance.getString("inventoryItemId"),
+                    "adjustmentQuantity", variance.getBigDecimal("varianceQuantity"),
+                    "reasonEnumId", "IID_MRP_ADJUSTMENT",
+                    "userLogin", context.get("userLogin")
+                );
+                
+                dispatcher.runSync("createInventoryItemAdjustment", adjustmentContext);
+            }
+        }
+        
+        return ServiceUtil.returnSuccess();
+        
+    } catch (GenericServiceException e) {
+        return ServiceUtil.returnError("Error updating inventory: " + e.getMessage());
+    }
+}
+```
+
+### 2. Purchasing Integration
+
+Automatic purchase order generation based on MRP recommendations:
+
+```groovy
+// Purchase requisition generation
+def generatePurchaseRequisitions() {
+    def purchaseEvents = EntityQuery.use(delegator)
+        .from("MrpEvent")
+        .where("mrpEventTypeId", "PLANNED_PURCHASE")
+        .queryList()
+    
+    def requisitionsBySupplier = [:]
+    
+    purchaseEvents.each { event ->
+        def supplier = getPreferredSupplier(event.productId)
+        if (!requisitionsBySupplier[supplier.partyId]) {
+            requisitionsBySupplier[supplier.partyId] = []
+        }
+        
+        requisitionsBySupplier[supplier.partyId] << [
+            productId: event.productId,
+            quantity: event.quantity,
+            requiredByDate: event.eventDate
+        ]
+    }
+    
+    // Create purchase requisitions
+    requisitionsBySupplier.each { supplierId, items ->
+        def requisitionId = createPurchaseRequisition(supplierId, items)
+        Debug.logInfo("Created purchase requisition ${requisitionId} for supplier ${supplierId}")
+    }
+}
+```
+
+## Best Practices and Performance Optimization
+
+### 1. Database Optimization
+
+```sql
+-- Recommended indexes for MRP performance
+CREATE INDEX idx_mrp_event_product_date ON mrp_event (product_id, event_date);
+CREATE INDEX idx_mrp_event_facility_type ON mrp_event (facility_id, mrp_event_

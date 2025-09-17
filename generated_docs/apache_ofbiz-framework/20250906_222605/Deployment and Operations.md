@@ -1,131 +1,47 @@
 # Deployment and Operations
 
-## Overview
+This section provides comprehensive guidance for deploying, optimizing, and maintaining Apache OFBiz in production environments. OFBiz is a complex enterprise framework that requires careful consideration of deployment strategies, performance tuning, and ongoing operational practices.
 
-Apache OFBiz deployment and operations encompass the complete lifecycle management of this enterprise resource planning (ERP) framework, from initial setup through production monitoring and maintenance. As a comprehensive business application suite built on Java and leveraging the Spring Framework architecture, OFBiz requires careful consideration of deployment strategies, configuration management, and operational procedures to ensure optimal performance and reliability.
+## Production Deployment
 
-## Deployment Architecture
+### Prerequisites and Environment Setup
 
-### Multi-Tier Deployment Model
+Before deploying OFBiz to production, ensure your environment meets the following requirements:
 
-OFBiz follows a multi-tier architecture that can be deployed across various environments:
+#### System Requirements
+- **Java**: OpenJDK 11 or higher (recommended: OpenJDK 17)
+- **Memory**: Minimum 4GB RAM (recommended: 8GB+ for production)
+- **Storage**: At least 10GB free space for application and logs
+- **Operating System**: Linux (recommended), Windows, or macOS
 
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Web Tier      │    │  Application    │    │   Data Tier     │
-│                 │    │     Tier        │    │                 │
-│ - Apache/Nginx  │◄──►│ - OFBiz Server  │◄──►│ - PostgreSQL    │
-│ - Load Balancer │    │ - Tomcat        │    │ - MySQL         │
-│ - SSL Termination│    │ - JVM           │    │ - Derby         │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-```
+#### Database Configuration
 
-### Container-Based Deployment
+OFBiz supports multiple database systems. Configure your production database:
 
-OFBiz supports containerization through Docker, enabling consistent deployments across environments:
-
-```dockerfile
-# Example Dockerfile configuration
-FROM openjdk:11-jdk-slim
-
-WORKDIR /opt/ofbiz
-COPY . .
-
-# Build OFBiz
-RUN ./gradlew build
-
-# Expose default ports
-EXPOSE 8080 8443
-
-# Start OFBiz
-CMD ["./gradlew", "ofbiz"]
-```
-
-### Kubernetes Deployment
-
-For scalable cloud deployments, OFBiz can be orchestrated using Kubernetes:
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: ofbiz-deployment
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: ofbiz
-  template:
-    metadata:
-      labels:
-        app: ofbiz
-    spec:
-      containers:
-      - name: ofbiz
-        image: ofbiz:latest
-        ports:
-        - containerPort: 8080
-        env:
-        - name: JAVA_OPTS
-          value: "-Xmx2g -Xms1g"
-        - name: OFBIZ_CONFIG
-          value: "production"
-```
-
-## Configuration Management
-
-### Environment-Specific Configurations
-
-OFBiz utilizes a hierarchical configuration system that supports environment-specific overrides:
-
-```
-framework/
-├── base/
-│   └── config/
-│       ├── general.properties
-│       ├── security.properties
-│       └── cache.properties
-├── webapp/
-│   └── config/
-│       ├── url.properties
-│       └── web.xml
-└── entity/
-    └── config/
-        ├── entityengine.xml
-        └── delegator.xml
-```
-
-### Database Configuration
-
-Production deployments require careful database configuration in `entityengine.xml`:
-
-```xml
-<delegator name="default" entity-model-reader="main" 
-           entity-group-reader="main" entity-eca-reader="main" 
-           distributed-cache-clear-enabled="false">
-    <group-map group-name="org.apache.ofbiz" datasource-name="localpostgres"/>
-</delegator>
-
-<datasource name="localpostgres"
-            helper-class="org.apache.ofbiz.entity.datasource.GenericHelperDAO"
-            field-type-name="postgres"
-            check-on-start="true"
-            add-missing-on-start="true"
-            use-pk-constraint-names="false"
-            constraint-name-clip-length="30"
-            alias-view-columns="false"
-            join-style="ansi-no-parenthesis"
-            result-fetch-size="50">
+```properties
+# framework/entity/config/entityengine.xml
+<datasource name="localderby"
+    helper-class="org.apache.ofbiz.entity.datasource.GenericHelperDAO"
+    field-type-name="derby"
+    check-on-start="true"
+    add-missing-on-start="true"
+    use-pk-constraint-names="false"
+    use-indices-unique="false"
+    alias-view-columns="false"
+    join-style="ansi-no-parenthesis"
+    result-fetch-size="50">
+    
     <read-data reader-name="tenant"/>
     <read-data reader-name="seed"/>
     <read-data reader-name="seed-initial"/>
     <read-data reader-name="demo"/>
     <read-data reader-name="ext"/>
+    
     <inline-jdbc
-        jdbc-driver="org.postgresql.Driver"
-        jdbc-uri="jdbc:postgresql://db-server:5432/ofbiz"
-        jdbc-username="${env:DB_USERNAME}"
-        jdbc-password="${env:DB_PASSWORD}"
+        jdbc-driver="org.apache.derby.jdbc.EmbeddedDriver"
+        jdbc-uri="jdbc:derby:runtime/data/derby/ofbiz;create=true"
+        jdbc-username="ofbiz"
+        jdbc-password="ofbiz"
         isolation-level="ReadCommitted"
         pool-minsize="2"
         pool-maxsize="250"
@@ -133,136 +49,431 @@ Production deployments require careful database configuration in `entityengine.x
 </datasource>
 ```
 
-## Operational Procedures
-
-### Application Lifecycle Management
-
-#### Startup Sequence
-
-OFBiz follows a specific startup sequence that can be controlled through Gradle tasks:
-
-```bash
-# Standard startup
-./gradlew ofbiz
-
-# Load initial data
-./gradlew "ofbiz --load-data"
-
-# Start with specific components
-./gradlew "ofbiz --start-component=party,accounting"
-
-# Production startup with JVM tuning
-./gradlew ofbiz -Dfile.encoding=UTF-8 -Xms1024M -Xmx2048M -XX:MaxPermSize=1024m
-```
-
-#### Graceful Shutdown
-
-```bash
-# Graceful shutdown via admin interface
-curl -X POST http://localhost:8080/webtools/control/shutdown \
-  -d "USERNAME=admin&PASSWORD=ofbiz"
-
-# Force shutdown
-./gradlew --stop
-pkill -f "org.apache.ofbiz"
-```
-
-### Monitoring and Health Checks
-
-#### Built-in Health Monitoring
-
-OFBiz provides comprehensive health monitoring through its WebTools interface:
-
-```bash
-# System status endpoint
-curl http://localhost:8080/webtools/control/SystemStatus
-
-# Entity engine status
-curl http://localhost:8080/webtools/control/EntityEngineStatus
-
-# Cache statistics
-curl http://localhost:8080/webtools/control/CacheStatus
-```
-
-#### JMX Integration
-
-Enable JMX for advanced monitoring:
-
-```bash
-export JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote \
-  -Dcom.sun.management.jmxremote.port=9999 \
-  -Dcom.sun.management.jmxremote.authenticate=false \
-  -Dcom.sun.management.jmxremote.ssl=false"
-```
-
-### Log Management
-
-#### Centralized Logging Configuration
-
-Configure Log4j2 for production environments in `framework/base/config/log4j2.xml`:
+For PostgreSQL production setup:
 
 ```xml
-<Configuration>
-  <Appenders>
-    <RollingFile name="RollingFile" fileName="runtime/logs/ofbiz.log"
-                 filePattern="runtime/logs/ofbiz-%d{yyyy-MM-dd}-%i.log.gz">
-      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} |%X{localDispatcherName}| %5p | %t | %c{1} | %m%n"/>
-      <Policies>
-        <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
-        <SizeBasedTriggeringPolicy size="100MB"/>
-      </Policies>
-      <DefaultRolloverStrategy max="30"/>
-    </RollingFile>
-  </Appenders>
-  
-  <Loggers>
-    <Logger name="org.apache.ofbiz" level="INFO"/>
-    <Logger name="org.apache.ofbiz.entity.transaction" level="WARN"/>
-    <Root level="WARN">
-      <AppenderRef ref="RollingFile"/>
-    </Root>
-  </Loggers>
-</Configuration>
+<datasource name="localpostgres"
+    helper-class="org.apache.ofbiz.entity.datasource.GenericHelperDAO"
+    field-type-name="postgres"
+    check-on-start="true"
+    add-missing-on-start="true"
+    use-pk-constraint-names="false"
+    use-indices-unique="false"
+    alias-view-columns="false"
+    join-style="ansi"
+    result-fetch-size="50">
+    
+    <inline-jdbc
+        jdbc-driver="org.postgresql.Driver"
+        jdbc-uri="jdbc:postgresql://localhost:5432/ofbiz"
+        jdbc-username="ofbiz"
+        jdbc-password="ofbiz"
+        isolation-level="ReadCommitted"
+        pool-minsize="5"
+        pool-maxsize="50"
+        time-between-eviction-runs-millis="600000"/>
+</datasource>
+```
+
+### Build and Packaging
+
+#### Creating Production Build
+
+Generate a production-ready build with optimized settings:
+
+```bash
+# Clean and build the framework
+./gradlew cleanAll loadAll
+
+# Create a distribution package
+./gradlew createOfbizBackup
+
+# Build without demo data for production
+./gradlew "ofbiz --load-data readers=seed,seed-initial,ext"
+```
+
+#### Configuration for Production
+
+Update key configuration files for production deployment:
+
+**framework/base/config/ofbiz-containers.xml**:
+```xml
+<container name="catalina-container" 
+    loaders="main,rmi,test" 
+    class="org.apache.ofbiz.catalina.container.CatalinaContainer">
+    <property name="delegator-name" value="default"/>
+    <property name="use-naming" value="false"/>
+    <property name="debug" value="0"/>
+    <property name="catalina-runtime-home" value="runtime/catalina"/>
+    <property name="apps-context-reloadable" value="false"/>
+    <property name="apps-cross-context" value="false"/>
+    <property name="apps-distributable" value="false"/>
+    <property name="enable-request-dump" value="false"/>
+</container>
+```
+
+**framework/webapp/config/url.properties**:
+```properties
+# HTTPS Configuration
+port.https.enabled=Y
+port.https=8443
+default.https.port=8443
+force.https.host=your-domain.com
+
+# Security headers
+strict-transport-security=max-age=31536000; includeSubDomains
+x-frame-options=SAMEORIGIN
+x-content-type-options=nosniff
+```
+
+### Deployment Strategies
+
+#### Docker Deployment
+
+Create a production Dockerfile:
+
+```dockerfile
+FROM openjdk:17-jdk-slim
+
+# Install required packages
+RUN apt-get update && apt-get install -y \
+    wget \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create ofbiz user
+RUN useradd -m -s /bin/bash ofbiz
+
+# Set working directory
+WORKDIR /opt/ofbiz
+
+# Copy OFBiz files
+COPY --chown=ofbiz:ofbiz . .
+
+# Set permissions
+RUN chmod +x gradlew
+
+# Switch to ofbiz user
+USER ofbiz
+
+# Expose ports
+EXPOSE 8080 8443
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:8080/webtools/control/main || exit 1
+
+# Start OFBiz
+CMD ["./gradlew", "ofbiz"]
+```
+
+**docker-compose.yml** for production:
+
+```yaml
+version: '3.8'
+
+services:
+  ofbiz:
+    build: .
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    environment:
+      - JAVA_OPTS=-Xms2g -Xmx4g -XX:+UseG1GC
+    volumes:
+      - ofbiz_data:/opt/ofbiz/runtime
+      - ofbiz_logs:/opt/ofbiz/runtime/logs
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: ofbiz
+      POSTGRES_USER: ofbiz
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
+    depends_on:
+      - ofbiz
+    restart: unless-stopped
+
+volumes:
+  ofbiz_data:
+  ofbiz_logs:
+  postgres_data:
+```
+
+#### Traditional Server Deployment
+
+For traditional server deployment, create systemd service:
+
+```ini
+# /etc/systemd/system/ofbiz.service
+[Unit]
+Description=Apache OFBiz ERP System
+After=network.target
+
+[Service]
+Type=forking
+User=ofbiz
+Group=ofbiz
+WorkingDirectory=/opt/ofbiz
+ExecStart=/opt/ofbiz/gradlew ofbizBackground
+ExecStop=/opt/ofbiz/gradlew "ofbiz --shutdown"
+Restart=always
+RestartSec=10
+
+Environment=JAVA_OPTS=-Xms2g -Xmx4g -XX:+UseG1GC -XX:+UseStringDeduplication
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Enable and start the service:
+
+```bash
+sudo systemctl enable ofbiz
+sudo systemctl start ofbiz
+sudo systemctl status ofbiz
+```
+
+### SSL/TLS Configuration
+
+Configure HTTPS for production security:
+
+**framework/base/config/ofbiz-containers.xml**:
+```xml
+<property name="https-keystore" value="framework/base/config/ofbizssl.jks"/>
+<property name="https-keystore-type" value="JKS"/>
+<property name="https-keystore-pass" value="changeit"/>
+<property name="https-key-alias" value="ofbiz"/>
+```
+
+Generate SSL certificate:
+
+```bash
+# Generate keystore
+keytool -genkey -alias ofbiz -keyalg RSA -keystore framework/base/config/ofbizssl.jks
+
+# Import CA certificate (if using CA-signed certificate)
+keytool -import -alias root -keystore framework/base/config/ofbizssl.jks -trustcacerts -file ca-cert.crt
 ```
 
 ## Performance Optimization
 
 ### JVM Tuning
 
-Production deployments require careful JVM configuration:
+Optimize JVM settings for production workloads:
 
 ```bash
+# Set in gradle.properties or environment
 export JAVA_OPTS="-server \
-  -Xms2g -Xmx4g \
-  -XX:NewRatio=2 \
+  -Xms4g \
+  -Xmx8g \
   -XX:+UseG1GC \
-  -XX:MaxGC
+  -XX:MaxGCPauseMillis=200 \
+  -XX:+UseStringDeduplication \
+  -XX:+OptimizeStringConcat \
+  -XX:+UseCompressedOops \
+  -XX:+UseCompressedClassPointers \
+  -Djava.awt.headless=true \
+  -Dfile.encoding=UTF-8 \
+  -Duser.timezone=UTC"
+```
 
-## Subsections
+### Database Optimization
 
-- [Deployment Architecture](./Deployment Architecture.md)
-- [Production Configuration](./Production Configuration.md)
-- [Monitoring and Maintenance](./Monitoring and Maintenance.md)
+#### Connection Pool Tuning
 
-## Repository Context
+Optimize database connection pools in `entityengine.xml`:
 
-- **Repository**: [https://github.com/apache/ofbiz-framework](https://github.com/apache/ofbiz-framework)
-- **Description**: No description available
-- **Business Domain**: Software Development
-- **Architecture Pattern**: Library/Utility
+```xml
+<inline-jdbc
+    jdbc-driver="org.postgresql.Driver"
+    jdbc-uri="jdbc:postgresql://localhost:5432/ofbiz?prepareThreshold=3&amp;preparedStatementCacheQueries=256&amp;preparedStatementCacheSizeMiB=5"
+    jdbc-username="ofbiz"
+    jdbc-password="ofbiz"
+    isolation-level="ReadCommitted"
+    pool-minsize="10"
+    pool-maxsize="100"
+    pool-sleeptime="300000"
+    pool-lifetime="600000"
+    pool-deadlock-maxwait="300000"
+    pool-deadlock-retrywait="10000"
+    time-between-eviction-runs-millis="600000"/>
+```
 
-## Technology Stack
+#### Entity Engine Cache Configuration
 
-## Related Documentation
+Configure entity caching in `cache.properties`:
 
-This section is part of a comprehensive documentation structure. Related sections include:
+```properties
+# Entity cache settings
+cache.entity.default.maxSize=10000
+cache.entity.default.expireTime=3600000
+cache.entity.default.useSoftReference=true
 
-- **Deployment Architecture**: Detailed coverage of deployment architecture
-- **Production Configuration**: Detailed coverage of production configuration
-- **Monitoring and Maintenance**: Detailed coverage of monitoring and maintenance
+# Specific entity cache tuning
+cache.entity.Party.maxSize=50000
+cache.entity.Product.maxSize=100000
+cache.entity.ProductStore.maxSize=1000
+```
 
----
+### Application-Level Optimizations
 
-*Generated by ADocS (Automated Documentation Structure) on 2025-09-06 22:50:17*
+#### Service Engine Tuning
 
-*For the most up-to-date information, visit the [original repository](https://github.com/apache/ofbiz-framework)*
+Optimize service execution in `serviceengine.xml`:
+
+```xml
+<service-engine name="main">
+    <thread-pool send-to-pool="pool"
+                 purge-job-days="4"
+                 failed-retry-min="3"
+                 ttl="120000"
+                 jobs="100"
+                 min-threads="5"
+                 max-threads="15"
+                 poll-enabled="true"
+                 poll-db-millis="30000">
+        <run-from-pool name="pool"/>
+    </thread-pool>
+</service-engine>
+```
+
+#### Widget and Screen Optimization
+
+Enable screen widget caching:
+
+```xml
+<!-- framework/widget/config/widget.properties -->
+<property name="widget.screen.cache" value="true"/>
+<property name="widget.form.cache" value="true"/>
+<property name="widget.menu.cache" value="true"/>
+<property name="widget.tree.cache" value="true"/>
+```
+
+### Web Server Optimization
+
+#### Nginx Reverse Proxy Configuration
+
+Configure Nginx for optimal performance:
+
+```nginx
+upstream ofbiz_backend {
+    server 127.0.0.1:8080 max_fails=3 fail_timeout=30s;
+    server 127.0.0.1:8081 max_fails=3 fail_timeout=30s backup;
+}
+
+server {
+    listen 80;
+    server_name your-domain.com;
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name your-domain.com;
+
+    ssl_certificate /etc/nginx/ssl/cert.pem;
+    ssl_certificate_key /etc/nginx/ssl/key.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512;
+    ssl_prefer_server_ciphers off;
+
+    # Gzip compression
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 1024;
+    gzip_types text/plain text/css text/xml text/javascript 
+               application/javascript application/xml+rss 
+               application/json;
+
+    # Static file caching
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        proxy_pass http://ofbiz_backend;
+    }
+
+    location / {
+        proxy_pass http://ofbiz_backend;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        proxy_connect_timeout 30s;
+        proxy_send_timeout 30s;
+        proxy_read_timeout 30s;
+        
+        proxy_buffer_size 4k;
+        proxy_buffers 8 4k;
+        proxy_busy_buffers_size 8k;
+    }
+}
+```
+
+## Monitoring and Maintenance
+
+### Application Monitoring
+
+#### Health Check Endpoints
+
+Implement custom health check services:
+
+```java
+// In a custom service file
+public static Map<String, Object> systemHealthCheck(DispatchContext dctx, Map<String, ? extends Object> context) {
+    Map<String, Object> result = ServiceUtil.returnSuccess();
+    
+    // Check database connectivity
+    Delegator delegator = dctx.getDelegator();
+    try {
+        delegator.findOne("SystemProperty", UtilMisc.toMap("systemResourceId", "general", 
+                                                          "systemPropertyId", "instanceId"), false);
+        result.put("database", "healthy");
+    } catch (Exception e) {
+        result.put("database", "unhealthy: " + e.getMessage());
+    }
+    
+    // Check memory usage
+    Runtime runtime = Runtime.getRuntime();
+    long maxMemory = runtime.maxMemory();
+    long totalMemory = runtime.totalMemory();
+    long freeMemory = runtime.freeMemory();
+    long usedMemory = totalMemory - freeMemory;
+    
+    Map<String, Object> memoryInfo = new HashMap<>();
+    memoryInfo.put("used", usedMemory);
+    memoryInfo.put("free", freeMemory);
+    memoryInfo.put("total", totalMemory);
+    memoryInfo.put("max", maxMemory);
+    memoryInfo.put("usage_percent", (usedMemory * 100) / maxMemory);
+    
+    result.put("memory", memoryInfo);
+    
+    return result;
+}
+```
+
+#### JMX Monitoring
+
+Enable JMX for monitoring:
+
+```bash
+export JAVA_OPTS="$JAVA_OPTS \
+  -Dcom.sun.management.jmxremote \
+  

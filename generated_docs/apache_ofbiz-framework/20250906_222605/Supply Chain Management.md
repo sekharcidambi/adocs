@@ -1,206 +1,420 @@
-## Supply Chain Management
+# Supply Chain Management
 
 ## Overview
 
-The Supply Chain Management (SCM) module in Apache OFBiz provides a comprehensive framework for managing the flow of goods, services, and information from suppliers to end customers. Built on OFBiz's service-oriented architecture, this module integrates seamlessly with other business applications including Manufacturing, Inventory Management, Purchasing, and Order Management to create a unified supply chain ecosystem.
+The Supply Chain Management (SCM) module in Apache OFBiz provides a comprehensive framework for managing the flow of goods, services, and information throughout the entire supply chain lifecycle. Built on OFBiz's robust entity engine and service framework, the SCM module integrates seamlessly with other business applications including inventory management, procurement, manufacturing, and order fulfillment.
 
-The SCM implementation leverages OFBiz's entity engine and service framework to provide real-time visibility, automated workflows, and data-driven decision making across the entire supply chain network.
+## Architecture
 
-## Core Components
+### Core Components
 
-### Supply Chain Planning Engine
+The Supply Chain Management system in OFBiz is built around several key architectural components:
 
-The planning engine utilizes OFBiz's service orchestration capabilities to coordinate demand forecasting, capacity planning, and resource allocation:
-
-```xml
-<service name="createSupplyChainPlan" engine="java"
-         location="org.apache.ofbiz.scm.planning.PlanningServices"
-         invoke="createSupplyChainPlan">
-    <description>Create comprehensive supply chain plan</description>
-    <attribute name="facilityId" type="String" mode="IN" optional="false"/>
-    <attribute name="planningHorizon" type="Integer" mode="IN" optional="true"/>
-    <attribute name="planId" type="String" mode="OUT" optional="false"/>
-</service>
+```
+applications/
+├── product/          # Product catalog and inventory management
+├── order/           # Order management and fulfillment
+├── shipment/        # Shipping and logistics
+├── manufacturing/   # Production planning and execution
+└── purchasing/      # Procurement and vendor management
 ```
 
-### Supplier Relationship Management
+### Entity Model
 
-The supplier management component extends OFBiz's Party framework to handle supplier-specific relationships, performance metrics, and collaboration workflows:
+The SCM module leverages OFBiz's entity-relationship model with key entities including:
 
-- **Supplier Onboarding**: Automated workflows for supplier registration and qualification
-- **Performance Tracking**: Real-time monitoring of supplier KPIs using OFBiz's data warehouse capabilities
-- **Contract Management**: Integration with OFBiz's agreement framework for supplier contracts
+- **Product**: Core product definitions and attributes
+- **InventoryItem**: Physical inventory tracking
+- **OrderHeader/OrderItem**: Order management
+- **Shipment**: Logistics and delivery tracking
+- **WorkEffort**: Manufacturing and production activities
+- **SupplierProduct**: Vendor-product relationships
 
-### Demand Forecasting
+## Key Features
 
-Built on OFBiz's analytics framework, the demand forecasting system provides:
+### 1. Inventory Management
+
+#### Real-time Inventory Tracking
 
 ```java
-// Example service implementation for demand forecasting
-public static Map<String, Object> calculateDemandForecast(DispatchContext dctx, 
-                                                          Map<String, ?> context) {
+// Example: Check available inventory
+public static Map<String, Object> getInventoryAvailable(DispatchContext dctx, Map<String, ? extends Object> context) {
     Delegator delegator = dctx.getDelegator();
     String productId = (String) context.get("productId");
     String facilityId = (String) context.get("facilityId");
     
-    // Leverage OFBiz's entity engine for historical data analysis
-    List<GenericValue> salesHistory = delegator.findByAnd("OrderItem", 
-        UtilMisc.toMap("productId", productId), null, false);
-    
-    // Apply forecasting algorithms
-    Map<String, Object> forecast = ForecastingAlgorithms.exponentialSmoothing(salesHistory);
-    
-    return ServiceUtil.returnSuccess("Forecast calculated", forecast);
+    try {
+        List<GenericValue> inventoryItems = EntityQuery.use(delegator)
+            .from("InventoryItem")
+            .where("productId", productId, "facilityId", facilityId)
+            .queryList();
+            
+        BigDecimal availableToPromise = BigDecimal.ZERO;
+        for (GenericValue item : inventoryItems) {
+            BigDecimal atp = item.getBigDecimal("availableToPromiseTotal");
+            if (atp != null) {
+                availableToPromise = availableToPromise.add(atp);
+            }
+        }
+        
+        Map<String, Object> result = ServiceUtil.returnSuccess();
+        result.put("availableToPromise", availableToPromise);
+        return result;
+        
+    } catch (GenericEntityException e) {
+        return ServiceUtil.returnError("Error retrieving inventory: " + e.getMessage());
+    }
 }
 ```
 
-## Integration Architecture
+#### Multi-facility Support
 
-### Entity Model Integration
-
-The SCM module extends OFBiz's core entity model with specialized entities for supply chain operations:
+OFBiz supports complex multi-facility inventory management:
 
 ```xml
-<!-- Supply Chain Plan Entity -->
-<entity entity-name="SupplyChainPlan" package-name="org.apache.ofbiz.scm.plan">
-    <field name="planId" type="id-ne"/>
-    <field name="facilityId" type="id"/>
-    <field name="planTypeId" type="id"/>
-    <field name="planName" type="name"/>
-    <field name="fromDate" type="date-time"/>
-    <field name="thruDate" type="date-time"/>
-    <field name="statusId" type="id"/>
-    <prim-key field="planId"/>
-    <relation type="one" fk-name="SCP_FACILITY" rel-entity-name="Facility"/>
-    <relation type="one" fk-name="SCP_STATUS" rel-entity-name="StatusItem"/>
-</entity>
+<!-- Example facility configuration -->
+<Facility facilityId="MAIN_WAREHOUSE" 
+          facilityName="Main Distribution Center"
+          facilityTypeId="WAREHOUSE"
+          primaryFacilityGroupId="DISTRIBUTION"/>
+
+<FacilityLocation facilityId="MAIN_WAREHOUSE"
+                  locationSeqId="A001"
+                  areaId="ZONE_A"
+                  aisleId="01"
+                  sectionId="A"
+                  levelId="1"
+                  positionId="001"/>
 ```
 
-### Service Layer Architecture
+### 2. Procurement Management
 
-The SCM module implements a layered service architecture that promotes reusability and maintainability:
+#### Supplier Integration
 
-- **Core Services**: Fundamental SCM operations (planning, forecasting, optimization)
-- **Composite Services**: Complex workflows combining multiple core services
-- **Integration Services**: APIs for external system connectivity
+```java
+// Service for creating purchase orders
+public static Map<String, Object> createPurchaseOrder(DispatchContext dctx, Map<String, ? extends Object> context) {
+    Delegator delegator = dctx.getDelegator();
+    LocalDispatcher dispatcher = dctx.getDispatcher();
+    GenericValue userLogin = (GenericValue) context.get("userLogin");
+    
+    try {
+        // Create order header
+        Map<String, Object> orderHeaderMap = UtilMisc.toMap(
+            "orderTypeId", "PURCHASE_ORDER",
+            "orderDate", UtilDateTime.nowTimestamp(),
+            "statusId", "ORDER_CREATED",
+            "currencyUom", context.get("currencyUom"),
+            "userLogin", userLogin
+        );
+        
+        Map<String, Object> orderResult = dispatcher.runSync("createOrderHeader", orderHeaderMap);
+        String orderId = (String) orderResult.get("orderId");
+        
+        // Add order items
+        List<Map<String, Object>> orderItems = (List<Map<String, Object>>) context.get("orderItems");
+        for (Map<String, Object> item : orderItems) {
+            Map<String, Object> orderItemMap = UtilMisc.toMap(
+                "orderId", orderId,
+                "productId", item.get("productId"),
+                "quantity", item.get("quantity"),
+                "unitPrice", item.get("unitPrice"),
+                "userLogin", userLogin
+            );
+            dispatcher.runSync("createOrderItem", orderItemMap);
+        }
+        
+        return ServiceUtil.returnSuccess("Purchase order created successfully", 
+                                       UtilMisc.toMap("orderId", orderId));
+                                       
+    } catch (GenericServiceException e) {
+        return ServiceUtil.returnError("Failed to create purchase order: " + e.getMessage());
+    }
+}
+```
 
-### Event-Driven Processing
-
-Leveraging OFBiz's event framework, the SCM module responds to business events in real-time:
+#### Vendor Management
 
 ```xml
-<eca service="createPurchaseOrder" event="commit">
-    <condition field-name="orderTypeId" operator="equals" value="PURCHASE_ORDER"/>
-    <action service="updateSupplyChainPlan" mode="async"/>
-    <action service="notifySupplier" mode="async"/>
-</eca>
+<!-- Supplier product configuration -->
+<SupplierProduct partyId="SUPPLIER_001"
+                 productId="PRODUCT_123"
+                 availableFromDate="2024-01-01 00:00:00"
+                 supplierPrefOrderId="10_MAIN_SUPPL"
+                 minimumOrderQuantity="10"
+                 orderQtyIncrements="5"
+                 lastPrice="25.99"
+                 currencyUomId="USD"/>
 ```
 
-## Key Features and Capabilities
+### 3. Order Fulfillment
 
-### Multi-Tier Supply Network Management
-
-The system supports complex supply network topologies with multiple tiers of suppliers, manufacturers, and distributors. Each node in the network is represented as a Facility entity with specialized attributes for supply chain operations.
-
-### Advanced Planning and Scheduling
-
-Integration with OFBiz's Manufacturing module enables sophisticated planning capabilities:
-
-- **Material Requirements Planning (MRP)**: Automated calculation of material needs based on production schedules
-- **Capacity Planning**: Resource optimization across multiple facilities
-- **Constraint-Based Scheduling**: Advanced algorithms for production scheduling
-
-### Supply Chain Visibility
-
-Real-time dashboards and reporting leverage OFBiz's BI framework to provide:
+#### Automated Order Processing
 
 ```groovy
-// Example screen widget for supply chain dashboard
-screenlet {
-    title = "Supply Chain Performance Dashboard"
+// Groovy script for order fulfillment workflow
+import org.apache.ofbiz.entity.util.EntityQuery
+import org.apache.ofbiz.service.ServiceUtil
+
+// Check inventory availability
+def checkInventoryService = [
+    productId: parameters.productId,
+    facilityId: parameters.facilityId,
+    quantity: parameters.quantity
+]
+
+def inventoryResult = dispatcher.runSync("isStoreInventoryAvailable", checkInventoryService)
+
+if (inventoryResult.availableToPromise >= parameters.quantity) {
+    // Reserve inventory
+    def reserveService = [
+        productId: parameters.productId,
+        facilityId: parameters.facilityId,
+        quantity: parameters.quantity,
+        orderId: parameters.orderId,
+        orderItemSeqId: parameters.orderItemSeqId
+    ]
     
-    container {
-        chart(type: "line") {
-            data = context.supplyChainMetrics
-            xAxis = "date"
-            yAxis = "performance"
-        }
-    }
+    def reserveResult = dispatcher.runSync("createInventoryReservation", reserveService)
     
-    grid {
-        entity = "SupplyChainKPI"
-        conditions = [facilityId: parameters.facilityId]
+    if (ServiceUtil.isSuccess(reserveResult)) {
+        // Update order status
+        def updateOrderService = [
+            orderId: parameters.orderId,
+            statusId: "ORDER_APPROVED"
+        ]
+        dispatcher.runSync("changeOrderStatus", updateOrderService)
     }
 }
 ```
 
-## Configuration and Customization
+### 4. Manufacturing Resource Planning (MRP)
 
-### Module Configuration
-
-Supply chain parameters are managed through OFBiz's SystemProperty mechanism:
-
-```properties
-# Supply Chain Configuration
-scm.planning.horizon.days=90
-scm.forecast.algorithm=exponential_smoothing
-scm.supplier.evaluation.frequency=monthly
-scm.inventory.safety.stock.multiplier=1.5
-```
-
-### Custom Business Rules
-
-The module supports custom business rules through OFBiz's flexible rule engine:
+#### Bill of Materials (BOM) Management
 
 ```xml
-<simple-method method-name="validateSupplierPerformance">
-    <if-compare field="supplierRating" operator="less" value="3.0">
-        <add-error error="Supplier performance below threshold"/>
-    </if-compare>
-</simple-method>
+<!-- Product BOM definition -->
+<ProductAssoc productId="FINISHED_GOOD_001"
+              productIdTo="COMPONENT_A"
+              productAssocTypeId="MANUF_COMPONENT"
+              fromDate="2024-01-01 00:00:00"
+              quantity="2.0"
+              sequenceNum="10"/>
+
+<ProductAssoc productId="FINISHED_GOOD_001"
+              productIdTo="COMPONENT_B"
+              productAssocTypeId="MANUF_COMPONENT"
+              fromDate="2024-01-01 00:00:00"
+              quantity="1.0"
+              sequenceNum="20"/>
 ```
 
-## Best Practices and Implementation Guidelines
+#### Production Planning
 
-### Data Model Extensions
+```java
+// MRP calculation service
+public static Map<String, Object> runMrpCalculation(DispatchContext dctx, Map<String, ? extends Object> context) {
+    Delegator delegator = dctx.getDelegator();
+    LocalDispatcher dispatcher = dctx.getDispatcher();
+    
+    String facilityId = (String) context.get("facilityId");
+    String productId = (String) context.get("productId");
+    BigDecimal requiredQuantity = (BigDecimal) context.get("requiredQuantity");
+    Timestamp requiredByDate = (Timestamp) context.get("requiredByDate");
+    
+    try {
+        // Get current inventory levels
+        Map<String, Object> inventoryContext = UtilMisc.toMap(
+            "productId", productId,
+            "facilityId", facilityId
+        );
+        
+        Map<String, Object> inventoryResult = dispatcher.runSync("getInventoryAvailableByFacility", inventoryContext);
+        BigDecimal availableInventory = (BigDecimal) inventoryResult.get("availableToPromiseTotal");
+        
+        // Calculate net requirements
+        BigDecimal netRequirement = requiredQuantity.subtract(availableInventory);
+        
+        if (netRequirement.compareTo(BigDecimal.ZERO) > 0) {
+            // Create production requirement
+            Map<String, Object> requirementContext = UtilMisc.toMap(
+                "requirementTypeId", "PRODUCT_REQUIREMENT",
+                "productId", productId,
+                "facilityId", facilityId,
+                "quantity", netRequirement,
+                "requirementStartDate", UtilDateTime.nowTimestamp(),
+                "requiredByDate", requiredByDate,
+                "statusId", "REQ_CREATED"
+            );
+            
+            dispatcher.runSync("createRequirement", requirementContext);
+        }
+        
+        return ServiceUtil.returnSuccess();
+        
+    } catch (GenericServiceException e) {
+        return ServiceUtil.returnError("MRP calculation failed: " + e.getMessage());
+    }
+}
+```
 
-When extending the SCM data model, follow OFBiz conventions:
+## Integration Points
 
-- Use appropriate field types from the OFBiz type definitions
-- Implement proper foreign key relationships
-- Include audit fields (createdDate, lastModifiedDate, etc.)
+### 1. ERP Integration
 
-### Service Development
+The SCM module integrates with other OFBiz applications:
 
-SCM services should adhere to OFBiz service patterns:
+```java
+// Integration with accounting for cost tracking
+public static Map<String, Object> createInventoryVarianceAccounting(DispatchContext dctx, Map<String, ? extends Object> context) {
+    LocalDispatcher dispatcher = dctx.getDispatcher();
+    
+    String inventoryItemId = (String) context.get("inventoryItemId");
+    BigDecimal varianceQuantity = (BigDecimal) context.get("varianceQuantity");
+    BigDecimal unitCost = (BigDecimal) context.get("unitCost");
+    
+    try {
+        // Create accounting transaction
+        Map<String, Object> acctgTransContext = UtilMisc.toMap(
+            "acctgTransTypeId", "INVENTORY_VARIANCE",
+            "transactionDate", UtilDateTime.nowTimestamp(),
+            "description", "Inventory variance adjustment"
+        );
+        
+        Map<String, Object> transResult = dispatcher.runSync("createAcctgTrans", acctgTransContext);
+        String acctgTransId = (String) transResult.get("acctgTransId");
+        
+        // Create debit entry
+        BigDecimal varianceAmount = varianceQuantity.multiply(unitCost);
+        Map<String, Object> debitEntry = UtilMisc.toMap(
+            "acctgTransId", acctgTransId,
+            "acctgTransEntrySeqId", "00001",
+            "glAccountId", "140000", // Inventory Asset Account
+            "debitCreditFlag", "D",
+            "amount", varianceAmount.abs()
+        );
+        
+        dispatcher.runSync("createAcctgTransEntry", debitEntry);
+        
+        return ServiceUtil.returnSuccess();
+        
+    } catch (GenericServiceException e) {
+        return ServiceUtil.returnError("Failed to create accounting entries: " + e.getMessage());
+    }
+}
+```
 
-- Implement proper transaction management
-- Use ServiceUtil for consistent return values
-- Include comprehensive parameter validation
-- Implement proper error handling and logging
+### 2. External System Integration
 
-### Performance Optimization
+#### EDI Integration
 
-For large-scale supply chain operations:
+```xml
+<!-- EDI configuration for supplier communication -->
+<DataResource dataResourceId="EDI_850_TEMPLATE"
+              dataResourceTypeId="ELECTRONIC_TEXT"
+              dataTemplateTypeId="FTL"
+              statusId="CTNT_PUBLISHED"
+              dataResourceName="EDI 850 Purchase Order Template"/>
 
-- Utilize OFBiz's entity caching mechanisms
-- Implement asynchronous processing for long-running operations
-- Use database views for complex reporting queries
-- Leverage OFBiz's job scheduling for batch operations
+<ElectronicText dataResourceId="EDI_850_TEMPLATE">
+    <textData><![CDATA[
+ST*850*${orderHeader.orderId}
+BEG*00*SA*${orderHeader.orderId}**${orderHeader.orderDate?string("yyyyMMdd")}
+<#list orderItems as item>
+PO1*${item.orderItemSeqId}*${item.quantity}*EA*${item.unitPrice}**BP*${item.productId}
+</#list>
+SE*${segmentCount}*${orderHeader.orderId}
+    ]]></textData>
+</ElectronicText>
+```
 
-The Supply Chain Management module represents a sophisticated implementation of enterprise SCM capabilities within the OFBiz framework, providing organizations with the tools needed to optimize their supply chain operations while maintaining the flexibility and extensibility that characterizes the OFBiz platform.
+#### REST API Integration
 
-## Repository Context
+```java
+// REST endpoint for external system integration
+@Path("/supply-chain")
+public class SupplyChainResource {
+    
+    @POST
+    @Path("/inventory/update")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateInventory(InventoryUpdateRequest request) {
+        try {
+            Map<String, Object> serviceContext = UtilMisc.toMap(
+                "inventoryItemId", request.getInventoryItemId(),
+                "quantityOnHandDiff", request.getQuantityChange(),
+                "availableToPromiseDiff", request.getQuantityChange(),
+                "reasonEnumId", "VAR_FOUND",
+                "userLogin", getUserLogin()
+            );
+            
+            Map<String, Object> result = dispatcher.runSync("createInventoryItemDetail", serviceContext);
+            
+            if (ServiceUtil.isSuccess(result)) {
+                return Response.ok().entity(new SuccessResponse("Inventory updated successfully")).build();
+            } else {
+                return Response.status(Response.Status.BAD_REQUEST)
+                              .entity(new ErrorResponse(ServiceUtil.getErrorMessage(result)))
+                              .build();
+            }
+            
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                          .entity(new ErrorResponse("Internal server error"))
+                          .build();
+        }
+    }
+}
+```
 
-- **Repository**: [https://github.com/apache/ofbiz-framework](https://github.com/apache/ofbiz-framework)
-- **Description**: No description available
-- **Business Domain**: Software Development
-- **Architecture Pattern**: Library/Utility
+## Configuration and Setup
 
-## Technology Stack
+### 1. Database Configuration
 
----
+```xml
+<!-- Entity group configuration for SCM -->
+<entity-group group="org.apache.ofbiz.tenant" 
+               entity="Product"/>
+<entity-group group="org.apache.ofbiz.tenant" 
+               entity="InventoryItem"/>
+<entity-group group="org.apache.ofbiz.tenant" 
+               entity="OrderHeader"/>
+<entity-group group="org.apache.ofbiz.tenant" 
+               entity="Shipment"/>
+```
 
-*Generated by ADocS (Automated Documentation Structure) on 2025-09-06 22:30:47*
+### 2. Service Configuration
 
-*For the most up-to-date information, visit the [original repository](https://github.com/apache/ofbiz-framework)*
+```xml
+<!-- Service definitions for SCM -->
+<service name="calculateInventoryReorderLevel" engine="java"
+         location="org.apache.ofbiz.product.inventory.InventoryServices"
+         invoke="calculateReorderLevel">
+    <description>Calculate reorder level based on demand history</description>
+    <attribute name="productId" type="String" mode="IN" optional="false"/>
+    <attribute name="facilityId" type="String" mode="IN" optional="false"/>
+    <attribute name="daysToInclude" type="Integer" mode="IN" optional="true"/>
+    <attribute name="reorderLevel" type="BigDecimal" mode="OUT" optional="false"/>
+</service>
+```
+
+### 3. Security Configuration
+
+```xml
+<!-- Security permissions for SCM -->
+<SecurityPermission permissionId="CATALOG_ADMIN" 
+                    description="Permission to administer product catalog"/>
+<SecurityPermission permissionId="FACILITY_ADMIN" 
+                    description="Permission to administer facilities"/>
+<SecurityPermission permissionId="ORDERMGR_CREATE" 
+                    description="Permission to create orders"/>
+
+<SecurityGroupPermission groupId="ORDERADMIN" 
+                        permissionId="ORDERMGR_CREATE" 
+                        fromDate="2001-01-01 12:00:00.0"/>
+```
+
+## Best Practices
+
+### 1.
