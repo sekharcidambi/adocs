@@ -241,7 +241,13 @@ class CloudStorageService:
             
             # Download and parse
             content = latest_blob.download_as_text()
-            return json.loads(content)
+            metadata = json.loads(content)
+            
+            # Add timestamp from blob creation time
+            if latest_blob.time_created:
+                metadata['generated_at'] = latest_blob.time_created.isoformat()
+            
+            return metadata
             
         except Exception as e:
             logger.error(f"Error getting repository metadata: {e}")
@@ -322,7 +328,7 @@ class CloudStorageService:
                         'name': repo_name,
                         'github_url': github_url,
                         'metadata': metadata,
-                        'last_updated': metadata.get('timestamp', 'Unknown'),
+                        'last_updated': metadata.get('generated_at', metadata.get('timestamp', 'Unknown')),
                         'storage_path': repo_path
                     })
                     logger.info(f"Added repository: {repo_name}")
@@ -364,7 +370,7 @@ class CloudStorageService:
                             'business_domain': 'Software Development',
                             'tech_stack': {'languages': [], 'topics': []},
                             'architecture': {'description': 'Repository documentation'},
-                            'timestamp': structure_blob.time_created.isoformat() if structure_blob.time_created else 'Unknown'
+                            'generated_at': structure_blob.time_created.isoformat() if structure_blob.time_created else None
                         }
             
             return None
